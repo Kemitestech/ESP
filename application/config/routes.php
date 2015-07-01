@@ -40,8 +40,7 @@
 
 $route['default_controller'] = "home/view";
 $route['(:any)'] = 'pages/view/$1';
-$route['404_override'] = '';
-
+$route['404_override'] = 'errors/page_missing';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
