@@ -1,6 +1,11 @@
 <?php
 class Home extends CI_Controller {
 	
+	public function __construct(){
+		
+		$this->load->helper('url');
+	}
+
 	public function view($page = 'home'){  //view method that takes an arguement, which is the name of the page to be loaded 
 		
 		if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php')){ //checks if file exists

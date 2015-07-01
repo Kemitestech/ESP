@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8"> 
 
-	<link href="css/style.css" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url("css/style.css"); ?>" rel="stylesheet" type='text/css'>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -14,8 +14,8 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.min.js"></script>
-  <script src="js/scrolling-nav.js"></script>
+	<script src="<?php echo base_url("js/jquery.easing.min.js"); ?>"></script>
+  <script src="<?php echo base_url("js/scrolling-nav.js"); ?>"></script>
 </head>
 <body id="top">
 	<div class="header_logo">
