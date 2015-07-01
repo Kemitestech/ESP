@@ -14,8 +14,8 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url("js/jquery.easing.min.js"); ?>"></script>
-  <script src="<?php echo base_url("js/scrolling-nav.js"); ?>"></script>
+	<script src="js/jquery.easing.min.js"></script>
+  	<script src="js/scrolling-nav.js"></script>
 </head>
 <body id="top">
 	<div class="header_logo">
