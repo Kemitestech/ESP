@@ -57,7 +57,7 @@
               <li><a href="events.html" class="nav-color">Events</a></li>
              </ul>  
             </li>
-			    	<li><a href="contact-us" class="nav-color">Contact Us</a></li>
+			<li class="<?php if(uri_string=='contact-us'){echo $active;} ?>"><a href="contact-us" class="nav-color">Contact Us</a></li>
             <li class="dropdown">
 			    	  <a href="#" class="dropdown-toggle nav-color" data-toggle="dropdown" role="button">Ministries</a>
               <ul class="dropdown-menu" role="menu">

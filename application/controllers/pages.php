@@ -14,6 +14,7 @@ class Pages extends CI_Controller {
 
 		$data['title'] = 'Edward Street Parish'; //assigns title element of array to capitalized home page
 		$data['nav'] = ucfirst($page); //assigns nav element of array to capitalized home page
+		$data['active']= 'active';
 
 		$this->load->view('templates/header', $data); //loads view in templates/header, view takes two parameters: url  and data 
 		$this->load->view('pages/'.$page, $data);		//$data array is used to pass values to the view
