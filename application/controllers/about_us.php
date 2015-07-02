@@ -13,10 +13,25 @@
 			}			
 
 			$data['title'] = 'Edward Street Parish'; //assigns title element of array to capitalized home page
-			$data['active']= 'active';			
+			$data['active'] = 'active';			
 
 			$this->load->view('templates/header', $data);
 			$this->load->view('about_pages/index', $data);
+			$this->load->view('templates/newsletter_section', $data);
+			$this->load->view('templates/footer');			
+		}
+
+		public function view($page){
+			
+			if ( ! file_exists(APPPATH.'views/about_pages/'.$page.'.php')){ //checks if file exists
+				show_404();
+			}
+			
+			$data['title'] = 'Edward Street Parish'; //assigns title element of array to capitalized home page
+			$data['active'] = 'active';
+			
+			$this->load->view('templates/header', $data);			
+			$this->load->view('about_pages/'.$page., $data);
 			$this->load->view('templates/newsletter_section', $data);
 			$this->load->view('templates/footer');			
 		}
