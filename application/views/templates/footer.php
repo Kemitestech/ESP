@@ -54,10 +54,23 @@
     </div>   
 	</footer><!--start of footer-->	
   <script>
+      $('body').scrollspy({ 
+        target: '#navbar-example',
+        offset: $(window).height() * 0.2 
+
+      });
+
       $('#myAffix').affix({
           offset: {
             top: $('.header_logo').height()-$('#nav').height()
         }}); 
+
+      $('#sidebar').affix({
+        offset: {
+          top: $('.header_logo').height()+$('#myAffix').height()+$('.page-header').height()+$('.nav-tabs').height(),
+          bottom: 252
+        }
+        });  
   </script>
 </body>
 </html>
