@@ -40,7 +40,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
 			    	<li class="<?php if(uri_string() == 'home'){echo $active;} ?>"><a href="home" class="nav-color">Home<span 
-class="sr-only">(current)</span></a></li>
+						class="sr-only">(current)</span></a>
+					</li>
 			    	<li class="dropdown">
           			<a href="#" class="dropdown-toggle nav-color" data-toggle="dropdown" role="button">About Us</a>
 		  				<ul class="dropdown-menu" role="menu">
