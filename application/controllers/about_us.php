@@ -21,7 +21,7 @@
 			$this->load->view('templates/footer');			
 		}
 
-		public function view($page){
+		public function view($page = 'history'){
 			
 			if ( ! file_exists(APPPATH.'views/about_pages/'.$page.'.php')){ //checks if file exists
 				show_404();
@@ -31,11 +31,10 @@
 			$data['active'] = 'active';
 			
 			$this->load->view('templates/header', $data);			
-			$this->load->view('about_pages/'.$page., $data);
+			$this->load->view('about_pages/'.$page, $data);
 			$this->load->view('templates/newsletter_section', $data);
 			$this->load->view('templates/footer');			
 		}
-
 
 	}
 ?>
