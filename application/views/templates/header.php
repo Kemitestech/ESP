@@ -47,13 +47,13 @@
 			            <li><a href="<?php echo base_url('about-us') ?>" class="nav-color">Who we are</a></li>
 				    	<li><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 			            <li><a href="<?php echo base_url('about-us/days-of-worship') ?>" class="nav-color">Days of worship</a></li>
-			            <li><a href="mission-statement.html" class="nav-color">Tenets</a></li>
+			            <li><a href="#" class="nav-color">Tenets</a></li>
                   		<li><a href="#" class="nav-color">Constitution</a></li>
-			            <li><a href="code-of-conduct.html" class="nav-color">Code of Conduct</a></li>
+			            <li><a href="#" class="nav-color">Code of Conduct</a></li>
 		  		  </ul>
-        		        </li>
+        	    </li>
             <li class="dropdown">
-					   <a href="#" class="dropdown-toggle nav-color" data-toggle="dropdown" role="button">News</a>
+			 <a href="#" class="dropdown-toggle nav-color" data-toggle="dropdown" role="button">News</a>
              <ul class="dropdown-menu" role="menu"> 
               <li><a href="newsletter.html" class="nav-color">Newsletters</a></li>
               <li><a href="events.html" class="nav-color">Events</a></li>
