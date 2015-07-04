@@ -47,7 +47,7 @@
 			            <li><a href="<?php echo base_url('about-us') ?>" class="nav-color">Who we are</a></li>
 				    	<li><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 			            <li><a href="<?php echo base_url('about-us/days-of-worship') ?>" class="nav-color">Days of worship</a></li>
-			            <li><a href="#" class="nav-color">Tenets</a></li>
+			            <li><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
                   		<li><a href="#" class="nav-color">Constitution</a></li>
 			            <li><a href="#" class="nav-color">Code of Conduct</a></li>
 		  		  </ul>
