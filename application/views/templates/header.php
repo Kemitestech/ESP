@@ -21,7 +21,6 @@
 	<div class="header_logo">
   		<div class="container-header">
     	 	<img src="<?php echo base_url('img/edward-logo.png') ?>" alt="ccc-logo" class="ccc-logo img-thumbnail">
-    		<h1 class="header-title"><?php echo $title ?></h1>
   		</div>
 	</div>
 	<nav id="myAffix" class="navbar navbar-default">
