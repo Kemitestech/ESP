@@ -16,6 +16,10 @@ body {
   height: 100%;
 }
 
+a{
+ word-wrap: break-word; 	
+}
+
 p{
 font-size:14px;
 }
