@@ -1,7 +1,7 @@
   <div class="jumbotron contact-background">    
     <div class="container">
      
-       <h1 class="jumbotron-h1 header-title ">Our Tenets</h1><br></br>
+       <h1 class="header-title ">Our Tenets</h1><br></br>
        
 	   <blockquote>
 		<p>Let my teaching fall like rain and my words descend like dew, like showers on new grass, like abundant rain on tender plants.</p>
@@ -49,8 +49,7 @@
             </a>  
             <div class="caption">  
               <p class="no-jumbotron-p">Matthew 17: 1 - 2 <br/> Matthew 28: 2 - 3</br>Mark 9: 2 - 3</br>
-				Revelation 7: 9
-			  </p>
+		Revelation 7: 9</p>
             </div>  
         </div>
       
