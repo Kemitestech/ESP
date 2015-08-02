@@ -61,7 +61,7 @@
              </ul>  
             </li>
 			<li class="collapse-underline <?php if(uri_string() == 'contact-us'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
-			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Prayer request</a></li>
+			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
             <li class="dropdown collapse-underline">
 			  <a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Ministries</a>
               <ul class="dropdown-menu list-scroll" role="menu">
