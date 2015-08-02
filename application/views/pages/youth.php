@@ -20,18 +20,18 @@
 		
 		  <div class="container" style="color: white;">
 			<div class="row">
-				<div class="col-md-5 youth-testimonial">
+				<div class="col-md-6 youth-testimonial">
 					<blockquote class="blockquote-color">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in fringilla purus. Vestibulum non lacinia ligula. Donec magna arcu, auctor eget congue ut, semper nec erat.</p>
 					</blockquote>
 					<h4>- Rachel Somebody</h4>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<img src="" alt="" class="img-circle">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5 youth-testimonial col-md-offset-8">
+				<div class="col-md-6 youth-testimonial col-md-offset-7">
 					<blockquote class="blockquote-color">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in fringilla purus. Vestibulum non lacinia ligula. Donec magna arcu, auctor eget congue ut, semper nec erat.</p>
 					</blockquote>
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5 youth-testimonial">
+				<div class="col-md-6 youth-testimonial">
 					<blockquote class="blockquote-color">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in fringilla purus. Vestibulum non lacinia ligula. Donec magna arcu, auctor eget congue ut, semper nec erat.</p>
 					</blockquote>
@@ -49,108 +49,17 @@
 		  </div>
 		
 	</div>
-  <div id="home-news-container" class="container-fluid jumbotron">
-<div class="container "><!--start of container-->
-	<div class="page-header page-header-nounderline">
-  		<h1 class="header-title">Youth News</h1>
-	</div>
-	<div class="col-md-13">
-		<div class="slider2">
-			<div>	
-			<div class="col-md-11">
-			  <div class="thumbnail thumbnail-override">
-			   <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
-			   <div class="caption">
-				<h4 class="header-title">Architecture</h4>
-				<p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				<p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-			   </div>
-			  </div>
-			</div>
-			</div>
-	 	<div>
-					  
-					  
-		<div class="col-md-11">
-		  <div class="thumbnail thumbnail-override">
-  		   <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-  		   <div class="caption">
-    	    <h4 class="header-title">Technology</h4>
-    	    <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    	    <p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-           </div>
-          </div>
-		  </div>
-		</div>
-					
-					<div>
-					
-					  
-					<div class="col-md-11">
-					  <div class="thumbnail thumbnail-override">
-					   <img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-					   <div class="caption">
-						<h4 class="header-title">Nature</h4>
-						<p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-					   </div>
-					  </div>
-					  </div>
-					  
-					
-					</div>
-					
-					<div>
-					  	
-					  
-							<div class="col-md-11">
-		  <div class="thumbnail thumbnail-override">
-  		   <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-  		   <div class="caption">
-    	    <h4 class="header-title">Technology</h4>
-    	    <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    	    <p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-           </div>
-          </div>
-		  </div>
-					  
-					
-					</div>
-					
-					
-					<div>
-					  
-					  
-							<div class="col-md-11">
-							<div class="thumbnail thumbnail-override">
-							<img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-  		   <div class="caption">
-    	    <h4 class="header-title">Nature</h4>
-    	    <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    	    <p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-           </div>
-          </div>
-		  </div>
-					  
-					
-					</div>
-					
-				<div>
-					  
-					<div class="col-md-11">
-					  <div class="thumbnail thumbnail-override">
-					   <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
-					   <div class="caption">
-						<h4 class="header-title">Architecture</h4>
-						<p class="no-jumbotron-p">Lorem psyche ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<p><a href="#" class="btn btn-info" role="button">Read more</a></p>
-					   </div>
-					  </div>
-					</div>					
-					  
-				</div>					
-					
-			    </div>	
+    <div class="container-fluid jumbotron bg-green">
+		<div class="container" style="color: white;">
+			<div class="row">
+				<div class="col-md-7 col-sm-7 separator-responsive separator-responsive-xs">
+					<h2>Our Youth Ministry has a lot of amazing news to tell, along with charitable and fun events happening all the time.</h2>
 				</div>
-			</div><!--end of container-->
-		</div>
+				<div class="col-md-4">
+					<a href="#" class="hover-on-green" role="button"><h2 style="color: white;">Read Our Youth News</h2></a>
+					<a href="#" class="hover-on-green" role="button"><h2 style="color: white;">Check Our Youth Events</h2></a>
+				</div>
+			</div>
+			
+		</div>	
+    </div>

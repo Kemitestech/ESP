@@ -281,11 +281,6 @@ a.btn-transparent:hover{
 .well-nobg{
  background-image: none !important;
 }
-.newsletter-section{
-  background-color: #35478C;
-  margin-top: 30px; 
-  color: white;
-}
 
 .input-margin{
   margin-bottom: 25px !important;
@@ -723,6 +718,11 @@ margin-right: 21px !important;
   margin-left: 5px;
 }
 
+.separator-responsive-xs {
+border-bottom: 2px solid white; 
+padding-bottom: 15px; 
+margin-bottom: 10px;
+}
 
 .navbar-nav li {
   margin-left: 10px;
@@ -737,9 +737,17 @@ display: none;
 .search-pos{
 margin-left: 10px;
 }
+
+.separator-responsive-xs {
+border-bottom: 2px solid white; 
+padding-bottom: 15px; 
+margin-bottom: 10px;
+}
+
 #chevron-top{
 display: none;
 }
+
 .navbar-brand{
 height: auto !important;
 padding-right: 0px !important ;
@@ -815,6 +823,12 @@ margin-right: 21px !important;
 }
 #chevron-top{
 display: none;
+}
+
+.separator-responsive {
+border-right: 2px solid white; 
+padding-right: 15px; 
+margin-right: 10px;
 }
 }
 
@@ -945,6 +959,12 @@ padding: 11px !important;
 
 #chevron-top{
 display: none;
+}
+
+.separator-responsive {
+border-right: 2px solid white; 
+padding-right: 15px; 
+margin-right: 10px;
 }
 }
 
@@ -1124,5 +1144,11 @@ padding: 11px !important;
 
 .border-style{
 border-right: 0 !important;
+}
+
+.separator-responsive {
+border-right: 2px solid white; 
+padding-right: 15px; 
+margin-right: 10px;
 }
 }
