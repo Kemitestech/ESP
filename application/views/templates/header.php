@@ -33,7 +33,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="<?php echo base_url('home')?>">
 					<img src="<?php echo base_url('img/est-logo.png') ?>" alt="Edward Street Parish Logo" class="hidden-xs ccc-logo">
 					<h3 class="visible-xs-inline">CCC Edward Street Parish</h3>
 					</a>	
@@ -45,7 +45,7 @@
 		  				<ul class="dropdown-menu" role="menu">
 							<li><a href="history.html" class="nav-color">Who we are</a></li>
 							<li><a href="history.html" class="nav-color">History</a></li>
-							<li><a href="mission-statement.html" class="nav-color">Tenets</a></li>
+							<li><a href="mission-statement.html" class="nav-color">Testimonials</a></li>
 							<li><a href="testimonials.html" class="nav-color">Tenets</a></li>
 							<li><a href="#" class="nav-color">Constitution</a></li>
 							<li><a href="code-of-conduct.html" class="nav-color">Code of conduct</a></li>
@@ -60,12 +60,12 @@
               <li><a href="events.html" class="nav-color">Events</a></li>
              </ul>  
             </li>
-			<li class="collapse-underline"><a href="contact.html" class="nav-color nav-hover">Contact</a></li>
-			<li class="collapse-underline"><a href="prayer-request.html" class="nav-color nav-hover">Prayer request</a></li>
+			<li class="collapse-underline <?php if(uri_string() == 'contact-us'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
+			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Prayer request</a></li>
             <li class="dropdown collapse-underline">
 			  <a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Ministries</a>
-              <ul class="dropdown-menu" role="menu">
-				<li><a href="our-ministry.html" class="nav-color">Our Ministry</a></li>	
+              <ul class="dropdown-menu list-scroll" role="menu">
+				<li><a href="our-ministry.html" class="nav-color">Our Ministries</a></li>	
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Elder</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Building commitee</a></li>

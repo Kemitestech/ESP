@@ -84,6 +84,42 @@ position: relative;
 .youth-testimonial{
 	margin-bottom: 20px;
 }
+
+a.hero-button {
+	background-color: #00A0C6;
+	border-radius: 0px !important;
+	color: white;
+	font-size: 22px;
+}
+
+a.hero-button:hover {
+	color: white;
+}
+
+a.btn-news {
+	background-color: #00A0C6;
+	border-radius: 0px !important;
+	color: white;
+	font-size: 16px;
+}
+
+a.btn-news:hover {
+	color: white;
+	background-color: #0099BD;
+}
+
+.nav-tabs {
+	font-size: 18px;
+}
+
+.title-margin {
+	margin-bottom: 40px;
+}
+
+.list-scroll {
+max-height: 400px; 
+overflow-y: scroll;
+}
 /*
 -----------------------------------------------------------
             utility styles
@@ -225,7 +261,10 @@ border-radius: 0px !important;
 
 a.btn-transparent:hover{
 	background-color: #5BC0DE !important;
-	border: none;
+	border: 1px solid rgb(255, 0, 0)!important;
+    border: 1px solid rgba(255, 0, 0, .1) !important;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box;
 }
 
 /*

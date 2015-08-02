@@ -1,9 +1,11 @@
-<div class="jumbotron contact-background">    
+<div class="jumbotron contact-background reset-jumb-pos">    
     <div class="container">
-        <form class="form-horizontal col-sm-10 col-sm-offset-3">
+    <h1 class="header-title title-margin">Contact Us</h1>
+    <div class="row">
+    <div class="col-md-8">
+        <form class="form-horizontal">
           <div class="form-group">
           <label class="col-sm-9">
-            <h1 class="header-title">Contact Us</h1>
             <p>Feel free to give us a call on 0208 692 9036 or simply use the form below. If you prefer, just email us direct at
                <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">info@cccedwardstreetparish.org</a>
             </p>
@@ -38,7 +40,21 @@
             <div class="col-sm-9"> 
               <button type="submit" class="btn btn-info btn-lg btn-block no-radius">Send</button>
             </div>
-          </div>  
+          </div>
+        
         </form>
     </div>
-</div>
+    <div class="col-md-4">
+      <h3 class="header-title" style="margin: 0 0 10px;">Other Contact Details </h3>
+      <p>Sheperd's Office:</p>
+      <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br> <abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
+      <hr>
+      <p>Parochial Commitee:</p>
+      <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
+      <hr>
+      <p>Clergy:</p>
+      <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>     
+    </div>
+    </div>
+    </div>
+  </div>
