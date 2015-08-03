@@ -17,7 +17,7 @@
 |
 */
 $config['base_url'] = 
-'http://eunuigbe.home/~unuigbee/edwardstreetparish/';
+'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/';
 
 /*
 |--------------------------------------------------------------------------
