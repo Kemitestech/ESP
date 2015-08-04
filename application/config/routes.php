@@ -38,7 +38,7 @@
 |
 */
 $route['about-us/(:any)'] = 'about_us/view/$1';
-$route['about-us'] = 'about_us/index';
+$route['about-us'] = 'about_us';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = 'errors/page_missing';

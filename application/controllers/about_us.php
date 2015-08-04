@@ -6,11 +6,7 @@
 			parent::__construct();
 		}
 
-		public function index(){
-			
-			if ( ! file_exists(APPPATH.'views/about_pages/who-we-are')){ //checks if file exists
-				show_404();
-			}					
+		public function index(){				
 
 			$this->load->view('templates/header', $data);
 			$this->load->view('about_pages/who-we-are', $data);
