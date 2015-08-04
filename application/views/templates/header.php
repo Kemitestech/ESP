@@ -82,7 +82,7 @@
 			<li class="collapse-underline <?php if(uri_string() == 'gallery'){echo $active;} ?>"><a href="<?php echo base_url('gallery') ?>" class="nav-color nav-hover">Gallery</a></li>
 			</ul>
 			<ul id="secondnav" class="nav navbar-nav repos-top-right">
-				<li class="hidden-xs hidden-sm"><a><img src="img/search2.png" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"></a></li>
+				<li class="hidden-xs hidden-sm"><a><img src="<?php echo base_url('img/search2.png') ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"></a></li>
 				  <form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
 					<div class="form-group">
 					 <div class="col-xs-7 col-sm-8 search-pos"> 
@@ -92,7 +92,7 @@
 					</div>
 					
 				  </form>
-				<li class="visible-lg-inline"><a href="#" class="nav-color"><img src="img/user.png" style="" class="nav-img-display" alt=""></a></li>
+				<li class="visible-lg-inline"><a href="#" class="nav-color"><img src="<?php echo base_url('img/user.png') ?>" style="" class="nav-img-display" alt=""></a></li>
 			</ul>
 			<div class="collapse" id="collapseExample">
 				<form class="navbar-form navbar-left" role="search">
@@ -100,7 +100,7 @@
 					<div class="input-group">
 					  <input type="text" class="form-control border-style" placeholder="Search">
 					  <span class="input-group-btn nav-inputsearch">
-						<img src="img/search2.png" class="nav-img-display" role="button">
+						<img src="<?php echo base_url('img/search2.png') ?>" class="nav-img-display" role="button">
 					  </span>
 					</div>
 					</div>
