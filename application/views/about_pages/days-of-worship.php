@@ -1,12 +1,12 @@
-<div class="jumbotron contact-background">    
+<div class="jumbotron contact-background reset-jumb-pos">    
     <div class="container">
-        <h1 class="header-title">Our days of Worship</h1>
+        <h1 class="header-title">Days of Worship</h1>
         <div class="row">
           <div class="col-sm-9 col-md-offset-0">
            <div class="table-responsive">
-            <table class="table table-hover table-condensed table-margin">
+            <table class="table table-striped table-condensed table-margin">
               <tr>
-                <th scope="col"><h3 class="header-title">Days</h3></th>
+                <th scope="col"><h3 class="header-title">Day</h3></th>
                 <th scope="col"><h3 class="header-title">Type of Service</h3></th>
                 <th scope="col"><h3 class="header-title">Start Time</h3></th>
                 <th scope="col"><h3 class="header-title">End Time</h3></th>  

@@ -1,8 +1,13 @@
-  <div class="jumbotron contact-background">    
+<div id="history-banner"class="jumbotron jumbotron-img reset-jumb-pos" style="color: white;">
     <div class="container">
        <div class="page-header page-header-nounderline"> 
-        <h1 class="header-title">Our History</h1>
-       </div> 
+      <h1>Our History</h1>
+      <p>Edward Street Parish has a rich history as a church and also as part of Celestial Church of Christ World Wide</p>
+       </div>       
+      </div>
+  </div>
+  <div class="jumbotron contact-background reset-jumb-pos">    
+    <div class="container">
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#ccc-history" data-toggle="tab" aria-controls="ccc-history" role="tab">Celestial Church of Christ</a></li>
           <li role="presentation"><a href="#edward-history" data-toggle="tab" aria-controls="edward-history" role="tab">CCC Edward Street Parish</a></li>
