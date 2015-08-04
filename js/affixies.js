@@ -4,7 +4,7 @@ $(document).ready(function() {
 		
 		$('#sidebar').affix({
         offset: {
-          top: $myAffix.height()+$('.page-header').height()+$('.nav-tabs').height()+$('#history-banner').height()+ 100,
+          top: $myAffix.height()+$('.nav-tabs').height()+$('#history-banner').height(),
           bottom: 100
         }
         });
