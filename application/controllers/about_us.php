@@ -8,9 +8,9 @@
 
 		public function index(){				
 
-			$this->load->view('templates/header', $data);
-			$this->load->view('about_pages/who-we-are', $data);
-			$this->load->view('templates/newsletter_section', $data);
+			$this->load->view('templates/header');
+			$this->load->view('about_pages/who-we-are');
+			$this->load->view('templates/newsletter_section');
 			$this->load->view('templates/footer');			
 		}
 
