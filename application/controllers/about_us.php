@@ -8,10 +8,7 @@
 
 		public function index(){				
 
-			$this->load->view('templates/header');
-			$this->load->view('about_pages/who-we-are');
-			$this->load->view('templates/newsletter_section');
-			$this->load->view('templates/footer');			
+			redirect('about-us/who-we-are');		
 		}
 
 		public function view($page = 'who-we-are'){
