@@ -10,10 +10,7 @@
 			
 			if ( ! file_exists(APPPATH.'views/about_pages/who-we-are')){ //checks if file exists
 				show_404();
-			}			
-
-			$data['title'] = 'Edward Street Parish'; //assigns title element of array to capitalized home page
-			$data['active'] = 'active';			
+			}					
 
 			$this->load->view('templates/header', $data);
 			$this->load->view('about_pages/who-we-are', $data);
