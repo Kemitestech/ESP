@@ -8,7 +8,7 @@
 
 		public function index(){
 			
-			if ( ! file_exists(APPPATH.'views/about_pages/index.php')){ //checks if file exists
+			if ( ! file_exists(APPPATH.'views/about_pages/who-we-are')){ //checks if file exists
 				show_404();
 			}			
 
@@ -16,7 +16,7 @@
 			$data['active'] = 'active';			
 
 			$this->load->view('templates/header', $data);
-			$this->load->view('about_pages/index', $data);
+			$this->load->view('about_pages/who-we-are', $data);
 			$this->load->view('templates/newsletter_section', $data);
 			$this->load->view('templates/footer');			
 		}
