@@ -49,7 +49,7 @@
 							<li><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li><a href="#" class="nav-color">Constitution</a></li>
 							<li><a href="code-of-conduct.html" class="nav-color">Code of conduct</a></li>
-							<li><a href="<?php echo base_url('about-us/days-of-worship') ?>.html" class="nav-color">Days of worship</a></li>
+							<li><a href="<?php echo base_url('about-us/days-of-worship') ?>" class="nav-color">Days of worship</a></li>
 		  				</ul>
 					</li>
             <li class="dropdown collapse-underline">
