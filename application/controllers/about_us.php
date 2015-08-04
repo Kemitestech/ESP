@@ -21,7 +21,7 @@
 			$this->load->view('templates/footer');			
 		}
 
-		public function view($page = 'history'){
+		public function view($page = 'who-we-are'){
 			
 			if ( ! file_exists(APPPATH.'views/about_pages/'.$page.'.php')){ //checks if file exists
 				show_404();
