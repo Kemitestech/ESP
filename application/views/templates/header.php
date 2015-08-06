@@ -10,6 +10,7 @@
 	<link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet" type='text/css'>
 	<link href="<?php echo base_url('css/bootstrap-theme.min.css') ?>" rel="stylesheet" type='text/css'>
 	<link href="<?php echo base_url('css/slick-theme.css') ?>" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url('css/formValidation.min.css') ?>" rel="stylesheet" type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
 	
@@ -18,6 +19,8 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+	<script src="<?php echo base_url('js/formValidation.popular.min.js') ?>"></script>
+	<script src="<?php echo base_url('js/framework/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('js/jquery.easing.min.js') ?>"></script>
   	<script src="<?php echo base_url('js/scrolling-nav.js') ?>"></script>
   	<script src="<?php echo base_url('js/parallax.min.js') ?>"></script>

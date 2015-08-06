@@ -53,7 +53,8 @@
           </div>
         </div>
       </div>  
-    </div>   
+    </div>
+  <script src="<?php echo base_url('js/formsSettings.js') ?>"></script>   
   <script src="<?php echo base_url('js/affixies.js') ?>"></script>
   <script src="<?php echo base_url('js/sliders.js') ?>"></script>
   <script src="<?php echo base_url('js/main.js') ?>"></script> 
