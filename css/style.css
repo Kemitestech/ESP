@@ -17,6 +17,10 @@ ul.nav-font a{
 font-size: 19px !important;
 }
 
+a {
+word-wrap: break-word;
+}
+
 body {
   font-family:  'Ubuntu', sans-serif !important;
   padding-top: 70px; 
@@ -30,6 +34,7 @@ body {
   top: -70px;
   background-color: #00a1c6 !important;
   background-image: url('../img/bedge-grunge.png')!important;
+  background-size: 100% 100%;
   color: white !important;
   border-radius: 0px !important; 
   border-top: 0px !important; 
@@ -94,6 +99,13 @@ a.hero-button {
 
 a.hero-button:hover {
 	color: white;
+}
+
+.btn-contact {
+	background-color: #00A0C6;
+	border-radius: 0px !important;
+	color: white;
+	font-size: 16px;
 }
 
 a.btn-news {
@@ -1137,6 +1149,7 @@ padding: 11px !important;
 .dropdown-menu{
   background-color: #00a1c6 !important;
   background-image: url('../img/bedge-grunge.png') !important;
+  background-size: 100% 100%;
   border: 1px solid #E7E7E7 !important;
   border-top: 3px solid #FFB100 !important;	
   margin-top: 1px !important;
