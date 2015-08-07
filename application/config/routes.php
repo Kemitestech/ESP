@@ -39,10 +39,10 @@
 */
 $route['about-us/(:any)'] = 'about_us/view/$1';
 $route['about-us'] = 'about_us';
-$route['default_controller'] = 'pages/view';
-$route['(:any)'] = 'pages/view/$1';
 $route['contact-us'] = 'contactform/view';
 $route['contactform'] = 'contactform';
+$route['default_controller'] = 'pages/view';
+$route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = 'errors/page_missing';
 
 /* End of file routes.php */
