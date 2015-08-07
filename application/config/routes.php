@@ -37,9 +37,9 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['contactform'] = 'contactform';
 $route['about-us/(:any)'] = 'about_us/view/$1';
 $route['about-us'] = 'about_us';
+$route['contactform'] = 'contactform/index';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = 'errors/page_missing';
