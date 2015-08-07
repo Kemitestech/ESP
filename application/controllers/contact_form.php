@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Contact_form extends CI_Controlller {
 	
 	public function __construct() {
@@ -6,7 +6,7 @@ class Contact_form extends CI_Controlller {
 		
 	}
 
-    function index(){
+    public function index(){
     	//set validation rules
     	$this->form_validation->set_rules('fullname', 'Full Name', 'trim|required|xss_clean|callback_alpha_space_only');
     	$this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|callback_alpha_space_only');

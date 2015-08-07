@@ -3,7 +3,7 @@ function Postcontactform(){
 	$("#signinForm").submit(function(e){
 		
 		$.ajax({
-			url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contact_form/index/',
+			url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contact_form',
 			type: 'POST',
 			data: $(this).serialize(),
 			success: function(msg){
