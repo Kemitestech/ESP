@@ -51,7 +51,7 @@ class Contactform extends CI_Controller {
 
         $data['active']= 'active';
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view($page);
         $this->load->view('templates/newsletter_section');
         $this->load->view('templates/footer');
