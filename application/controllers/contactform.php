@@ -11,7 +11,7 @@ class Contactform extends CI_Controller {
         $this->load->library('form_validation');
            	
         if($this->form_validation->run() == FALSE){
-            $this->load->view('pages/contact');
+            $this->load->view('pages/contact-us');
         }
         else{
             $this->load->view('pages/home');
