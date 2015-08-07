@@ -3,7 +3,6 @@
     <h1 class="header-title title-margin">Contact Us</h1>
     <div class="row">
     <div class="col-md-8">
-        <?php echo validation_errors(); ?>
         <form id="signinForm" class="form-horizontal">
           <div class="form-group">
           <label class="col-sm-9">
