@@ -30,14 +30,17 @@ class Contactform extends CI_Controller {
         $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|callback_alpha_space_only');
         $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|xss_clean');
 
+        $data['active'] = 'active';
+        $data['title'] = 'Edward Street Parish';
+
         if($this->form_validation->run() == FALSE){
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('contact-us');
             $this->load->view('templates/newsletter_section');
             $this->load->view('templates/footer');  
         }
         else{
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('pages/home');
             $this->load->view('templates/newsletter_section');
             $this->load->view('templates/footer');
