@@ -24,6 +24,7 @@
 	<script src="<?php echo base_url('js/jquery.easing.min.js') ?>"></script>
   	<script src="<?php echo base_url('js/scrolling-nav.js') ?>"></script>
   	<script src="<?php echo base_url('js/parallax.min.js') ?>"></script>
+  	<script src="<?php echo base_url('js/post.js') ?>"></script>
 </head>
 <body id="top">
 	<nav id="myAffix" class="myaffix1 navbar navbar-default">

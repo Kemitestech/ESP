@@ -31,9 +31,14 @@
           </div>
           <div class="form-group input-margin">
            <div class="col-sm-9">  
-            <input type="tel" class="form-control input-lg no-radius" name="phone" id="Inputnumber1" placeholder="Phone number">
+            <input type="tel" class="form-control input-lg no-radius" name="phone" id="Inputphone" placeholder="Phone number">
            </div> 
           </div>          
+          <div class="form-group input-margin">
+           <div class="col-sm-9"> 
+            <input type="text" class="form-control input-lg no-radius" id="subject" name="subject" placeholder="Subject *">
+           </div> 
+          </div>
           <div class="form-group input-margin">
            <div class="col-sm-9"> 
             <textarea id="InputEnquiry" class="form-control no-radius input-lg" name="enquiry" placeholder="Enquiry *" rows="3"></textarea>
@@ -41,7 +46,7 @@
           </div> 
           <div class="form-group">
             <div class="col-sm-9"> 
-              <button type="submit" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
+              <button type="submit" onclick="Postcontactform()" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
             </div>
           </div>
         
