@@ -32,7 +32,7 @@ class Contactform extends CI_Controller {
 
         if($this->form_validation->run() == FALSE){
             $this->load->view('templates/header');
-            $this->load->view('pages/contact-us');
+            $this->load->view('contact-us');
             $this->load->view('templates/newsletter_section');
             $this->load->view('templates/footer');  
         }
@@ -50,7 +50,7 @@ class Contactform extends CI_Controller {
         }
 
         $this->load->view('templates/header');
-        $this->load->view('contact-us');
+        $this->load->view($page);
         $this->load->view('templates/newsletter_section');
         $this->load->view('templates/footer');
 
