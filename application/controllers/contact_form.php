@@ -1,4 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Contact_form extends CI_Controlller {
 	
 	public function __construct() {
@@ -28,6 +29,7 @@ class Contact_form extends CI_Controlller {
                 	'message'=>form_error('message')
                 )));
     		}
+    	}	
     	else {
     		
     	//get the form data
