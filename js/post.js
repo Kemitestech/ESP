@@ -1,7 +1,6 @@
 function Postcontactform(){
 	
 	$("#signinForm").submit(function(e){
-		e.preventDefault();
 		$.ajax({
 			url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contact_form/index/',
 			type: 'POST',
