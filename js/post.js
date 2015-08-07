@@ -9,12 +9,12 @@ function Postcontactform(){
 			success: function(msg){
 				if(msg.validate){
 				alert("success");
-					$(#fullname_contact).val = '';
-					$(#businessname).val = '';
-					$(#InputEmail1).val = '';
-					$(#Inputphone).val = '';
-					$(#subject).val = '';
-					$(#InputEnquiry).val = '';
+					$(#fullname_contact).val('');
+					$(#businessname).val('');
+					$(#InputEmail1).val('');
+					$(#Inputphone).val('');
+					$(#subject).val('');
+					$(#InputEnquiry).val('');
 				}else{
 					alert("error");
 				}
