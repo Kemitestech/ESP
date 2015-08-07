@@ -49,6 +49,8 @@ class Contactform extends CI_Controller {
             show_404();
         }
 
+        $data['active']= 'active';
+
         $this->load->view('templates/header');
         $this->load->view($page);
         $this->load->view('templates/newsletter_section');
