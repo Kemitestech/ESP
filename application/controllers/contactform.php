@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contact_form extends CI_Controlller {
+class Contactform extends CI_Controlller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -76,7 +76,7 @@ class Contact_form extends CI_Controlller {
 
     }
 
-    function alpha_space_only($str)
+    public function alpha_space_only($str)
     {
         if (!preg_match("/^[a-zA-Z ]+$/",$str))
         {
