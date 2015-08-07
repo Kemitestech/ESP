@@ -1,6 +1,7 @@
 function Postcontactform(){
 	
 	$("#signinForm").submit(function(e){
+		
 		$.ajax({
 			url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contact_form/index/',
 			type: 'POST',
@@ -14,5 +15,6 @@ function Postcontactform(){
 					
 			}
        });
-	})
+       e.preventDefault();
+	});
 }
