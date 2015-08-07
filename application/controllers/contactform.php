@@ -44,6 +44,18 @@ class Contactform extends CI_Controller {
         }
     }
 
+    public function view($page = 'contact-us'){
+        if ( ! file_exists(APPPATH.'views/'.$page.'.php')){ //checks if file exists
+            show_404();
+        }
+
+        $this->load->view('templates/header');
+        $this->load->view('contact-us');
+        $this->load->view('templates/newsletter_section');
+        $this->load->view('templates/footer');
+
+    }
+
 }
 
 ?>
