@@ -5,7 +5,7 @@ function Postcontactform(){
 		$.ajax({
 			url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contact_form/index',
 			type: 'POST',
-			data: $(this).seralize(),
+			data: $(this).serialize(),
 			success: function(msg){
 				if(msg.validate){
 				alert("success");

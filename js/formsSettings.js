@@ -47,6 +47,17 @@ $(document).ready(function() {
 					}
                 }
             },
+            subject: {
+                validators: {
+                    notEmpty: {
+                        message: 'The subject is required'
+                    },
+                    stringLength: {
+                        max: 50,
+                        message: 'The subject must be less than 50 characters'
+                    }
+                }
+            },
 			enquiry: {
                 validators: {
                     stringLength: {
