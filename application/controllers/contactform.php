@@ -49,7 +49,8 @@ class Contactform extends CI_Controller {
             show_404();
         }
 
-        $data['active']= 'active';
+        $data['active'] = 'active';
+        $data['title'] = 'Edward Street Parish';
 
         $this->load->view('templates/header', $data);
         $this->load->view($page);
