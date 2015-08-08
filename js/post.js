@@ -21,7 +21,7 @@ $("#signinForm").submit(function(e){
 				alert(msg);
 		},
 		error: function(response){
-			if( jqXhr.status == 400 ) { //Validation error or other reason for Bad Request 400
+			if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
             var json = $.parseJSON( response.responseText );
             alert(json);
         }
