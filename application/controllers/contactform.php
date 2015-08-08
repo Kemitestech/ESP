@@ -11,6 +11,7 @@ class Contactform extends CI_Controller {
     public function index(){
         $this->load->library('form_validation');
         $this->load->helper('form');
+        $this->load->library('email');
            	
         $fullname = $this->input->post('fullname');
         $businessname = $this->input->post('businessname');
@@ -52,10 +53,12 @@ class Contactform extends CI_Controller {
         else{
             
             if($ajax){
-                $this->load->view('templates/header', $data);
-                $this->load->view('pages/home');
-                $this->load->view('templates/newsletter_section');
-                $this->load->view('templates/footer');
+                $this->email->from('sinnell@aol.com', 'Emmanuel');
+                $this->email->to('info.cccedwardstreetparish.org');
+                $this->email->subject('Email Test');
+                $this->email->message('Testing the email class.');
+
+                $this->email->send();
             }
             
            
