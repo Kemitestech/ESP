@@ -35,10 +35,11 @@ class Contactform extends CI_Controller {
 
         if($this->form_validation->run() == FALSE){
             
-            if($ajax){
+            
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('400');
             $this->data['message'] = validation_errors();
+            echo json_encode($this->data);
 
             //$msg = array(
             //        'fullname' => form_error('fullname'), 
@@ -48,15 +49,16 @@ class Contactform extends CI_Controller {
             //        'subject' => form_error('subject'),
             //        'message' => form_error('message')
             //);    
-            } 
+            
             
         }
         else{
             
-            if($ajax){
+            
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('200');
             $this->data['message'] = 'Success';
+            echo json_encode($this->data);
 
             //$msg = array(
             //        'fullname' => form_error('fullname'), 
@@ -66,7 +68,7 @@ class Contactform extends CI_Controller {
             //        'subject' => form_error('subject'),
             //        'message' => form_error('message')
             //);    
-            }
+            
             
                 //$this->email->from('sinnell@aol.com', 'Emmanuel');
                 //$this->email->to('info.cccedwardstreetparish.org');
@@ -78,7 +80,7 @@ class Contactform extends CI_Controller {
             
            
         }
-        echo json_encode($this->data);
+        
         
         
     }

@@ -46,7 +46,7 @@
           </div> 
           <div class="form-group">
             <div class="col-sm-9"> 
-              <button type="submit" onclick="Sendcontact()" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
+              <button type="submit" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
             </div>
           </div>
         </form>

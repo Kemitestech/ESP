@@ -72,31 +72,33 @@ $(document).ready(function() {
         }
     }).on('success.form.fv', function(e) {
         e.preventDefault();
-        var form_data = {
-            fullname : $('#fullname_contact').val(),
-            businessname : $('#businessname_contact').val(),
-            email : $('#email_contact').val(),
-            phone : $('#phone_contact').val(),
-            subject : $('#subject_contact').val(),
-            message : $('#message_contact').val(),
-            ajax: '1'   
-        }
+        //var form_data = {
+        //    fullname : $('#fullname_contact').val(),
+        //    businessname : $('#businessname_contact').val(),
+        //    email : $('#email_contact').val(),
+        //    phone : $('#phone_contact').val(),
+        //    subject : $('#subject_contact').val(),
+        //    message : $('#message_contact').val(),
+        //    ajax: '1'   
+        //}
 
-        form_data = $(e.target);
+        
+
+        var $form = $(e.target);
         
         $.ajax({
             type: 'POST',
             url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
             dataType: 'json',
-            data: form_data,
+            data: $form.serialize(),
             success: function(data){
-                    $form_data.formValidation('resetForm', true);
+                    $form.formValidation('resetForm', true);
                     alert(data);
             },
             error: function(response){
                 if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
-                var json = $.parseJSON( response.responseText );
-                console.log(json);
+                    var json = $.parseJSON( response.responseText );
+                    console.log(json);
                 }
             }
         });   
