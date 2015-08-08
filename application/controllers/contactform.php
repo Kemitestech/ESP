@@ -74,11 +74,14 @@ class Contactform extends CI_Controller {
             $config['charset']  = 'utf-8'; //Change this you your preferred charset 
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html'; //Use 'text' if you don't need html tags and images
+            $config['crlf'] = '\r\n';      //should be "\r\n"
+            $config['newline'] = '\r\n';   //should be "\r\n"
 
             $config['smtp_host'] = 'smtp.mandrillapp.com';
             $config['smtp_user'] = 'info@cccedwardstreetparish.org';
             $config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
             $config['smtp_port'] = '587';
+            $this->email->initialize($config);
                         
             $this->email->from('sinnell@aol.com', 'Emmanuel');
             $this->email->to('info@cccedwardstreetparish.org');
