@@ -1,6 +1,6 @@
 function Sendcontact() {
 
-$("#signinForm").submit(function(e){
+$("#signinForm").one("submit", function(e){
 	e.preventDefault();
 	var form_data = {
 		fullname : $('#fullname_contact').val(),
