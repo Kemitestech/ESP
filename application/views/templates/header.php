@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-	<script src="<?php echo base_url('js/formValidation.popular.min.js') ?>"></script>
+	<!--<script src="<?php echo base_url('js/formValidation.popular.min.js') ?>"></script>-->
 	<script src="<?php echo base_url('js/framework/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('js/jquery.easing.min.js') ?>"></script>
   	<script src="<?php echo base_url('js/scrolling-nav.js') ?>"></script>
