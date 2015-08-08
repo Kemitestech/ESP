@@ -18,7 +18,7 @@ $("#signinForm").submit(function(e){
 		dataType: 'json',
 		data: form_data,
 		success: function(data){
-				alert('data');
+				alert(data);
 		},
 		error: function(response){
 			if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
