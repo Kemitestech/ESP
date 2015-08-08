@@ -1,6 +1,5 @@
-function Sendcontact() {
-
-$("#signinForm").one("submit", function(e){
+$(document).ready(function() {
+$("#signinForm").submit(function(e){
 	e.preventDefault();
 	var form_data = {
 		fullname : $('#fullname_contact').val(),
@@ -28,4 +27,4 @@ $("#signinForm").one("submit", function(e){
     	}
 	});
 });
-}
+});
