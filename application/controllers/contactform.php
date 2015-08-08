@@ -19,7 +19,6 @@ class Contactform extends CI_Controller {
         $phone = $this->input->post('phone');
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
-        $ajax = $this->input->post('ajax');
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|alpha_numeric_spaces');
@@ -77,10 +76,15 @@ class Contactform extends CI_Controller {
             $config['crlf'] = '\r\n';      //should be "\r\n"
             $config['newline'] = '\r\n';   //should be "\r\n"
 
-            $config['smtp_host'] = 'smtp.mandrillapp.com';
+            //$config['smtp_host'] = 'smtp.mandrillapp.com';
+            //$config['smtp_user'] = 'info@cccedwardstreetparish.org';
+            //$config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
+            //$config['smtp_port'] = '587';
+            //$this->email->initialize($config);
+            $config['smtp_host'] = 'smtp.cccedwardstreetparish.org';
             $config['smtp_user'] = 'info@cccedwardstreetparish.org';
-            $config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
-            $config['smtp_port'] = '587';
+            $config['smtp_pass'] = 'N2wcr0ss';
+            $config['smtp_port'] = '465';
             $this->email->initialize($config);
                         
             $this->email->from('sinnell@aol.com', 'Emmanuel');
@@ -88,8 +92,7 @@ class Contactform extends CI_Controller {
             $this->email->subject('Email Test');
             $this->email->message('If you forgot how to do this, go ahead and refer to: <a href="http://the-amazing-php.blogspot.com/2015/05/codeigniter-send-email-with-mandrill.html">The Amazing PHP</a>.');
 
-            $this->email->send(FALSE);
-            echo json_encode($this->email->print_debugger(array('headers', 'subject', 'body')));
+            $this->email->send();
         }
         
         
