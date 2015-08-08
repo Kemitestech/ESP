@@ -49,7 +49,7 @@ class Contactform extends CI_Controller {
             //        'message' => form_error('message')
             //);    
             } 
-            echo json_encode($this->data);
+            
         }
         else{
             
@@ -67,7 +67,7 @@ class Contactform extends CI_Controller {
             //        'message' => form_error('message')
             //);    
             }
-            echo json_encode($this->data);
+            
                 //$this->email->from('sinnell@aol.com', 'Emmanuel');
                 //$this->email->to('info.cccedwardstreetparish.org');
                 //$this->email->subject('Email Test');
@@ -78,7 +78,7 @@ class Contactform extends CI_Controller {
             
            
         }
-        
+        echo json_encode($this->data);
         
         
     }
