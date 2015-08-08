@@ -15,7 +15,7 @@ $(".submit").click(function(){
 		data: form_data,
 		success: function(msg){
 				alert(msg);
-		}
+		},
 		error: function(response){
 			alert(response.responseJSON.msg);
 		}
