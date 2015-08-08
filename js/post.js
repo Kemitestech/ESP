@@ -24,7 +24,6 @@ $("#signinForm").submit(function(e){
 			if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
             var json = $.parseJSON( response.responseText );
             console.log(json);
-            alert("Error: " + json.error.text);
     		}
     	}
 	});this.reset();
