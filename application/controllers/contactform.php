@@ -49,6 +49,7 @@ class Contactform extends CI_Controller {
             //        'message' => form_error('message')
             //);    
             } 
+            echo json_encode($this->data);
         }
         else{
             
@@ -64,7 +65,7 @@ class Contactform extends CI_Controller {
             
            
         }
-        echo json_encode($this->data);
+        
         
         
     }
