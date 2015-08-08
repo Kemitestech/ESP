@@ -1,4 +1,4 @@
-$(".submit").click(function(){
+$(".submit_contact").click(function(){
 	var form_data = {
 		fullname : $('#fullname_contact').val(),
 		businessname : $('#businessname_contact').val(),
@@ -12,6 +12,7 @@ $(".submit").click(function(){
 	$.ajax({
 		type: 'POST',
 		url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
+		dataType: 'json',
 		data: form_data,
 		success: function(msg){
 				alert(msg);
