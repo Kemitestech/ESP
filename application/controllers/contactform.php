@@ -53,7 +53,6 @@ class Contactform extends CI_Controller {
         }
         else{
             
-            if($ajax){
                 $this->email->from('sinnell@aol.com', 'Emmanuel');
                 $this->email->to('info.cccedwardstreetparish.org');
                 $this->email->subject('Email Test');
@@ -61,7 +60,6 @@ class Contactform extends CI_Controller {
 
                 $this->email->send(FALSE);
                 $this->email->print_debugger(array('headers', 'body', 'subject'));
-            }
             
            
         }
