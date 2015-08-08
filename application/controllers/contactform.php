@@ -19,7 +19,7 @@ class Contactform extends CI_Controller {
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
         $ajax = $this->input->post('ajax');
-        
+
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
@@ -54,8 +54,8 @@ class Contactform extends CI_Controller {
                     'subject' => form_error('subject'),
                     'message' => form_error('message')
             );
-            $this->output->set_status_header('500');
-            $this->output->set_content_type('application/json');
+            
+            
             echo json_encode($msg);
         }
         

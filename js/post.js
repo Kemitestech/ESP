@@ -15,7 +15,7 @@ $("#signinForm").submit(function(e){
 	$.ajax({
 		type: 'POST',
 		url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
-		dataType: 'json',
+		dataType: "json",
 		data: form_data,
 		success: function(msg){
 				alert(msg);
