@@ -1,7 +1,7 @@
 function Sendcontact() {
 
-$("#signinForm").submit(function(e){
-	e.preventDefault();
+$("#signinForm").submit(function(){
+	
 	var form_data = {
 		fullname : $('#fullname_contact').val(),
 		businessname : $('#businessname_contact').val(),
@@ -27,5 +27,6 @@ $("#signinForm").submit(function(e){
     		}
     	}
 	});
+	return false;
 });
 }
