@@ -74,6 +74,7 @@ if (defined('ENVIRONMENT'))
  */
 	$application_folder = 'application';
 
+
 /*
  * --------------------------------------------------------------------
  * DEFAULT CONTROLLER
@@ -123,7 +124,7 @@ if (defined('ENVIRONMENT'))
 	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
 
-
+	date_default_timezone_set('Europe/London');
 // --------------------------------------------------------------------
 // END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
 // --------------------------------------------------------------------
