@@ -58,7 +58,8 @@ class Contactform extends CI_Controller {
                 $this->email->subject('Email Test');
                 $this->email->message('Testing the email class.');
 
-                $this->email->send();
+                $this->email->send(FALSE);
+                $this->email->print_debugger(array('headers', 'body', 'subject'));
             }
             
            
