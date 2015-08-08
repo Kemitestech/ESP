@@ -1,4 +1,5 @@
-$(".submit_contact").click(function(){
+$(".submit_contact").submit(function(e){
+	e.preventDefault();
 	var form_data = {
 		fullname : $('#fullname_contact').val(),
 		businessname : $('#businessname_contact').val(),
@@ -21,5 +22,4 @@ $(".submit_contact").click(function(){
 			alert(response.responseJSON.msg);
 		}
 	});
-	return false;
 });
