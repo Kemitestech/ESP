@@ -53,13 +53,28 @@ class Contactform extends CI_Controller {
         }
         else{
             
-                $this->email->from('sinnell@aol.com', 'Emmanuel');
-                $this->email->to('info.cccedwardstreetparish.org');
-                $this->email->subject('Email Test');
-                $this->email->message('Testing the email class.');
+            if($ajax){
+            $this->output->set_content_type('application/json');
+            $this->output->set_status_header('200');
+            $this->data['message'] = 'Success';
 
-                $this->email->send(FALSE);
-                $this->email->print_debugger(array('headers', 'body', 'subject'));
+            //$msg = array(
+            //        'fullname' => form_error('fullname'), 
+            //        'business' => form_error('businessname'),
+            //        'email' => form_error('email'),
+            //        'phone' => form_error('phone'),
+            //        'subject' => form_error('subject'),
+            //        'message' => form_error('message')
+            //);    
+            }
+            echo json_encode($this->data);
+                //$this->email->from('sinnell@aol.com', 'Emmanuel');
+                //$this->email->to('info.cccedwardstreetparish.org');
+                //$this->email->subject('Email Test');
+                //$this->email->message('Testing the email class.');
+
+                //$this->email->send(FALSE);
+                //$this->email->print_debugger(array('headers', 'body', 'subject'));
             
            
         }

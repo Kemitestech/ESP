@@ -1,4 +1,5 @@
-$(document).ready(function() {
+function Sendcontact() {
+
 $("#signinForm").submit(function(e){
 	e.preventDefault();
 	var form_data = {
@@ -16,8 +17,8 @@ $("#signinForm").submit(function(e){
 		url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
 		dataType: 'json',
 		data: form_data,
-		success: function(){
-				alert('success');
+		success: function(data){
+				alert('data');
 		},
 		error: function(response){
 			if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
@@ -27,4 +28,4 @@ $("#signinForm").submit(function(e){
     	}
 	});
 });
-});
+}
