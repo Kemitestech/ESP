@@ -27,6 +27,6 @@ $("#signinForm").submit(function(e){
             alert("Error: " + json.error.text);
     		}
     	}
-	});
+	});this.reset();
 });
 }
