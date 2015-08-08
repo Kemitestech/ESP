@@ -58,7 +58,7 @@ $(document).ready(function() {
                     }
                 }
             },
-			enquiry: {
+			message: {
                 validators: {
                     stringLength: {
                         max: 300,

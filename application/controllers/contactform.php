@@ -22,6 +22,7 @@ class Contactform extends CI_Controller {
 
     public function index(){
         $this->load->library('form_validation');
+        $this->load->helper('form');
            	
         $this->form_validation->set_rules('fullname', 'Full Name', 'trim|required|xss_clean|callback_alpha_space_only');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|callback_alpha_space_only');
@@ -34,17 +35,41 @@ class Contactform extends CI_Controller {
         $data['title'] = 'Edward Street Parish';
 
         if($this->form_validation->run() == FALSE){
-            $this->load->view('templates/header', $data);
-            $this->load->view('contact-us');
-            $this->load->view('templates/newsletter_section');
-            $this->load->view('templates/footer');  
+            
+            $fullname = $this->input->post('fullname');
+            $businessname = $this->input->post('businessname');
+            $email = $this->input->post('email');
+            $phone = $this->input->post('phone');
+            $subject = $this->input->post('subject');
+            $message = $this->input->post('message');
+            $ajax = $this->input->post('ajax');
+            
+            if($ajax){
+                $this->load->view('templates/header', $data);
+                $this->load->view('pages/home');
+                $this->load->view('templates/newsletter_section');
+                $this->load->view('templates/footer');
+            }
+
+              
         }
         else{
-            $this->load->view('templates/header', $data);
-            $this->load->view('pages/home');
-            $this->load->view('templates/newsletter_section');
-            $this->load->view('templates/footer');
+            $this->output->set_content_type('application/json');
+            
+            $msg = array(
+                    'fullname' => form_error('fullname'), 
+                    'business' => form_error('businessname'),
+                    'email' => form_error('email'),
+                    'phone' => form_error('phone'),
+                    'subject' => form_error('subject'),
+                    'message' => form_error('message')
+            );
+            $this->output->set_status_header('500');
+            $this->output->set_content_type('application/json');
+            echo json_encode($msg);
         }
+        
+        
     }
 
     public function view($page = 'contact-us'){
