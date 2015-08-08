@@ -27,7 +27,7 @@ class Contactform extends CI_Controller {
         $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
         $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('ajax', 'Ajax', 'required|is_natural|alpha_numeric_spaces');
+    
 
         $data['active'] = 'active';
         $data['title'] = 'Edward Street Parish';
