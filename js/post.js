@@ -1,11 +1,11 @@
 $(".submit").click(function(){
 	var form_data = {
-		fullname : $(#fullname_contact).val(),
-		businessname : $(#businessname_contact).val(),
-		email : $(#email_contact).val(),
-		phone : $(#phone_contact).val(),
-		subject : $(#subject_contact).val(),
-		message : $(#message_contact).val(),
+		fullname : $('#fullname_contact').val(),
+		businessname : $('#businessname_contact').val(),
+		email : $('#email_contact').val(),
+		phone : $('#phone_contact').val(),
+		subject : $('#subject_contact').val(),
+		message : $('#message_contact').val(),
 		ajax: '1'	
 	}
 
@@ -17,7 +17,7 @@ $(".submit").click(function(){
 				alert(msg);
 		}
 		error: function(response){
-			alert(response.responseJSON.msg)
+			alert(response.responseJSON.msg);
 		}
 	});
 	return false;
