@@ -20,12 +20,12 @@ class Contactform extends CI_Controller {
         $message = $this->input->post('message');
         $ajax = $this->input->post('ajax');
 
-        $this->form_validation->set_rules('fullname', 'Full Name', 'trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
-        $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural');
-        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|alpha_numeric_spaces');
-        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|alpha_numeric_spaces');
+        $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
+        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('ajax', 'Ajax', 'required|is_natural|alpha_numeric_spaces');
 
         $data['active'] = 'active';
@@ -35,26 +35,32 @@ class Contactform extends CI_Controller {
         if($this->form_validation->run() == FALSE){
             
             if($ajax){
-                echo 'success';
-            }
+            $this->output->set_content_type('application/json');
+            $this->output->set_status_header('400');
+            $this->data['message'] = validation_errors();
 
-              
+            //$msg = array(
+            //        'fullname' => form_error('fullname'), 
+            //        'business' => form_error('businessname'),
+            //        'email' => form_error('email'),
+            //        'phone' => form_error('phone'),
+            //        'subject' => form_error('subject'),
+            //        'message' => form_error('message')
+            //);    
+            } 
         }
         else{
-            $this->output->set_content_type('application/json');
             
-            $msg = array(
-                    'fullname' => form_error('fullname'), 
-                    'business' => form_error('businessname'),
-                    'email' => form_error('email'),
-                    'phone' => form_error('phone'),
-                    'subject' => form_error('subject'),
-                    'message' => form_error('message')
-            );
+            if($ajax){
+                $this->load->view('templates/header', $data);
+                $this->load->view('pages/home');
+                $this->load->view('templates/newsletter_section');
+                $this->load->view('templates/footer');
+            }
             
-            
-            echo json_encode($msg);
+           
         }
+        echo json_encode($this->data);
         
         
     }

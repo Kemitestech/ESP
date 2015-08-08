@@ -15,13 +15,16 @@ $("#signinForm").submit(function(e){
 	$.ajax({
 		type: 'POST',
 		url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
-		dataType: "json",
-		data: form_data.serialize(),
+		dataType: 'json',
+		data: form_data,
 		success: function(msg){
 				alert(msg);
 		},
 		error: function(response){
-			alert(response.responseJSON);
+			if( jqXhr.status == 400 ) { //Validation error or other reason for Bad Request 400
+            var json = $.parseJSON( response.responseText );
+            alert(json);
+        }
 		}
 	});
 });
