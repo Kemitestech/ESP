@@ -71,7 +71,7 @@ class Contactform extends CI_Controller {
             //);    
               
             $config['protocol'] = 'smtp';
-            $config['charset']  = 'iso-8859-1'; //Change this you your preferred charset 
+            $config['charset']  = 'utf-8'; //Change this you your preferred charset 
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html'; //Use 'text' if you don't need html tags and images
 
@@ -81,12 +81,12 @@ class Contactform extends CI_Controller {
             $config['smtp_port'] = '587';
                         
             $this->email->from('sinnell@aol.com', 'Emmanuel');
-            $this->email->to('info.cccedwardstreetparish.org');
+            $this->email->to('info@cccedwardstreetparish.org');
             $this->email->subject('Email Test');
             $this->email->message('If you forgot how to do this, go ahead and refer to: <a href="http://the-amazing-php.blogspot.com/2015/05/codeigniter-send-email-with-mandrill.html">The Amazing PHP</a>.');
 
-            $this->email->send();
-            //echo $this->email->print_debugger(array('headers', 'subject', 'body'));
+            $this->email->send(FALSE);
+            echo json_encode($this->email->print_debugger(array('headers', 'subject', 'body')));
         }
         
         
