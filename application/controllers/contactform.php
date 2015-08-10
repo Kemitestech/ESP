@@ -83,7 +83,7 @@ class Contactform extends CI_Controller {
             $this->email->from($email, $fullname);
             $this->email->to($from_address);
             $this->email->subject($subject);
-            $this->email->message('<html><body><p>Dear Edward Street Parish,<p><br><br>'.if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}.'<br><br>'.$message.'</body></html');
+            $this->email->message('<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html');
 
             $this->email->send(FALSE);
             $this->email->print_debugger(array('headers', 'body', 'subject'));
