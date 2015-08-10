@@ -63,8 +63,10 @@
             <?php echo form_error('message'); ?>
            </div> 
           </div>
+          <div class="form-group input-margin">
           <div class="col-sm-9">
             <div id="captchaContainer"></div>
+          </div>
           </div> 
           <div class="form-group">
             <div class="col-sm-9"> 
