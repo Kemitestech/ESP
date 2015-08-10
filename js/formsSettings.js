@@ -6,16 +6,6 @@ $(document).ready(function() {
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
-        addOns: {
-            reCaptcha2: {
-                element: 'captchaContainer',
-                language: 'en',
-                theme: 'light',
-                siteKey: '6LdgOwETAAAAALA9auuNVKFeXizXcYFrKOVC_vs-',
-                timeout: 120,
-                message: 'The captcha is not valid'
-            }
-        },
         fields: {
             fullname: {
                 validators: {
