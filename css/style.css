@@ -43,6 +43,10 @@ body {
   box-shadow: none !important;
 }
 
+.navbar-collapse{
+padding: 0px !important;
+}
+
 p{
 font-size:14px;
 }
