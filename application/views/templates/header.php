@@ -21,6 +21,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
 	<script src="<?php echo base_url('js/formValidation.popular.min.js') ?>"></script>
 	<script src="<?php echo base_url('js/framework/bootstrap.min.js') ?>"></script>
+	<script src="<?php echo base_url('js/reCaptcha2.min.js') ?>"></script>
 	<script src="<?php echo base_url('js/jquery.easing.min.js') ?>"></script>
   	<script src="<?php echo base_url('js/scrolling-nav.js') ?>"></script>
   	<script src="<?php echo base_url('js/parallax.min.js') ?>"></script>

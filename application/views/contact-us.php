@@ -62,6 +62,9 @@
             <textarea id="message_contact" class="form-control no-radius input-lg" name="message" placeholder="Enquiry *" rows="3"></textarea>
             <?php echo form_error('message'); ?>
            </div> 
+          </div>
+          <div class="col-sm-9">
+            <div id="captchaContainer"></div>
           </div> 
           <div class="form-group">
             <div class="col-sm-9"> 
