@@ -113,9 +113,9 @@ $(document).ready(function() {
             },
             error: function(xhr){
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
-                    var json = $.parseJSON( xhr.responseText );
-                    alert(json);
-                    console.log(json);
+                    var json = $.parseJSON(xhr.responseText );
+                    alert(json.message);
+                    console.log(json.message);
                 }
             }
         });   
