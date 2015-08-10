@@ -9,6 +9,8 @@ class Contactform extends CI_Controller {
     
 
     public function index(){
+        $from_address = 'info@cccedwardstreetparish.org';
+
         $fullname = $this->input->post('fullname');
         $businessname = $this->input->post('businessname');
         $email = $this->input->post('email');
@@ -78,12 +80,13 @@ class Contactform extends CI_Controller {
             $config['smtp_port'] = '587';
             $this->email->initialize($config);
                         
-            $this->email->from('sinnell@aol.com', 'Emmanuel');
-            $this->email->to('info@cccedwardstreetparish.org');
-            $this->email->subject('Email Test');
-            $this->email->message('If you forgot how to do this, go ahead and refer to: <a href="http://the-amazing-php.blogspot.com/2015/05/codeigniter-send-email-with-mandrill.html">The Amazing PHP</a>.');
+            $this->email->from($email, $fullname);
+            $this->email->to($from_address);
+            $this->email->subject($subject);
+            $this->email->message('<html><body><p>Dear Edward Street Parish,<p><br><br>'.if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}.'<br><br>'.$message.'</body></html');
 
-            $this->email->send();
+            $this->email->send(FALSE);
+            $this->email->print_debugger(array('headers', 'body', 'subject'));
         }
         
         
