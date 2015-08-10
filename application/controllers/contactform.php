@@ -9,8 +9,6 @@ class Contactform extends CI_Controller {
     
 
     public function index(){
-        $this->load->library('form_validation');
-        
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
@@ -24,10 +22,9 @@ class Contactform extends CI_Controller {
             
 
         if($this->form_validation->run() == FALSE){
-            
-            
             $this->output->set_content_type('application/json');
-            $this->output->set_status_header('400');
+            $this->output->set_status_header(400);
+
             $this->data['message'] = validation_errors();
             echo json_encode($this->data);   
             
@@ -88,11 +85,6 @@ class Contactform extends CI_Controller {
                 $this->email->message('Dear Edward Street Parish<br><br>Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
 
-
-            
-
-            //'<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html'
-
             if(! $this->email->send()){
                 echo json_encode(array(
                  'result' => 'error',
@@ -103,11 +95,7 @@ class Contactform extends CI_Controller {
                  'result' => 'ok',
                 ));
             }
-                
-            //$this->email->print_debugger(array('headers', 'body', 'subject'));
         }
-        
-        
         
     }
 
