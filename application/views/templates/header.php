@@ -45,7 +45,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav nav-font">
 			    	<li class="dropdown collapse-underline">
-          			<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
+          			<a class="dropdown-toggle nav-color nav-hover <?php if(strpos(uri_string(),'about-us') !== false){echo $active;} ?>" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
 							<li><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color">Who we are</a></li>
 							<li><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
