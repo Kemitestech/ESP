@@ -70,20 +70,14 @@ $(document).ready(function() {
                 }
             }
         }
-    }).on('success.form.fv', function(e) {
+    })
+    .on('success.field.fv', function(e, data) {
+            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                data.fv.disableSubmitButtons(true);
+            }
+    })
+    .on('success.form.fv', function(e) {
         e.preventDefault();
-        //var form_data = {
-        //    fullname : $('#fullname_contact').val(),
-        //    businessname : $('#businessname_contact').val(),
-        //    email : $('#email_contact').val(),
-        //    phone : $('#phone_contact').val(),
-        //    subject : $('#subject_contact').val(),
-        //    message : $('#message_contact').val(),
-        //    ajax: '1'   
-        //}
-
-        
-
         var $form = $(e.target);
         
         $.ajax({
@@ -119,9 +113,5 @@ $(document).ready(function() {
                 }
             }
         });   
-    }).on('success.field.fv', function(e, data) {
-            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
-                data.fv.disableSubmitButtons(true);
-            }
     });
 });
