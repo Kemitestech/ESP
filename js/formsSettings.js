@@ -91,9 +91,25 @@ $(document).ready(function() {
             url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
             dataType: 'json',
             data: $form.serialize(),
-            success: function(data){
+            success: function(response){
                     $form.formValidation('resetForm', true);
-                    alert(data);
+                    if(response.result === 'error'){
+                        $('#alertmessage')
+                        .removeClass('alert-success')
+                        .addClass('alert-warning')
+                        .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
+                        .show();
+                        $('#alertmodal').modal('show');
+                    }
+                    if(response.result === 'ok'){
+                        $('#alertmessage')
+                        .removeClass('alert-success')
+                        .addClass('alert-warning')
+                        .html('Your message has been sent')
+                        .show();
+                        $('#alertmodal').modal('show');
+                    }
+                        
             },
             error: function(response){
                 if( response.status == 400 ) { //Validation error or other reason for Bad Request 400

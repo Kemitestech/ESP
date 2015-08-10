@@ -36,17 +36,7 @@ class Contactform extends CI_Controller {
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('400');
             $this->data['message'] = validation_errors();
-            echo json_encode($this->data);
-
-            //$msg = array(
-            //        'fullname' => form_error('fullname'), 
-            //        'business' => form_error('businessname'),
-            //        'email' => form_error('email'),
-            //        'phone' => form_error('phone'),
-            //        'subject' => form_error('subject'),
-            //        'message' => form_error('message')
-            //);    
-            
+            echo json_encode($this->data);   
             
         }
         else{
@@ -54,10 +44,6 @@ class Contactform extends CI_Controller {
             
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('200');
-            $this->data['message'] = 'Success';
-            echo json_encode($this->data);
-
-
             //$msg = array(
             //        'fullname' => form_error('fullname'), 
             //        'business' => form_error('businessname'),
@@ -88,17 +74,16 @@ class Contactform extends CI_Controller {
                 
             //}
             if($businessname == '' && $phone == ''){
-                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>.'.$message.'');
+                $this->email->message('<p>Dear Edward Street Parish</p><br><br>'.$message.'');
             }
-
             if($businessname !== '' && $phone !== ''){
-                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$businessname.' Telephone Nom.:'.$phone.'<br>'.$message.'');
+                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Business Name: '.$businessname. ' Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
             if ($businessname !== '' && $phone == ''){
-                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$businessname.'<br><br>'.$message.'');
+                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
             }
             if ($phone !== '' && $businessname == ''){
-                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$phone.'<br><br>'.$message.'');
+                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
 
 
@@ -106,8 +91,17 @@ class Contactform extends CI_Controller {
 
             //'<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html'
 
-            $this->email->send(FALSE);
-            $this->email->print_debugger(array('headers', 'body', 'subject'));
+            if(!$this->email->send();){
+                echo json_encode(array(
+                 'result' => 'error',
+                ));
+            }else{
+                echo json_encode(array(
+                 'result' => 'ok',
+                ));
+            }
+                
+            //$this->email->print_debugger(array('headers', 'body', 'subject'));
         }
         
         

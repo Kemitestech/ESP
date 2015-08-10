@@ -14,6 +14,19 @@
       <small>Fields marked with a * are required</small>
       <label>
           </div>
+          <div id="alertmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <div id="alertmessage" class="alert" style="display: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="form-group input-margin">
            <div class="col-sm-9"> 
             <input type="text" class="form-control input-lg no-radius" id="fullname_contact" name="fullname" placeholder="Full name *">
