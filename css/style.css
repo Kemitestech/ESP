@@ -33,7 +33,7 @@ body {
 #myAffix{
   top: -70px;
   background-color: #00a1c6 !important;
-  background-image: url('../img/bedge-grunge.png')!important;
+  background-image: url('../img/bedge-grunge.png');
   background-size: 100% 100%;
   color: white !important;
   border-radius: 0px !important; 
@@ -1058,13 +1058,16 @@ margin-top:148px;
 }
 
 #myAffix.affix{
-    position: fixed;
-    top: 0;
-    z-index: 1030;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1030;
+  width: 100%;
 	min-height: 50px;
-	-webkit-transition: all 2s ease-in;
-    transition: all 0.7s linear;
+	-webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear; 
+  transition: all 0.5s linear;
 }
 
 #myAffix.affix-top{

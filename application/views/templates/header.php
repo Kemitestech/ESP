@@ -27,6 +27,7 @@
 </head>
 <body id="top">
 	<nav id="myAffix" class="myaffix1 navbar navbar-default">
+	 <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-13">
 				<div class="navbar-header">
@@ -111,5 +112,6 @@
 			</div>			
 		</div>
 		</div>
-	</div>
+	  </div>
+	 </div>
 	</nav>

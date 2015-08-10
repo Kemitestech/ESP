@@ -9,10 +9,6 @@ class Contactform extends CI_Controller {
     
 
     public function index(){
-        $this->load->library('form_validation');
-        $this->load->helper('form');
-        $this->load->library('email');
-           	
         $fullname = $this->input->post('fullname');
         $businessname = $this->input->post('businessname');
         $email = $this->input->post('email');
@@ -21,7 +17,7 @@ class Contactform extends CI_Controller {
         $message = $this->input->post('message');
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
         $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|alpha_numeric_spaces');
@@ -76,15 +72,10 @@ class Contactform extends CI_Controller {
             $config['crlf'] = '\r\n';      //should be "\r\n"
             $config['newline'] = '\r\n';   //should be "\r\n"
 
-            //$config['smtp_host'] = 'smtp.mandrillapp.com';
-            //$config['smtp_user'] = 'info@cccedwardstreetparish.org';
-            //$config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
-            //$config['smtp_port'] = '587';
-            //$this->email->initialize($config);
-            $config['smtp_host'] = 'smtp.cccedwardstreetparish.org';
+            $config['smtp_host'] = 'smtp.mandrillapp.com';
             $config['smtp_user'] = 'info@cccedwardstreetparish.org';
-            $config['smtp_pass'] = 'N2wcr0ss';
-            $config['smtp_port'] = '465';
+            $config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
+            $config['smtp_port'] = '587';
             $this->email->initialize($config);
                         
             $this->email->from('sinnell@aol.com', 'Emmanuel');
