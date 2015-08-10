@@ -70,7 +70,7 @@ class Contactform extends CI_Controller {
             $config['protocol'] = 'smtp';
             $config['charset']  = 'utf-8'; //Change this you your preferred charset 
             $config['wordwrap'] = TRUE;
-            $config['mailtype'] = 'html'; //Use 'text' if you don't need html tags and images
+            $config['mailtype'] = "html"; //Use 'text' if you don't need html tags and images
             $config['crlf'] = '\r\n';      //should be "\r\n"
             $config['newline'] = '\r\n';   //should be "\r\n"
 
@@ -83,7 +83,28 @@ class Contactform extends CI_Controller {
             $this->email->from($email, $fullname);
             $this->email->to($from_address);
             $this->email->subject($subject);
-            $this->email->message('<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html');
+            
+            //if($businessname == '' && $phone == ''){
+                
+            //}
+            if($businessname == '' && $phone == ''){
+                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>.'.$message.'');
+            }
+
+            if($businessname !== '' && $phone !== ''){
+                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$businessname.' Telephone Nom.:'.$phone.'<br>'.$message.'');
+            }
+            if ($businessname !== '' && $phone == ''){
+                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$businessname.'<br><br>'.$message.'');
+            }
+            if ($phone !== '' && $businessname == ''){
+                $this->email->message('<p>Dear Edward Street Parish,</p><br><br>Business Name:'.$phone.'<br><br>'.$message.'');
+            }
+
+
+            
+
+            //'<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html'
 
             $this->email->send(FALSE);
             $this->email->print_debugger(array('headers', 'body', 'subject'));
