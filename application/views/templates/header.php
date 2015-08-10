@@ -69,7 +69,7 @@
             <li class="dropdown collapse-underline">
 			  <a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Ministries</a>
               <ul class="dropdown-menu list-scroll" role="menu">
-				<li><a href="<?php if(uri_string() == 'ministries/our-ministries'){echo $active;} ?>" class="nav-color">Our Ministries</a></li>	
+				<li><a href="<?php echo base_url('ministries/our-ministries') ?>" class="nav-color">Our Ministries</a></li>	
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Elder</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Building commitee</a></li>
