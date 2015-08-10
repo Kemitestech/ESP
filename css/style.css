@@ -1063,11 +1063,11 @@ margin-top:148px;
   z-index: 1030;
   width: 100%;
 	min-height: 50px;
-	-webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear; 
-  transition: all 0.5s linear;
+	-webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear; 
+  transition: all 0.4s linear;
 }
 
 #myAffix.affix-top{
