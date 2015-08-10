@@ -782,7 +782,7 @@ margin-right: 21px !important;
 .navbar-brand h3{
   position: relative;
   color: white !important; 
-  font-size: 22px;
+  font-size: 26px;
   margin-left: 5px;
 }
 
@@ -821,14 +821,6 @@ padding-right: 0px !important ;
 float: right !important;
 margin-right: 21px !important;
 }
-
-.navbar-brand h3{
-  position: relative;
-  color: white !important; 
-  font-size: 22px;
-  margin-left: 5px;
-}
-
 
 .navbar-nav li {
   margin-left: 10px;
