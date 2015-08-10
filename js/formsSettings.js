@@ -111,9 +111,10 @@ $(document).ready(function() {
                     }
                         
             },
-            error: function(data){
-                if(data.status == 400) { //Validation error or other reason for Bad Request 400
-                    var json = $.parseJSON( data.responseText );
+            error: function(xhr){
+                if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
+                    var json = $.parseJSON( xhr.responseText );
+                    alert(json);
                     console.log(json);
                 }
             }

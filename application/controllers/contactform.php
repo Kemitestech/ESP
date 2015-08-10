@@ -10,7 +10,7 @@ class Contactform extends CI_Controller {
 
     public function index(){
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
         $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|alpha_numeric_spaces');
@@ -22,8 +22,9 @@ class Contactform extends CI_Controller {
             
 
         if($this->form_validation->run() == FALSE){
+            
+            $this->output->set_status_header('400');
             $this->output->set_content_type('application/json');
-            $this->output->set_status_header(400);
 
             $this->data['message'] = validation_errors();
             echo json_encode($this->data);   
