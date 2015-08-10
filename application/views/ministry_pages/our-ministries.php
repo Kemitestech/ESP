@@ -8,7 +8,7 @@
 			<div class="col-md-3 col-xs-6 col-sm-6">
 				<a href="#">
 				<div style="background-color: #FFB100; padding: 6px; color: #333;">
-					<img src="img/iconfinder/parochial.svg" class="img-responsive " alt="image">
+					<img src="<?php echo base_url('img/iconfinder/parochial.svg') ?>" class="img-responsive " alt="image">
 					<h3>Parochial Committee</h3>
 				</div>
 				</a>	
