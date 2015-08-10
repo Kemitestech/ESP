@@ -91,11 +91,12 @@ class Contactform extends CI_Controller {
 
             //'<html><body><p>Dear Edward Street Parish,</p><br><br>'".if($businessname !== ''){echo 'Business name: '.$businessname;} if($phone !== ''){echo 'Telephone nom: '.$phone;}."'<br><br>'".$message."'</body></html'
 
-            if(!$this->email->send();){
+            if(! $this->email->send()){
                 echo json_encode(array(
                  'result' => 'error',
                 ));
             }else{
+                $this->email->send();
                 echo json_encode(array(
                  'result' => 'ok',
                 ));
