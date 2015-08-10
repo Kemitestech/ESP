@@ -103,9 +103,9 @@ $(document).ready(function() {
                     }
                     if(response.result === 'ok'){
                         $('#alertmessage')
-                        .removeClass('alert-success')
-                        .addClass('alert-warning')
-                        .html('Your message has been sent')
+                        .removeClass('alert-warning')
+                        .addClass('alert-success')
+                        .html('Thank you, your message has been sent.')
                         .show();
                         $('#alertmodal').modal('show');
                     }

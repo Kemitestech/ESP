@@ -14,15 +14,15 @@
       <small>Fields marked with a * are required</small>
       <label>
           </div>
-          <div id="alertmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog" role="document">
+          <div id="alertmodal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
                 <div class="modal-body">
                   <div id="alertmessage" class="alert" style="display: none;">
                   </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
