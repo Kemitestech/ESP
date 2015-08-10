@@ -712,7 +712,9 @@ margin-left: 10px;
 .navbar-brand{
 padding: 15px 2px !important;
 }
-
+.navbar-header{
+  padding: 2px;
+}
 .affix {
  position: static !important;
 }
