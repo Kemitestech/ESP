@@ -119,5 +119,9 @@ $(document).ready(function() {
                 }
             }
         });   
+    }).on('success.field.fv', function(e, data) {
+            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                data.fv.disableSubmitButtons(true);
+            }
     });
 });
