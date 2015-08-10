@@ -111,9 +111,9 @@ $(document).ready(function() {
                     }
                         
             },
-            error: function(response){
-                if( response.status == 400 ) { //Validation error or other reason for Bad Request 400
-                    var json = $.parseJSON( response.responseText );
+            error: function(data){
+                if( data.status == 400 ) { //Validation error or other reason for Bad Request 400
+                    var json = $.parseJSON( data.responseText );
                     console.log(json);
                 }
             }

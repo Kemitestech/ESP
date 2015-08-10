@@ -9,15 +9,8 @@ class Contactform extends CI_Controller {
     
 
     public function index(){
-        $from_address = 'info@cccedwardstreetparish.org';
-
-        $fullname = $this->input->post('fullname');
-        $businessname = $this->input->post('businessname');
-        $email = $this->input->post('email');
-        $phone = $this->input->post('phone');
-        $subject = $this->input->post('subject');
-        $message = $this->input->post('message');
-
+        $this->load->library('form_validation');
+        
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
@@ -40,6 +33,15 @@ class Contactform extends CI_Controller {
             
         }
         else{
+
+            $from_address = 'info@cccedwardstreetparish.org';
+
+            $fullname = $this->input->post('fullname');
+            $businessname = $this->input->post('businessname');
+            $email = $this->input->post('email');
+            $phone = $this->input->post('phone');
+            $subject = $this->input->post('subject');
+            $message = $this->input->post('message');
             
             
             $this->output->set_content_type('application/json');
@@ -74,16 +76,16 @@ class Contactform extends CI_Controller {
                 
             //}
             if($businessname == '' && $phone == ''){
-                $this->email->message('<p>Dear Edward Street Parish</p><br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish<br><br>'.$message.'');
             }
             if($businessname !== '' && $phone !== ''){
-                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Business Name: '.$businessname. ' Telephone Nom.: '.$phone.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish<br><br>Business Name: '.$businessname. '<br> Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
             if ($businessname !== '' && $phone == ''){
-                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish<br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
             }
             if ($phone !== '' && $businessname == ''){
-                $this->email->message('<p>Dear Edward Street Parish</p><br><br>Telephone Nom.: '.$phone.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish<br><br>Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
 
 
