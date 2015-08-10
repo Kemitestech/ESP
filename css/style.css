@@ -863,8 +863,8 @@ margin-left: 10px;
 
 .repos-top-right{
 position: absolute;
-top: 0;
-right: 0;
+top: 20px;
+right: 30px;
 }
 
 .navbar-right {
