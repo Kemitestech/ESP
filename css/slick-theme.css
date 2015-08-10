@@ -116,6 +116,7 @@ display:none !important;
 @media (min-width : 320px) and (max-width : 479px){
 #home-hero .slick-dots{
     bottom: -45px !important;
+    z-index: 1;
 }
 }
 /* Dots */
