@@ -852,7 +852,7 @@ margin-right: 10px;
   color: white !important; 
 }
 
-.dropdowwn-active{
+.dropdown-active{
    background-color: #FFB100;
 }
 
@@ -1121,7 +1121,7 @@ opacity: 0.8;
 transition: all 1s ease;
 }
 
-.dropdowwn-active{
+.dropdown-active{
    background-color: #FFB100;
 }
 
