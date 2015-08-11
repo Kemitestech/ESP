@@ -14,7 +14,7 @@ html {
 }
 
 ul.nav-font a{
-font-size: 19px !important;
+font-size: 19px;
 }
 
 a {
@@ -851,6 +851,11 @@ margin-right: 10px;
   position: relative;
   color: white !important; 
 }
+
+.dropdowwn-active{
+   background-color: #FFB100;
+}
+
 .search-pos{
 margin-left: 10px;
 }
@@ -909,9 +914,9 @@ margin-top:148px;
 
 
 .navbar-brand > img {
-    display: block;
-    top: -145px;
-    position: relative;
+  display: block;
+  top: -145px;
+  position: relative;
 	border-right: 1px solid white;
 	padding-right: 30px;
 }
@@ -928,7 +933,9 @@ margin-top:148px;
 padding: 11px !important;
 }
 
-
+.dropdown-active{
+   background-color: #FFB100;
+}
 
 .navbar .navbar-nav {
     float: none;
@@ -960,7 +967,8 @@ padding: 11px !important;
 
 .dropdown-menu{
   background-color: #00a1c6 !important;
-  background-image: url('../img/bedge-grunge.png') !important;
+  background-image: url('../img/bedge-grunge.png');
+  background-size: 100% 100%;
   border: 1px solid #E7E7E7 !important;
   border-top: 3px solid #FFB100 !important;
   margin-top: 10px !important;
@@ -983,6 +991,10 @@ margin-right: 10px;
 position: absolute;
 top: -4px;
 right: 0;
+}
+
+ul.nav-font a{
+font-size: 20px;
 }
 
 .navbar-nav > li > a {
@@ -1109,6 +1121,9 @@ opacity: 0.8;
 transition: all 1s ease;
 }
 
+.dropdowwn-active{
+   background-color: #FFB100;
+}
 
 #chevron-top.affix span:hover{
 -webkit-opacity: 1;

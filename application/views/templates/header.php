@@ -47,7 +47,7 @@
 			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false){echo $active;} ?>">
           			<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color">Who we are</a></li>
+							<li class="<?php if(uri_string() == 'about-us/who-we-are'){echo $dropdownactive;} ?> "><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color ">Who we are</a></li>
 							<li><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 							<li><a href="<?php echo base_url('about-us/testimonials') ?>" class="nav-color">Testimonials</a></li>
 							<li><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
@@ -66,8 +66,8 @@
             </li>
 			<li class="collapse-underline <?php if(uri_string() == 'contact-us'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
-            <li class="dropdown collapse-underline">
-			  <a href="#" class="dropdown-toggle nav-color nav-hover <?php if(strpos(uri_string(),'ministries') !== false){echo $active;} ?>" data-toggle="dropdown" role="button">Ministries</a>
+            <li class="dropdown collapse-underline <?php if(strpos(uri_string(),'ministries') !== false){echo $active;} ?>">
+			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Ministries</a>
               <ul class="dropdown-menu list-scroll" role="menu">
 				<li><a href="<?php echo base_url('ministries/our-ministries') ?>" class="nav-color">Our Ministries</a></li>	
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>

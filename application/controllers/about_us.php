@@ -19,6 +19,8 @@
 			
 			$data['title'] = 'Edward Street Parish'; //assigns title element of array to capitalized home page
 			$data['active'] = 'active';
+			$data['dropdownactive'] = 'dropdown-active'; //assigns title element of array to capitalized home page
+			
 			
 			$this->load->view('templates/header', $data);			
 			$this->load->view('about_pages/'.$page, $data);

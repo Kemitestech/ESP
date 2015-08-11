@@ -102,6 +102,7 @@ class Contactform extends CI_Controller {
 
         $data['active'] = 'active';
         $data['title'] = 'Edward Street Parish';
+        $data['dropdownactive'] = 'dropdown-active';
 
         $this->load->view('templates/header', $data);
         $this->load->view($page);
