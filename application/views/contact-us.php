@@ -70,6 +70,7 @@
           </div>
         </form>
     </div>
+    <hr class="hidden-md hidden-lg">
     <div class="col-md-4">
       <h3 class="header-title" style="margin: 0 0 10px;">Other Contact Details </h3>
       <p>Sheperd's Office:</p>
