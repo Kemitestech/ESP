@@ -166,6 +166,12 @@ color:  #007591;
   color: white !important;
 }
 
+.flaticon_thumbnail{
+	padding: 6px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
 .bg-info-2 {
     background-color: #EEE !important;
 	color: black !important;
@@ -182,10 +188,8 @@ color:  #007591;
 }
 .bg-green {
 	background-color: #4ABC96 !important;
-	color: black;
+	color: white;
 }
-
-
 
 .bg-darkorange {
 	background-color: #FF7F00;
@@ -196,7 +200,6 @@ color:  #007591;
 	background-color: #005C71 ;
 	color: white;
 }
-
 .center-text{
   text-align: center;
 }
@@ -318,6 +321,10 @@ a.btn-transparent:hover{
 -----------------------------------------------------------
 
 */
+.img-responsive{
+	display: inline-block !important;
+}
+
 .nav-inputsearch{
 background: white; 
 border: 1px solid #CCC;
