@@ -94,23 +94,4 @@ class Contactform extends CI_Controller {
         }
         
     }
-
-    public function view($page = 'contact-us'){
-        if ( ! file_exists(APPPATH.'views/'.$page.'.php')){ //checks if file exists
-            show_404();
-        }
-
-        $data['active'] = 'active';
-        $data['title'] = 'Edward Street Parish';
-        $data['dropdownactive'] = 'dropdown-active';
-
-        $this->load->view('templates/header', $data);
-        $this->load->view($page);
-        $this->load->view('templates/newsletter_section');
-        $this->load->view('templates/footer');
-
-    }
-
-}
-
 ?>

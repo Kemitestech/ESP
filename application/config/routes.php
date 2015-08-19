@@ -37,11 +37,12 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['departments/(:any)'] = 'departments/view/$1';
+$route['departments'] = 'departments';
 $route['ministries/(:any)'] = 'ministries/view/$1';
 $route['ministries'] = 'ministries';
 $route['about-us/(:any)'] = 'about_us/view/$1';
 $route['about-us'] = 'about_us';
-$route['contact-us'] = 'contactform/view';
 $route['contactform'] = 'contactform';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';

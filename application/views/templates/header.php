@@ -52,8 +52,8 @@
 							<li class="<?php if(uri_string() == 'about-us/testimonials'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/testimonials') ?>" class="nav-color">Testimonials</a></li>
 							<li class="<?php if(uri_string() == 'about-us/tenets'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li><a href="#" class="nav-color">Constitution</a></li>
-							<li><a href="code-of-conduct.html" class="nav-color">Code of conduct</a></li>
-							<li class="<?php if(uri_string() == 'about-us/days-of-worship'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/days-of-worship') ?>" class="nav-color">Days of worship</a></li>
+							<li class="<?php if(uri_string() == 'about-us/days-of-worship'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
+							<li class="collapse-underline <?php if(uri_string() == 'about-us/contact-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 					</li>
             <li class="dropdown collapse-underline">
@@ -64,7 +64,6 @@
               <li><a href="events.html" class="nav-color">Events</a></li>
              </ul>  
             </li>
-			<li class="collapse-underline <?php if(uri_string() == 'contact-us'){echo $active;} ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
             <li class="dropdown collapse-underline <?php if(strpos(uri_string(),'ministries') !== false){echo $active;} ?>">
 			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Ministries</a>
