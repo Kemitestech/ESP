@@ -52,8 +52,8 @@
 							<li class="<?php if(uri_string() == 'about-us/testimonials'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/testimonials') ?>" class="nav-color">Testimonials</a></li>
 							<li class="<?php if(uri_string() == 'about-us/tenets'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li><a href="#" class="nav-color">Constitution</a></li>
-							<li class="<?php if(uri_string() == 'about-us/days-of-worship'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
-							<li class="collapse-underline <?php if(uri_string() == 'about-us/contact-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
+							<li class="<?php if(uri_string() == 'about-us/worship-with-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
+							<li class="collapse-underline <?php if(uri_string() == 'about-us/contact-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color">Contact</a></li>
 		  				</ul>
 					</li>
             <li class="dropdown collapse-underline">
@@ -64,24 +64,34 @@
               <li><a href="events.html" class="nav-color">Events</a></li>
              </ul>  
             </li>
+			<li class="collapse-underline <?php if(uri_string() == 'youth'){echo $active;} ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
 			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
             <li class="dropdown collapse-underline <?php if(strpos(uri_string(),'ministries') !== false){echo $active;} ?>">
 			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Ministries</a>
-              <ul class="dropdown-menu list-scroll" role="menu">
+              <ul class="dropdown-menu" role="menu">
 				<li class="<?php if(uri_string() == 'ministries/our-ministries'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('ministries/our-ministries') ?>" class="nav-color">Our Ministries</a></li>	
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Elder</a></li>
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Building commitee</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Choir</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Sunday School</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Youth</a></li>
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Clergy</a></li>
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Bible class</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Prophet</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Warden</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Choir</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Warden</a></li>
-				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Welfare</a></li>
-				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Health and safety</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Bible class</a></li>
               </ul>
             </li>
-            <li class="collapse-underline <?php if(uri_string() == 'youth'){echo $active;} ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
+			<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'departments') !== false){echo $active;} ?>">
+			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Departments</a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="<?php if(uri_string() == 'departments/our-departments'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('departments/our-departments') ?>" class="nav-color">Our Departments</a></li>	
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Elder</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Clergy</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Welfare</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Health and safety</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Building commitee</a></li>
+              </ul>
+            </li>
 			<li class="collapse-underline <?php if(uri_string() == 'gallery'){echo $active;} ?>"><a href="<?php echo base_url('gallery') ?>" class="nav-color nav-hover">Gallery</a></li>
 			</ul>
 			<ul id="secondnav" class="nav navbar-nav repos-top-right">

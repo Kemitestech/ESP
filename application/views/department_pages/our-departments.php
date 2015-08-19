@@ -21,16 +21,6 @@
 				</div>
 			</a> 	
         </div>
-			
-			<div class="col-md-3 col-xs-12 col-sm-6">
-				<a href="#">
-					<div class="bg-blue flaticon_thumbnail">
-						<img src="<?php echo base_url('img/iconfinder/Group_of_hands.svg') ?>" class="img-responsive" alt="image">
-						<h3>Youth</h3>  
-					</div>
-				</a>
-			</div>
-			
 		</div>
 		<hr>
 		<p>Parochial Sub-Commitees</p><br><br>
@@ -61,7 +51,15 @@
 						<h3>Health and Safety</h3>   
 					</div>
 				</a>	
-			</div>      
+			</div>
+			<div class="col-md-3 col-xs-12 col-sm-6">
+				<a href="#">
+					<div class="bg-torqouise flaticon_thumbnail">
+						<img src="<?php echo base_url('img/iconfinder/brick.svg') ?>" class="img-responsive" alt="image">
+						<h3>Building</h3>  
+					</div>
+				</a>
+			</div>	
     </div>
     </div>  
   </div>
