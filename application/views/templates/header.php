@@ -71,7 +71,7 @@
               <ul class="dropdown-menu" role="menu">
 				<li class="<?php if(uri_string() == 'ministries/our-ministries'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('ministries/our-ministries') ?>" class="nav-color">Our Ministries</a></li>	
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Choir</a></li>
-                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Sunday School</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Sunday school</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Youth</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Prophet</a></li>
                 <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Warden</a></li>
