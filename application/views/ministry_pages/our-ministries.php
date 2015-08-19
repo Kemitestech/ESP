@@ -4,7 +4,7 @@
 		<p>Duis vulputate mauris nec facilisis gravida. Quisque vel elementum lacus. In luctus posuere augue id condimentum. Aliquam sed convallis libero, varius faucibus tellus. Curabitur ultrices eleifend molestie.<br><br></p>
 		<p>View our different Ministries</p><br><br>
 		<div class="row">
-            <div class="col-md-3 col-xs-6 col-sm-6">
+            <div class="col-md-3 col-xs-12 col-sm-6">
 				<a href="#">
 				<div class="bg-orange flaticon_thumbnail">
 					<img src="<?php echo base_url('img/iconfinder/choir.svg') ?>" class="img-responsive" alt="image">				
