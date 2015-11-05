@@ -16,8 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 
-'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
