@@ -4,7 +4,7 @@ application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
 */config/development
-*/config/database.php
+
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
