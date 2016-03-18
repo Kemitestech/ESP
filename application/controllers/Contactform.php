@@ -9,12 +9,12 @@ class Contactform extends CI_Controller {
     
 
     public function index(){
-        $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|alpha_numeric_spaces');
+        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|alpha_numeric_spaces');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
-        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|alpha_numeric_spaces');
-        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|xss_clean|alpha_numeric_spaces');
+        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|alpha_numeric_spaces');
+        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|alpha_numeric_spaces');
 
         if($this->form_validation->run() == FALSE){
             
