@@ -1,12 +1,10 @@
 <?php
 
 class Contactform extends CI_Controller {
-	
-	public function __construct() {
-		parent::__construct();
-		
-	}
-    
+
+		public function __construct() {
+			parent::__construct();
+		}
 
     public function index(){
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|alpha_numeric_spaces');
@@ -17,13 +15,13 @@ class Contactform extends CI_Controller {
         $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|alpha_numeric_spaces');
 
         if($this->form_validation->run() == FALSE){
-            
+
             $this->output->set_status_header('400');
             $this->output->set_content_type('application/json');
 
             $this->data['message'] = validation_errors();
-            echo json_encode($this->data);   
-            
+            echo json_encode($this->data);
+
         }
         else{
 
@@ -35,21 +33,13 @@ class Contactform extends CI_Controller {
             $phone = $this->input->post('phone');
             $subject = $this->input->post('subject');
             $message = $this->input->post('message');
-            
-            
+
+
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('200');
-            //$msg = array(
-            //        'fullname' => form_error('fullname'), 
-            //        'business' => form_error('businessname'),
-            //        'email' => form_error('email'),
-            //        'phone' => form_error('phone'),
-            //        'subject' => form_error('subject'),
-            //        'message' => form_error('message')
-            //);    
-              
+
             $config['protocol'] = 'smtp';
-            $config['charset']  = 'utf-8'; //Change this you your preferred charset 
+            $config['charset']  = 'utf-8'; //Change this you your preferred charset
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = "html"; //Use 'text' if you don't need html tags and images
             $config['crlf'] = '\r\n';      //should be "\r\n"
@@ -60,38 +50,32 @@ class Contactform extends CI_Controller {
             $config['smtp_pass'] = 'spZUYyrkNIpqIBo4LZT7BA';
             $config['smtp_port'] = '587';
             $this->email->initialize($config);
-                        
+
             $this->email->from($email, $fullname);
             $this->email->to($from_address);
             $this->email->subject($subject);
-            
-            //if($businessname == '' && $phone == ''){
-                
-            //}
+
             if($businessname == '' && $phone == ''){
-                $this->email->message('Dear Edward Street Parish<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish,<br><br>'.$message.'');
             }
             if($businessname !== '' && $phone !== ''){
-                $this->email->message('Dear Edward Street Parish<br><br>Business Name: '.$businessname. '<br> Telephone Nom.: '.$phone.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish,<br><br>Business Name: '.$businessname. '<br> Telephone Nom.: '.$phone.'<br><br>'.$message.'');
             }
             if ($businessname !== '' && $phone == ''){
-                $this->email->message('Dear Edward Street Parish<br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish,<br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
             }
             if ($phone !== '' && $businessname == ''){
-                $this->email->message('Dear Edward Street Parish<br><br>Telephone Nom.: '.$phone.'<br><br>'.$message.'');
+                $this->email->message('Dear Edward Street Parish,<br><br>Phone Number: '.$phone.'<br><br>'.$message.'');
             }
 
-            if(! $this->email->send()){
-                echo json_encode(array(
-                 'result' => 'error',
-                ));
+            if(!$this->email->send()){
+                echo json_encode(array('result' => 'error'));
             }else{
                 $this->email->send();
-                echo json_encode(array(
-                 'result' => 'ok',
-                ));
+                echo json_encode(array('result' => 'ok'));
             }
         }
-        
+
     }
+	}
 ?>
