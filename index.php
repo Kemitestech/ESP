@@ -1,4 +1,36 @@
 <?php
+/*
+ *---------------------------------------------------------------
+ * FUEL INSTALL DIRECTORY
+ *---------------------------------------------------------------
+ *
+ * This is the directory path to the fuel installation folder
+ *
+ */
+define('INSTALL_ROOT', str_replace('\\', '/', realpath(dirname(__FILE__))).'/fuel/');
+
+
+/*
+ *---------------------------------------------------------------
+ * FUEL CLI (Command Line Interface)
+ *---------------------------------------------------------------
+ *
+ * You may need to alter these if you are using the CLI.  These $_SERVER variables
+ * are used for calculating the $config['base_url'] which is used in the site_url() function.
+ * So if your output requires the correct site_url() path, you will need to change these.
+ */
+
+if (defined('STDIN'))
+{
+	/* if your FUEL installation exists in a subfolder, then you may want to change SCRIPT_NAME to /subfolder/index.php 
+	 (Needed for using Tester module if running via CLI) */
+	$_SERVER['SCRIPT_NAME'] = 'index.php';
+	$_SERVER['SERVER_NAME'] = 'localhost';
+	$_SERVER['SERVER_PORT'] = 80;
+	$_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+	$_SERVER['HTTP_HOST'] = 'localhost';
+}
+
 /**
  * CodeIgniter
  *
@@ -6,7 +38,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014 - 2016, British Columbia Institute of Technology
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,10 +60,10 @@
  *
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2016, British Columbia Institute of Technology (http://bcit.ca/)
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
+ * @link	http://codeigniter.com
  * @since	Version 1.0.0
  * @filesource
  */
@@ -53,7 +85,47 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+// automatically set environment based on the values set in the environments config
+
+if (isset($_SERVER['CI_ENV']))
+{
+	define('ENVIRONMENT', $_SERVER['CI_ENV']);
+}
+else
+{
+	@include(INSTALL_ROOT.'application/config/environments.php');
+
+	if (!empty($environments))
+	{
+		foreach($environments as $env => $paths)
+		{
+			// normalize to an array
+			if (is_string($paths))
+			{
+				$paths = array($paths);
+			}
+
+			foreach($paths as $path)
+			{
+				// Convert wild-cards to RegEx
+				$path = str_replace(array(':any', '*'), '.*', str_replace(':num', '[0-9]+', $path));
+
+				// Does the RegEx match?
+				if (preg_match('#^'.$path.'$#', $_SERVER['HTTP_HOST']))
+				{
+					define('ENVIRONMENT', $env);
+					break 2;
+				}
+			}
+		}
+	}
+
+	if (!defined('ENVIRONMENT'))
+	{
+		define('ENVIRONMENT', 'development');
+	}
+}
+	
 
 /*
  *---------------------------------------------------------------
@@ -63,32 +135,33 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
-switch (ENVIRONMENT)
+if (defined('ENVIRONMENT'))
 {
-	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
-	break;
+	switch (ENVIRONMENT)
+	{
+		case 'development': case 'testing':
+			error_reporting(-1);
+			ini_set('display_errors', 1);
+		break;
 
-	case 'testing':
-	case 'production':
-		ini_set('display_errors', 0);
-		if (version_compare(PHP_VERSION, '5.3', '>='))
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-		}
-		else
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-		}
-	break;
+		case 'staging': case 'production':
+			ini_set('display_errors', 0);
+			if (version_compare(PHP_VERSION, '5.3', '>='))
+			{
+				error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+			}
+			else
+			{
+				error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+			}
+		break;
 
-	default:
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'The application environment is not set correctly.';
-		exit(1); // EXIT_ERROR
+		default:
+			header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+			echo 'The application environment is not set correctly.';
+			exit(1); // EXIT_ERROR
+	}
 }
-
 /*
  *---------------------------------------------------------------
  * SYSTEM FOLDER NAME
@@ -98,7 +171,7 @@ switch (ENVIRONMENT)
  * Include the path if the folder is not in the same directory
  * as this file.
  */
-	$system_path = 'system';
+	$system_path = INSTALL_ROOT.'codeigniter';
 
 /*
  *---------------------------------------------------------------
@@ -109,11 +182,11 @@ switch (ENVIRONMENT)
  * folder than the default one you can set its name here. The folder
  * can also be renamed or relocated anywhere on your server. If
  * you do, use a full server path. For more info please see the user guide:
- * https://codeigniter.com/user_guide/general/managing_apps.html
+ * http://codeigniter.com/user_guide/general/managing_apps.html
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'application';
+	$application_folder = INSTALL_ROOT.'application';
 
 /*
  *---------------------------------------------------------------
