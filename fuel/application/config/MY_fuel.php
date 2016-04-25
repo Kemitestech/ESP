@@ -9,10 +9,10 @@
 $config['fuel_path'] = 'fuel/';
 
 // the name to be displayed on the top left of the admin
-$config['site_name'] = 'My Website';
+$config['site_name'] = 'ESP';
 
 // whether the admin backend is enabled or not
-$config['admin_enabled'] = FALSE;
+$config['admin_enabled'] = TRUE;
 
 // options are cms, views, and auto. 
 // cms pulls views and variables from the database,
