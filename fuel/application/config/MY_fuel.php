@@ -19,7 +19,7 @@ $config['admin_enabled'] = TRUE;
 // views mode pulls views from the views folder and variables from the _variables folder,
 // and the auto option will first check the database for a page and if it doesn't exist or is 
 // not published, it will then check for the corresponding view file.
-$config['fuel_mode'] = 'views';
+$config['fuel_mode'] = 'auto';
 
 // specifies which modules are allowed to be used in the fuel admin
 $config['modules_allowed'] = array(
