@@ -23,7 +23,8 @@ $config['fuel_mode'] = 'auto';
 
 // specifies which modules are allowed to be used in the fuel admin
 $config['modules_allowed'] = array(
-	'user_guide',
+		'user_guide',
+		'blog',
 );
 
 // used for system emails
