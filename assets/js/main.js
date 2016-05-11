@@ -3,7 +3,7 @@ $('body').scrollspy({
 	offset: $(window).height() * 0.2 
 });
 
-$('.parallax-window').parallax({imageSrc: 'img/light_cross.jpg', bleed: 200});
+$('.parallax-window').parallax({imageSrc: 'assets/images/light_cross.jpg', bleed: 200});
 
 $(function(){	
 

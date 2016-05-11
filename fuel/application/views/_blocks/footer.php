@@ -1,26 +1,43 @@
+<div class="jumbotron newsletter-section">
+  <div class="container">
+    <form class="form-inline col-md-10 col-md-offset-1">
+      <h3 class="header-title center-text">Sign up to our newsletter</h3><p class="center-text">Coming soon</p><br><br>
+      <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputName2" disabled="" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputName2" disabled="" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail2" disabled="" placeholder="Email">
+      </div>
+      <button type="submit" disabled="" class="btn btn-default">Sign up</button>
+     </form>
+  </div>
+</div>
 <footer class="footer"><!--start of footer-->
       <div class="container"><!--start of container-->
         <div class="page-header">
-          <div class="row"> 
+          <div class="row">
           <div class="col-xs-10 col-sm-4 col-md-6">
             <h3 class="header-title">CCC Edward Street Parish</h3>
           </div>
           <div class="col-xs-7 col-md-5 col-md-offset-1">
         <ul class="nav">
-              <li class="horizontal-lists"><a href="<?php echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li> 
+              <li class="horizontal-lists"><a href="<?php echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li>
               <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Terms of Use</a></li>
               <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Trademark</a></li>
         <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Site Map</a></li>
-            </ul> 
+            </ul>
           </div>
-          </div>  
+          </div>
       </div>
-        <div class="row" style="margin-bottom: 20px;">  
+        <div class="row" style="margin-bottom: 20px;">
           <div class="col-xs-6 col-md-4">
             <h3 class="header-title">Service times</h3>
             <p>Sunday 10:00 - 14:00 AM</br></br> Wednesday 19:00 - 21:00 PM</br></br>Friday 19:00 - 21:00 PM</p>
           </div>
-          <div class="col-xs-6 col-md-4">         
+          <div class="col-xs-6 col-md-4">
             <h3 class="header-title">Contact us</h3>
             <address>
                 <strong>CCC Edward Street Parish</strong><br>
@@ -40,9 +57,9 @@
         </div>
       </div>
     </div><!--end of container-->
-    <div class="container-fluid row-background">    
-      <div class="container">  
-        <div class="row"> 
+    <div class="container-fluid row-background">
+      <div class="container">
+        <div class="row">
           <div class="col-xs-6 col-md-4"><p>Copyright &#169 2015 CCC Edward Street Parish</p></div>
           <div class="col-xs-6 col-md-4"><p>Charity Registration Number: 5929215</p></div>
       <div class="col-xs-6 col-md-4"><p>Designed and Developed by KemITes Tech</p></div>
@@ -52,12 +69,12 @@
             </a>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
-  <script src="<?php echo base_url('js/fv/formsSettings.js') ?>"></script>   
-  <script src="<?php echo base_url('js/affixies.js') ?>"></script>
-  <script src="<?php echo base_url('js/sliders.js') ?>"></script>
-  <script src="<?php echo base_url('js/main.js') ?>"></script> 
-</footer><!--start of footer--> 
+  <?php echo js('fv/formsSettings.js'); ?>
+  <?php echo js('affixies.js'); ?>
+  <?php echo js('sliders.js'); ?>
+  <?php echo js('main.js'); ?>
+</footer><!--start of footer-->
 </body>
 </html>

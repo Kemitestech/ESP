@@ -78,12 +78,12 @@
 }
 .slick-prev:before
 {
-    content: url(../img/chevron-left.svg);
+    content: url(../images/chevron-left.svg);
 }
 
 [dir='rtl'] .slick-prev:before
 {
-    content: url(../img/chevron-left.svg);
+    content: url(../images/chevron-left.svg);
 }
 
 
@@ -98,12 +98,12 @@
 }
 .slick-next:before
 {
-    content: url(../img/chevron-right.svg);
+    content: url(../images/chevron-right.svg);
 }
 
 [dir='rtl'] .slick-next:before
 {
-    content: url(../img/chevron-right.svg);
+    content: url(../images/chevron-right.svg);
 }
 }
 
@@ -199,7 +199,7 @@ display:none !important;
 position: absolute; 
 top: 0; 
 left: 0; 
-content: url(../img/stop2-before.svg); 
+content: url(../images/stop2-before.svg); 
 width: 32px; 
 height: 32px; 
 
