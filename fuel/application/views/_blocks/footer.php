@@ -1,23 +1,63 @@
-			</div>
-	</div>
-	<div class="wrapper">
-	<footer class="row footer">
-		<nav class="mainnav">
-			<ul>
-				<li class="first active"><a href="http://www.getfuelcms.com" target="_blank">Home</a></li>
-				<li><a href="http://getfuelcms.com/features" target="_blank">Features</a></li>
-				<li><a href="http://getfuelcms.com/developers" target="_blank">Developers</a></li>
-				<li><a href="http://getfuelcms.com/support" target="_blank">Support</a></li>
-				<li class="last"><a href="http://getfuelcms.com/blog" target="_blank">Blog</a></li>
-			</ul>
-		</nav>
-		<p class="colophon">FUEL CMS is developed with love by <a href="http://thedaylightstudio.com" target="_blank">Daylight Studio</a> 
-			<svg width="25px" height="25px" viewBox="0 0 126.962 115.395" preserveAspectRatio="xMidYMid"><use xlink:href="#daylight"></use></svg>
-			&copy; <?php echo date("Y"); ?> Run for Daylight LLC, All Rights Reserved.</p>
-	</footer>
-</div>
-
-<?php echo js('main').js($js); ?>
-
+<footer class="footer"><!--start of footer-->
+      <div class="container"><!--start of container-->
+        <div class="page-header">
+          <div class="row"> 
+          <div class="col-xs-10 col-sm-4 col-md-6">
+            <h3 class="header-title">CCC Edward Street Parish</h3>
+          </div>
+          <div class="col-xs-7 col-md-5 col-md-offset-1">
+        <ul class="nav">
+              <li class="horizontal-lists"><a href="<?php echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li> 
+              <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Terms of Use</a></li>
+              <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Trademark</a></li>
+        <li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Site Map</a></li>
+            </ul> 
+          </div>
+          </div>  
+      </div>
+        <div class="row" style="margin-bottom: 20px;">  
+          <div class="col-xs-6 col-md-4">
+            <h3 class="header-title">Service times</h3>
+            <p>Sunday 10:00 - 14:00 AM</br></br> Wednesday 19:00 - 21:00 PM</br></br>Friday 19:00 - 21:00 PM</p>
+          </div>
+          <div class="col-xs-6 col-md-4">         
+            <h3 class="header-title">Contact us</h3>
+            <address>
+                <strong>CCC Edward Street Parish</strong><br>
+                Saint Marks Centre<br>
+                London, SE14 6QX<br>
+                <abbr title="Phone">T:</abbr> 44 (0)208 692 9036
+              </address>
+          </div>
+          <div class="col-xs-7 col-md-4">
+            <h3 class="header-title">Social</h3>
+              <ul class="soc">
+                  <li><a class="soc-facebook" href="#"></a></li>
+                  <li><a class="soc-twitter" href="#"></a></li>
+                  <li><a class="soc-youtube" href="#"></a></li>
+                  <li><a class="soc-rss soc-icon-last" href="http://www.thenigerianvoice.com/news/179264/1/heritage-bank-pledges-consistent-and-seamless-serv.html" target="_blank"></a></li>
+              </ul>
+        </div>
+      </div>
+    </div><!--end of container-->
+    <div class="container-fluid row-background">    
+      <div class="container">  
+        <div class="row"> 
+          <div class="col-xs-6 col-md-4"><p>Copyright &#169 2015 CCC Edward Street Parish</p></div>
+          <div class="col-xs-6 col-md-4"><p>Charity Registration Number: 5929215</p></div>
+      <div class="col-xs-6 col-md-4"><p>Designed and Developed by KemITes Tech</p></div>
+      <div class="col-xs-6 col-md-1 hidden-lg">
+            <a href="#top" role="button" class="btn btn-default set-radius page-scroll">
+              <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
+            </a>
+          </div>
+        </div>
+      </div>  
+    </div>
+  <script src="<?php echo base_url('js/fv/formsSettings.js') ?>"></script>   
+  <script src="<?php echo base_url('js/affixies.js') ?>"></script>
+  <script src="<?php echo base_url('js/sliders.js') ?>"></script>
+  <script src="<?php echo base_url('js/main.js') ?>"></script> 
+</footer><!--start of footer--> 
 </body>
 </html>

@@ -1,69 +1,126 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-	<meta charset="utf-8">
- 	<title>
-		<?php 
-			if (!empty($is_blog)) :
-				echo $CI->fuel->blog->page_title($page_title, ' : ', 'right');
-			else:
-				echo fuel_var('page_title', '');
-			endif;
-		?>
-	</title>
+	
+	<title><?php echo $title ?></title> 	
 
-	<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
-	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8"> 
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-	<?php
-		echo css('main').css($css);
-
-		if (!empty($is_blog)):
-			echo $CI->fuel->blog->header();
-		endif;
-	?>
-	<?=jquery()?>
+	<link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url('css/bootstrap-theme.min.css') ?>" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url('css/slick-theme.css') ?>" rel="stylesheet" type='text/css'>
+	<link href="<?php echo base_url('css/fv/formValidation.min.css') ?>" rel="stylesheet" type='text/css'>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+	<script src="<?php echo base_url('js/fv/formValidation.popular.min.js') ?>"></script>
+	<script src="<?php echo base_url('js/fv/framework/bootstrap.min.js') ?>"></script>
+	<script src="<?php echo base_url('js/jquery.easing.min.js') ?>"></script>
+  	<script src="<?php echo base_url('js/scrolling-nav.js') ?>"></script>
+  	<script src="<?php echo base_url('js/parallax.min.js') ?>"></script>
 </head>
-<body>
-
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		 width="126.962px" height="115.395px" viewBox="0 0 126.962 115.395" enable-background="new 0 0 126.962 115.395"
-		 xml:space="preserve">
-
-		<g id="fuel" class="icon">
-				<path fill="#3DBFD9" d="M97.607,46.492C96.816,66.475,80.357,82.5,60.183,82.5c-17.978,0-33.03-12.719-36.659-29.626l27.841-4.995l-6.153,17.314
-			l76.037-35.357c0,0-7.743,1.839-17.449,4.145C98.871,14.481,81.194,0,60.183,0c-24.682,0-44.779,19.977-44.99,44.61
-			c2.518-1.054,5.084-2.13,7.672-3.214C24.686,22.404,40.722,7.5,60.183,7.5c17.472,0,32.163,12.02,36.307,28.218
-			c-14.32,3.403-29.729,7.066-30.79,7.327c-2.342,0.575,7.665-19.018,7.665-19.018S1.171,57.061,0,57.094l16.141-2.896
-			C20.401,74.613,38.522,90,60.183,90c24.812,0,45-20.186,45-45c0-0.586-0.021-1.168-0.045-1.75L97.607,46.492z"/>
-		</g>
-
-		<g id="fuelwhite" class="icon">
-			<path fill="#FFFFFF" d="M124.351,42.451c0,0-9.949,2.053-21.453,4.432c-3.959-18.029-20.016-31.526-39.233-31.526
-				c-22.19,0-40.179,17.988-40.179,40.178c0,0.705,0.019,1.407,0.055,2.104c-11.617,4.843-20.635,8.549-21.04,8.549l21.677-3.251
-				c3.476,18.652,19.826,32.777,39.487,32.777c22.188,0,40.177-17.989,40.177-40.179c0-1.406-0.073-2.794-0.214-4.163L124.351,42.451z
-				 M63.664,21.962c16.029,0,29.426,11.236,32.764,26.26c-13.383,2.771-26.779,5.552-27.925,5.822c-2.345,0.55,8.2-18.769,8.2-18.769
-				s-25.492,10.79-46.597,19.621C30.449,36.649,45.336,21.962,63.664,21.962z M97.237,55.536C97.236,74.078,82.205,89.11,63.664,89.11
-				c-16.347,0-29.956-11.683-32.954-27.153l23.339-3.5l-6.638,17.116l49.79-21.434C97.221,54.603,97.237,55.067,97.237,55.536z"/>
-		</g>
-		<g id="daylight" class="icon">
-			<path fill="#FFFFFF" d="M21.47,56.842c0-23.765,19.272-43.038,43.046-43.038c23.772,0,43.037,19.273,43.037,43.038
-				c0,17.501-10.447,32.521-25.429,39.25c-3.905-5.512-10.338-9.108-17.608-9.108c-7.273,0-13.693,3.603-17.598,9.115
-				C31.928,89.369,21.47,74.349,21.47,56.842z M41.711,34.049C51.895,23.868,65.142,19.3,76.629,20.807
-				c-3.812-1.279-7.872-1.995-12.112-1.995c-21.01,0-38.044,17.028-38.044,38.03c0,4.235,0.718,8.297,1.995,12.095
-				C26.975,57.459,31.534,44.23,41.711,34.049z"/>
-			<path fill="#FFFFFF" d="M118.547,56.842c0-29.797-24.238-54.041-54.031-54.041
-				c-29.798,0-54.043,24.244-54.043,54.041c0,29.803,24.244,54.049,54.043,54.049C94.31,110.891,118.547,86.645,118.547,56.842
-				L118.547,56.842z M114.201,56.842c0,27.406-22.289,49.702-49.685,49.702c-27.401,0-49.697-22.296-49.697-49.702
-				c0-27.403,22.295-49.695,49.697-49.695C91.912,7.147,114.201,29.439,114.201,56.842L114.201,56.842z"/>
-		</g>
-	</svg>
-	<div class="page">
-		<div class="wrapper">
-			<header class="page_header">
-				<div class="logo">
-					<svg width="160px" height="145px" viewBox="0 0 126.962 115.395" preserveAspectRatio="xMidYMid"><use xlink:href="#fuel"></use></svg>
+<body id="top">
+	<nav id="myAffix" class="myaffix1 navbar navbar-default">
+	 <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-13">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="<?php echo base_url('home')?>">
+					<img src="<?php echo base_url('img/est-logo.png') ?>" alt="Edward Street Parish Logo" class="hidden-xs ccc-logo">
+					<h3 class="visible-xs-inline">CCC Edward Street Parish</h3>
+					</a>	
 				</div>
-				<h1><?php echo fuel_var('heading')?></h1>
-			</header>		
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav nav-font">
+			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false){echo $active;} ?>">
+          			<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
+		  				<ul class="dropdown-menu" role="menu">
+							<li class="<?php if(uri_string() == 'about-us/who-we-are'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color ">Who we are</a></li>
+							<li class="<?php if(uri_string() == 'about-us/history'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
+							<li class="<?php if(uri_string() == 'about-us/testimonials'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/testimonials') ?>" class="nav-color">Testimonials</a></li>
+							<li class="<?php if(uri_string() == 'about-us/tenets'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
+							<li><a href="#" class="nav-color">Constitution</a></li>
+							<li class="<?php if(uri_string() == 'about-us/worship-with-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
+							<li class="collapse-underline <?php if(uri_string() == 'about-us/contact-us'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color">Contact</a></li>
+		  				</ul>
+					</li>
+            <li class="dropdown collapse-underline">
+				<a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">News</a>
+             <ul class="dropdown-menu" role="menu">
+			  <li><a href="latest-news.html" class="nav-color">Latest news</a></li>
+              <li><a href="newsletter.html" class="nav-color">Newsletters</a></li>
+              <li><a href="events.html" class="nav-color">Events</a></li>
+             </ul>  
+            </li>
+			<li class="collapse-underline <?php if(uri_string() == 'youth'){echo $active;} ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
+			<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
+            <li class="dropdown collapse-underline <?php if(strpos(uri_string(),'ministries') !== false){echo $active;} ?>">
+			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Ministries</a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="<?php if(uri_string() == 'ministries/our-ministries'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('ministries/our-ministries') ?>" class="nav-color">Our Ministries</a></li>	
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Choir</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Sunday school</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Youth</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Prophet</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Warden</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Choir</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Warden</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Bible class</a></li>
+              </ul>
+            </li>
+			<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'departments') !== false){echo $active;} ?>">
+			  <a href="#" class="dropdown-toggle nav-color nav-hover " data-toggle="dropdown" role="button">Departments</a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="<?php if(uri_string() == 'departments/our-departments'){echo $dropdownactive;} ?>"><a href="<?php echo base_url('departments/our-departments') ?>" class="nav-color">Our Departments</a></li>	
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Parochial</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Elder</a></li>
+                <li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Clergy</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Welfare</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Health and safety</a></li>
+				<li class="hidden-xs hidden-sm"><a href="ministries.html" class="nav-color">Building commitee</a></li>
+              </ul>
+            </li>
+			<li class="collapse-underline <?php if(uri_string() == 'gallery'){echo $active;} ?>"><a href="<?php echo base_url('gallery') ?>" class="nav-color nav-hover">Gallery</a></li>
+			</ul>
+			<ul id="secondnav" class="nav navbar-nav repos-top-right">
+				<li class="hidden-xs hidden-sm"><a><img src="<?php echo base_url('img/search2.png') ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"></a></li>
+				  <form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
+					<div class="form-group">
+					 <div class="col-xs-7 col-sm-8 search-pos"> 
+					  <input type="text" class="form-control" placeholder="Search">
+					 </div>
+					 <button type="submit"style="margin-left: 20px;" class="btn btn-default">Search</button>		
+					</div>
+					
+				  </form>
+				<li class="visible-lg-inline"><a href="#" class="nav-color"><img src="<?php echo base_url('img/user.png') ?>" style="" class="nav-img-display" alt=""></a></li>
+			</ul>
+			<div class="collapse" id="collapseExample">
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+					<div class="input-group">
+					  <input type="text" class="form-control border-style" placeholder="Search">
+					  <span class="input-group-btn nav-inputsearch">
+						<img src="<?php echo base_url('img/search2.png') ?>" class="nav-img-display" role="button">
+					  </span>
+					</div>
+					</div>
+				</form>
+			</div>			
+		</div>
+		</div>
+	  </div>
+	 </div>
+	</nav>
