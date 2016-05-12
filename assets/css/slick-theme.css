@@ -216,7 +216,7 @@ opacity: 0.7;
  { 
  color: black; 
  opacity: 1; 
- content: url(../img/stop2.svg);
+ content: url(../images/stop2.svg);
  -webkit-transform: scale(1.2);
  transform: scale(1.2);
 

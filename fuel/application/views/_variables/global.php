@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // declared here so we don't have to in each controller's variable file
 $CI =& get_instance();
@@ -12,6 +12,7 @@ $vars['meta_description'] = '';
 $vars['js'] = array();
 $vars['css'] = array();
 $vars['body_class'] = uri_segment(1).' '.uri_segment(2);
+$vars['active'] = 'active';
 
 // page specific variables
 $pages = array();
