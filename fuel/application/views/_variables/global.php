@@ -13,6 +13,7 @@ $vars['js'] = array();
 $vars['css'] = array();
 $vars['body_class'] = uri_segment(1).' '.uri_segment(2);
 $vars['active'] = 'active';
+$vars['dropdownactive'] = 'dropdown-active';
 
 // page specific variables
 $pages = array();
