@@ -9,3 +9,5 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 fuel/application/cache/
+fuel/application/config/mailchimp_email.php
+
