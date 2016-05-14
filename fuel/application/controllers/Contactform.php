@@ -45,18 +45,12 @@ class Contactform extends CI_Controller {
             $this->email->to($to_address);
             $this->email->subject($subject);
 
-            if($businessname == '' && $phone == '')	{
-                $this->email->message('Dear Edward Street Parish,<br><br>'.$message.'');
-            }
-            if($businessname !== '' && $phone !== '') {
-                $this->email->message('Dear Edward Street Parish,<br><br>Business Name: '.$businessname. '<br> Telephone Nom.: '.$phone.'<br><br>'.$message.'');
-            }
-            if($businessname !== '' && $phone == '') {
-                $this->email->message('Dear Edward Street Parish,<br><br>Business Name: '.$businessname.'<br><br>'.$message.'');
-            }
-            if($phone !== '' && $businessname == '') {
-                $this->email->message('Dear Edward Street Parish,<br><br>Phone Number: '.$phone.'<br><br>'.$message.'');
-            }
+						//Checks if businessname and phonenumber is empty.
+						//If empty set variables to empty string
+						$businessname = !empty($businessname) ? 'Business Name:' .$businessname. '<br>' : '';
+						$phone = !empty($phone) ? 'Telephone Number:' .$phone. '<br><br>' : '';
+
+						$this->email->message('Dear Edward Street Parish,<br><br>' . $businessname . $phone . $message);
 
             if(!$this->email->send()){
                 echo json_encode(array('result' => 'error'));
