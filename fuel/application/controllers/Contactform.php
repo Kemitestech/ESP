@@ -47,8 +47,8 @@ class Contactform extends CI_Controller {
 
 						//Checks if businessname and phonenumber is empty.
 						//If empty set variables to empty string
-						$businessname = !empty($businessname) ? 'Business Name:' .$businessname. '<br>' : '';
-						$phone = !empty($phone) ? 'Telephone Number:' .$phone. '<br><br>' : '';
+						$businessname = !empty($businessname) ? 'Business Name:' . $businessname . '<br>' : '';
+						$phone = !empty($phone) ? 'Telephone Number:' . $phone . '<br><br>' : '';
 
 						$this->email->message('Dear Edward Street Parish,<br><br>' . $businessname . $phone . $message);
 

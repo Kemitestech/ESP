@@ -4,7 +4,7 @@
 	<?php if(!empty($is_blog)) : ?>
 	<title><?php $CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
 	<?php else : ?>
-	<title><?php echo $page_title; ?></title>
+	<title><?=$page_title?></title>
 	<?php endif  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
 	<meta name="keywords" content="<?php fuel_var('meta_keywords'); ?>" />
@@ -48,7 +48,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- Start of navbar-collapse -->
           <ul class="nav navbar-nav nav-font"><!-- Start of navbar-nav -->
-			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false){echo $active;} ?>">
+			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false) echo $active; ?>">
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
 							<li class="<?php if(uri_string() == 'about-us/who-we-are') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color ">Who we are</a></li>
@@ -69,9 +69,9 @@
               </ul>
             </li>
 						<!-- End of About us section dropdown navigation -->
-						<li class="collapse-underline <?php if(uri_string() == 'youth'){echo $active;} ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'prayer-request'){echo $active;} ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'gallery'){echo $active;} ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
+						<li class="collapse-underline <?php if(uri_string() == 'youth') echo $active; ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
+						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
+						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondnav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
 						<li class="hidden-xs hidden-sm">
