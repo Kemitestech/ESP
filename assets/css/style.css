@@ -22,7 +22,7 @@ word-wrap: break-word;
 }
 
 body {
-  font-family:  'Ubuntu', sans-serif !important;
+  font-family:  'Ubuntu', sans-serif;
   padding-top: 70px;
   position: relative;
   height: 100%;
@@ -32,23 +32,23 @@ body {
 
 #myAffix{
   top: -70px;
-  background-color: #00a1c6 !important;
+  background-color: #00a1c6;
   background-image: url('../images/bedge-grunge.png');
   background-size: 100% 100%;
-  color: white !important;
-  border-radius: 0px !important;
-  border-top: 0px !important;
-  border-right: 0px !important;
-  border-left: 0px !important;
-  box-shadow: none !important;
+  color: white;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  box-shadow: 0px 2px rgba(211,211,211, 0.5);
 }
 
 .navbar-collapse{
-padding: 0px !important;
+  padding: 0px;
 }
 
 p{
-font-size:14px;
+  font-size:14px;
 }
 
 .horizontal-lists{
@@ -60,7 +60,7 @@ font-size:14px;
 }
 
 .blockquote-color{
-	border-left: 5px solid #FFB100 !important;
+	border-left: 5px solid #FFB100;
 }
 
 #mainCol h1{
@@ -68,26 +68,26 @@ font-size:14px;
 }
 
 a:hover {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .reset-jumb-pos{
-top: -70px;
-position: relative;
+  top: -70px;
+  position: relative;
 }
 
 .nav-hover:hover {
-	color: #FFB100 !important;
+	color: #FFB100;
 }
 
 .breadcrumb {
-    padding: 8px 30px !important;
+    padding: 8px 30px;
     margin-bottom: 20px;
     list-style: outside none none;
     background-color: #F5F5F5;
     border-radius: 4px;
-	position: relative;
-	top: -70px;
+	  position: relative;
+	  top: -70px;
 }
 
 .youth-testimonial{
@@ -96,7 +96,7 @@ position: relative;
 
 a.hero-button {
 	background-color: #00A0C6;
-	border-radius: 0px !important;
+	border-radius: 0px;
 	color: white;
 	font-size: 22px;
 }
@@ -107,14 +107,14 @@ a.hero-button:hover {
 
 .btn-contact {
 	background-color: #00A0C6;
-	border-radius: 0px !important;
+	border-radius: 0px;
 	color: white;
 	font-size: 16px;
 }
 
 a.btn-news {
 	background-color: #00A0C6;
-	border-radius: 0px !important;
+	border-radius: 0px;
 	color: white;
 	font-size: 16px;
 }
@@ -150,17 +150,17 @@ overflow-y: scroll;
 }
 
 .nav-pills > li > a {
-    border-radius: 0px !important;
+  border-radius: 0px !important;
 	font-size: 18px;
 	color: black !important;
 }
 
 #faq a {
-color:  #00A0C6;
+  color:  #00A0C6;
 }
 
 #faq a:hover {
-color:  #007591;
+  color:  #007591;
 }
 .nav-color{
   color: white !important;
@@ -173,7 +173,7 @@ color:  #007591;
 }
 
 .bg-info-2 {
-    background-color: #EEE !important;
+  background-color: #EEE !important;
 	color: black !important;
 }
 
@@ -258,7 +258,6 @@ margin-top: 50px;
   min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 70vh; /* These two lines are counted as one        */
   width: 100%;
-
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -604,9 +603,9 @@ left: 0px;
 
 */
 .soc-news {
-    overflow:hidden;
-    margin:0; padding:0;
-    list-style:none;
+  overflow:hidden;
+  margin:0; padding:0;
+  list-style:none;
 	margin-top: 20px !important;
 	margin-bottom: 20px !important;
 }
@@ -837,8 +836,9 @@ margin-right: 21px !important;
     border-right: 1px solid #FFF;
     padding-right: 30px;
 }
+
 #chevron-top{
-display: none;
+  display: none;
 }
 
 .separator-responsive {
@@ -1160,12 +1160,6 @@ opacity: 1;
 
 .navbar-brand{
 padding: 11px !important;
-}
-
-.navbar-brand h3{
-  display: none !important;
-  position: relative;
-  color: white !important;
 }
 
 .dropdown-menu{

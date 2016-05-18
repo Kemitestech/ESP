@@ -51,7 +51,7 @@
 			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false) echo $active; ?>">
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
-							<li class="<?php if(uri_string() == 'about-us/who-we-are') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/who-we-are') ?>" class="nav-color ">Who we are</a></li>
+							<li class="<?php if(uri_string() == 'about-us/what-we-do') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/what-we-do') ?>" class="nav-color ">What we do</a></li>
 							<li class="<?php if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 							<li class="<?php if(uri_string() == 'about-us/tenets') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li class="<?php if(uri_string() == 'our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
@@ -63,7 +63,7 @@
 						<li class="dropdown collapse-underline">
 						  <a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">News and Events</a>
               <ul class="dropdown-menu" role="menu">
-  			  		 	<li><a href="latest-news.html" class="nav-color">Latest news</a></li>
+  			  		 	<li><a href="latest-news.html" class="nav-color">News</a></li>
                 <li><a href="events.html" class="nav-color">Events</a></li>
               </ul>
             </li>
