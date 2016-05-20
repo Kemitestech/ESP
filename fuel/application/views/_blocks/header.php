@@ -7,8 +7,8 @@
 	<title><?=fuel_var('page_title', '')?></title>
 	<?php endif  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
-	<meta name="keywords" content="<?php fuel_var('meta_keywords'); ?>" />
-  <meta name="description" content="<?php fuel_var('meta_description'); ?>" />
+	<meta name="keywords" content="<?=fuel_var('meta_keywords'); ?>" />
+  	<meta name="description" content="<?=fuel_var('meta_description'); ?>" />
 
   <?php echo css('bootstrap.min.css'); ?>
   <?php echo css('bootstrap-theme.min.css'); ?>
@@ -57,7 +57,7 @@
 							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
               <li class="<?php if (uri_string() == 'about-us/our-departments') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-departments') ?>" class="nav-color">Departments</a></li>
 							<li class="<?php if(uri_string() == 'about-us/worship-with-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
-							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a 
+							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a
 href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 						</li>
@@ -89,9 +89,11 @@ href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover"
 							</div>
 						</form>
 						<li class="visible-lg-inline">
+						<?php if(!$CI->fuel->blog->is_logged_in()) :?>
 							<a href="<?php echo base_url('fuel/login'); ?>" class="nav-color">
 								<img src="<?php echo assets_path('images/user.png'); ?>" style="" class="nav-img-display" alt="">
 							</a>
+						<?php endif; ?>	
 						</li>
 					</ul><!-- End of second nav -->
 					<div class="collapse" id="collapseExample">
