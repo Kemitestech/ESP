@@ -4,7 +4,7 @@
 	<?php if(!empty($is_blog)) : ?>
 	<title><?php $CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
 	<?php else : ?>
-	<title><?=$page_title?></title>
+	<title><?=fuel_var('page_title', '')?></title>
 	<?php endif  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
 	<meta name="keywords" content="<?php fuel_var('meta_keywords'); ?>" />
