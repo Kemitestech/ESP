@@ -54,9 +54,10 @@
 							<li class="<?php if(uri_string() == 'about-us/what-we-do') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/what-we-do') ?>" class="nav-color ">What we do</a></li>
 							<li class="<?php if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 							<li class="<?php if(uri_string() == 'about-us/tenets') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
-							<li class="<?php if(uri_string() == 'our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
-              <li class="<?php if (uri_string() == 'our-departments') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-departments') ?>" class="nav-color">Departments</a></li>
+							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
+              <li class="<?php if (uri_string() == 'about-us/our-departments') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-departments') ?>" class="nav-color">Departments</a></li>
 							<li class="<?php if(uri_string() == 'about-us/worship-with-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
+							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 						</li>
 						<!-- Start of About us section dropdown navigation -->
@@ -69,7 +70,6 @@
             </li>
 						<!-- End of About us section dropdown navigation -->
 						<li class="collapse-underline <?php if(uri_string() == 'youth') echo $active; ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'contact-us') echo $active; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
