@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php if(!empty($is_blog)) : ?>
-	<title><?php $CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
+	<title><?=$CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
 	<?php else : ?>
 	<title><?=fuel_var('page_title', '')?></title>
 	<?php endif  ?>
@@ -57,7 +57,8 @@
 							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
               <li class="<?php if (uri_string() == 'about-us/our-departments') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-departments') ?>" class="nav-color">Departments</a></li>
 							<li class="<?php if(uri_string() == 'about-us/worship-with-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
-							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
+							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a 
+href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 						</li>
 						<!-- Start of About us section dropdown navigation -->
