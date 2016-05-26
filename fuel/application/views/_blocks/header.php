@@ -5,10 +5,10 @@
 	<title><?=$CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
 	<?php else : ?>
 	<title><?=fuel_var('page_title', '')?></title>
-	<?php endif  ?>
+  <?php endif;  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
 	<meta name="keywords" content="<?=fuel_var('meta_keywords'); ?>" />
-  	<meta name="description" content="<?=fuel_var('meta_description'); ?>" />
+  <meta name="description" content="<?=fuel_var('meta_description'); ?>" />
 
   <?php echo css('bootstrap.min.css'); ?>
   <?php echo css('bootstrap-theme.min.css'); ?>
@@ -47,7 +47,7 @@
 					</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- Start of navbar-collapse -->
-          <ul class="nav navbar-nav nav-font"><!-- Start of navbar-nav -->
+          <ul id="primary-nav" class="nav navbar-nav nav-font"><!-- Start of navbar-nav -->
 			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false) echo $active; ?>">
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
@@ -57,8 +57,7 @@
 							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
               <li class="<?php if (uri_string() == 'about-us/our-departments') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-departments') ?>" class="nav-color">Departments</a></li>
 							<li class="<?php if(uri_string() == 'about-us/worship-with-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
-							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a
-href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
+							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 						</li>
 						<!-- Start of About us section dropdown navigation -->
@@ -74,7 +73,7 @@ href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover"
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
-					<ul id="secondnav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
+					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
 						<li class="hidden-xs hidden-sm">
 							<a>
 								<img src="<?php echo assets_path('images/search2.png'); ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
@@ -93,7 +92,7 @@ href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover"
 							<a href="<?php echo base_url('fuel/login'); ?>" class="nav-color">
 								<img src="<?php echo assets_path('images/user.png'); ?>" style="" class="nav-img-display" alt="">
 							</a>
-						<?php endif; ?>	
+						<?php endif; ?>
 						</li>
 					</ul><!-- End of second nav -->
 					<div class="collapse" id="collapseExample">
