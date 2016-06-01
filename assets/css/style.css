@@ -130,6 +130,12 @@ a.btn-news:hover {
 	font-size: 18px;
 }
 
+.blog-main {
+	position: relative;
+	bottom: 55px;
+	margin-bottom: 20px;	
+}
+
 .title-margin {
 	margin-bottom: 40px;
 }
@@ -184,6 +190,31 @@ overflow-y: scroll;
 }
 .top-bar-list-item > .active {
   color: #FFB100;
+}
+
+.post-title a{
+	color: inherit;
+}
+.post-title:hover a{
+	color: #FFB100;
+}
+.post-author-name {
+	color: #005C71;
+}
+.post-meta {
+	margin-top: 15px;
+}
+.post-meta span {
+	margin-right: 10px;
+}
+.post-meta a {
+	color: inherit;
+}
+.post-meta a:hover {
+	color: #FFB100;
+}
+.post-date {
+	margin-bottom: 5px;
 }
 
 /*

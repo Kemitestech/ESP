@@ -14,10 +14,10 @@ if (isset($current_post) AND !$is_home)
 		<div class="container">
     	<div id="right">
 
-    		<?php echo $this->fuel->blog->sidemenu(array('authors', 'tags', 'categories', 'links', 'archives'))?>
+    		<?php //echo $this->fuel->blog->sidemenu(array('authors', 'tags', 'categories', 'links', 'archives'))?>
     	</div>
 
-    	<div id="main_inner">
+    	<div class="blog-main">
     		<?php echo fuel_var('body', ''); ?>
     	</div>
     </div>

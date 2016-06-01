@@ -47,7 +47,7 @@
 					</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- Start of navbar-collapse -->
-          <ul id="primary-nav" class="nav navbar-nav nav-font"><!-- Start of navbar-nav -->
+				<ul id="primary-nav" class="nav navbar-nav nav-font"><!-- Start of navbar-nav -->
 			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false) echo $active; ?>">
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
@@ -61,14 +61,9 @@
 		  				</ul>
 						</li>
 						<!-- Start of About us section dropdown navigation -->
-						<li class="dropdown collapse-underline">
-						  <a href="#" class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">News and Events</a>
-              <ul class="dropdown-menu" role="menu">
-  			  		 	<li><a href="latest-news.html" class="nav-color">News</a></li>
-                <li><a href="events.html" class="nav-color">Events</a></li>
-              </ul>
-            </li>
 						<!-- End of About us section dropdown navigation -->
+						<li class="collapse-underline <?php if(uri_string() == 'blog') echo $active; ?>"><a href="<?php echo base_url('blog') ?>" class="nav-color nav-hover">Blog</a></li>
+						<li class="collapse-underline <?php if(uri_string() == 'events') echo $active; ?>"><a href="<?php echo base_url('events') ?>" class="nav-color nav-hover">Events</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'youth') echo $active; ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
