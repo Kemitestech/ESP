@@ -135,6 +135,9 @@ a.btn-news:hover {
 	bottom: 55px;
 	margin-bottom: 20px;	
 }
+.blog-main > h1 {
+	margin-bottom: 30px;	
+}
 
 .title-margin {
 	margin-bottom: 40px;
