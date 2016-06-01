@@ -1,20 +1,51 @@
-<div class="post">
-	<?=fuel_edit($post)?>
-	
-	<?=blog_block('post_unpublished', array('post' => $post))?>
-	
-	<h1><?=$post->title?> </h1>
-	<div class="post_author_date">
-		<?=lang('blog_post_published')?> 
-		<span class="post_content_date"><?=$post->get_date_formatted(lang('blog_post_date_format'))?></span> 
-		<?=lang('blog_post_published_by')?> 
-		<span class="post_author_name"><?=$post->author_name?></span>
+<div class="row">
+	<div class="col-md-8">
+		<div class="post">
+			<?=fuel_edit($post)?>
+			
+			<?=blog_block('post_unpublished', array('post' => $post))?>
+			
+			<h1><?=$post->title?> </h1>
+			<div class="post_author_date" style="margin-top: 20px;">
+				<strong>BY <a href="#" class="header-title"><?=strtoupper($post->author_name)?></a></strong>
+				<span class="sep" style="padding: 0px 10px;">|</span>
+				<p style="display: inline;"><?=date_formatter($post->date_added, 'M d, Y')?></p>
+			</div>
+			<ul class="soc-news">
+				<li><a class="soc-news-twitter" href="#"></a></li>
+				<li><a class="soc-news-google" href="#"></a></li>
+				<li><a class="soc-news-facebook" href="#"></a></li>
+				<li><a class="soc-news-email1 soc-icon-last" href="#"></a></li>
+			</ul>
+			<figure>
+				<img src="https://placeimg.com/600/525/arch" class="img-responsive" alt="Image" >
+				<figcaption>A picture of something thats really interesting</figcaption>
+			</figure>
+			
+			<div class="post_content">
+				<p class="news-p"><?=$post->content_filtered?></p>
+			</div>
+			
+		</div>
 	</div>
 	
-	<div class="post_content">
-		<?=$post->content_formatted?>
-	</div>
-	
+	<div class="col-md-3">
+	  <div id="returnto-news"class="panel panel-default no-radius" style="margin-top:20px;">
+		<a href="<?=base_url('blog')?>" class="panel-heading text-center btn-block" role="button" style="text-color: black;">Back to blog posts</a>
+	  </div>
+	  <div class="panel panel-default no-radius" style="margin-top:20px;">
+		<div class="panel-heading text-center" style="padding-top:15px; padding-bottom:15px;"><strong>Recent posts</strong></div>
+		  <div class="panel-body">
+				<?php $posts = $this->fuel->blog->get_recent_posts(); ?>
+				<?php foreach($posts as $post) : ?>
+				<figure>
+					<a href="<?=$post->permalink?>"><img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" ></a>
+					<figcaption><?=$post->title?></figcaption>
+				</figure>
+				<?php endforeach; ?>
+		  </div>
+	  </div>
+	</div>	
 </div>
 
 
