@@ -130,15 +130,6 @@ a.btn-news:hover {
 	font-size: 18px;
 }
 
-.blog-main {
-	position: relative;
-	bottom: 55px;
-	margin-bottom: 20px;	
-}
-.blog-main > h1 {
-	margin-bottom: 30px;	
-}
-
 .title-margin {
 	margin-bottom: 40px;
 }
@@ -146,6 +137,21 @@ a.btn-news:hover {
 .list-scroll {
 max-height: 400px;
 overflow-y: scroll;
+}
+
+.filter,
+.badge,
+.top-bar-list-item a{
+	transition-duration: .25s;
+}
+
+.blog-main {
+	position: relative;
+	bottom: 30px;
+	margin-bottom: 20px;	
+}
+.blog-main > h1 {
+	margin-bottom: 30px;	
 }
 
 .top-bar {
@@ -180,9 +186,10 @@ overflow-y: scroll;
 }
 .top-bar-list-item {
   margin-left: 20px;
+  transition-property: color;
 }
 .top-bar-list-item a {
-  color: inherit;
+  color: inherit;  
 }
 .top-bar-list-item:hover a {
   color: #FFB100;
@@ -190,6 +197,12 @@ overflow-y: scroll;
 .top-bar-list-item .badge {
   margin-left: 5px;
   padding: 4px 7px;
+}
+.top-bar-list-item:hover .badge {
+  background-color: #FFB100;
+}
+.top-bar-list-item > .active .badge {
+  background-color: #FFB100;
 }
 .top-bar-list-item > .active {
   color: #FFB100;
@@ -220,6 +233,50 @@ overflow-y: scroll;
 	margin-bottom: 5px;
 }
 
+.filter {
+	width: 60%;
+	color: inherit;
+	margin-bottom: 20px;
+	transition-property: color, box-shadow;
+	box-shadow: inset 31px 26px 0 0 #fff,inset 31px 26px 0 0 #fff;
+	
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	
+	-webkit-box-pack: space-between;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: space-between;
+	justify-content: space-between;
+}
+.filter:hover, 
+.filter:focus {
+	color: #FFB100;
+	box-shadow: inset 31px 24px 0 0 #fff,inset 31px 26px 0 0 #fef1c6;
+}
+.filter:hover .badge, 
+.filter:focus .badge {
+	background-color: #FFB100;
+}
+.filter-item {
+	margin: 0px;
+}
+.filter-name {
+	z-index: 1;
+	padding-right: 6px;
+	background-color: #fff;
+}
+.filter-count {
+	z-index: 1;
+	background-color: #fff;
+	padding-left: 6px;
+}
 /*
 -----------------------------------------------------------
             utility styles
@@ -847,6 +904,14 @@ margin-bottom: 10px;
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
+.filter {
+	width: 100%;
+	-webkit-box-pack: space-between;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: space-between;
+	justify-content: space-between;
+}
 }
 
 /* Extra Small Devices, Phones */
@@ -885,12 +950,17 @@ margin-bottom: 10px;
   font-size: 26px;
   margin-left: 5px;
 }
-
-
 .navbar-nav li {
   margin-left: 10px;
 }
 
+.filter {
+	width: 100%;
+	-webkit-box-pack: space-between;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: space-between;
+	justify-content: space-between;
+}	
 }
 
 /* Small Devices, Tablets */

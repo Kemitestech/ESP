@@ -1,13 +1,16 @@
-<h1>Categories</h1>
 <?php foreach($categories as $category) :
 		$posts = $category->posts;
 		if (!empty($posts)) :
 	 ?>
-<h2><?=fuel_edit($category->id, 'Edit Category', 'blog/categories')?><?=anchor($category->url, $category->name)?></h2>
-	<ul class="bullets">
-	<?php foreach($posts as $post) : ?>
-		<li><?=fuel_edit($post->id, 'Edit Post', 'blog/posts')?><?=anchor($this->fuel_blog->url('id/'.$post->id), $post->title)?></li>
-	<?php endforeach; ?>
-	</ul>
+	
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-md-offset-2 col-sm-offset-2">	
+			<a href="<?=$category->url?>" class="filter">
+			<?=fuel_edit($category->id, 'Edit Category', 'blog/categories')?>
+				<h1 class="filter-item filter-name"><?=$category->name?></h1>
+				<div class="filter-item filter-count"><span class="badge"><?=count($posts)?></span></div>
+			</a>
+		</div>	
+	</div>
 <?php endif; ?>
 <?php endforeach; ?>
