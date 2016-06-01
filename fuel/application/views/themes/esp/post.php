@@ -36,11 +36,11 @@
 	  <div class="panel panel-default no-radius" style="margin-top:20px;">
 		<div class="panel-heading text-center" style="padding-top:15px; padding-bottom:15px;"><strong>Recent posts</strong></div>
 		  <div class="panel-body">
-				<?php $posts = $this->fuel->blog->get_recent_posts(); ?>
-				<?php foreach($posts as $post) : ?>
+				<?php $recent_posts = $this->fuel->blog->get_recent_posts(); ?>
+				<?php foreach($recent_posts as $recent_post) : ?>
 				<figure>
-					<a href="<?=$post->permalink?>"><img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" ></a>
-					<figcaption><?=$post->title?></figcaption>
+					<a href="<?=$recent_post->url?>"><img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" ></a>
+					<figcaption><?=$recent_post->title?></figcaption>
 				</figure>
 				<?php endforeach; ?>
 		  </div>
