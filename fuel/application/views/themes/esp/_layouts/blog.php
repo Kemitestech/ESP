@@ -12,10 +12,10 @@ if (isset($current_post) AND !$is_home)
 <?php $this->load->view('_blocks/header')?>
 		<?=$this->fuel->blog->block('top_bar')?>
 		<div class="container">
-    	<div id="right">
+    	
 
     		<?php //echo $this->fuel->blog->sidemenu(array('authors', 'tags', 'categories', 'links', 'archives'))?>
-    	</div>
+    	
 
     	<div class="blog-main">
     		<?php echo fuel_var('body', ''); ?>

@@ -47,7 +47,6 @@
 			
 			<div class="view_archives">
 				<div class="pagination"><?php if (!empty($pagination)) : ?><?=$pagination?>  &nbsp;<?php endif; ?></div>
-				Looking for older posts? <a href="<?=blog_url('archives')?>">View our Archives</a>
 			</div>
 			
 		<?php else: ?>
