@@ -29,7 +29,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid parallax-window">
+<div id="testimonial-parralax" class="container-fluid parallax-window">
   <div class="jumbotron vertical-center text-center" style="background: none;">
     <div class="container" style="color: white;">
       <h2>Would you like to see our testimonies?</h2>

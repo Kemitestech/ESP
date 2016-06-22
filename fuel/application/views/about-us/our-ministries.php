@@ -35,7 +35,7 @@
 				<a href="#">
 					<div class="bg-torqouise flaticon_thumbnail">
 					  <img src="<?=assets_path('images/iconfinder/dove.svg'); ?>" class="img-responsive" alt="image">
-					  <h3>Prophet</h3>
+					  <h3>Prophet/Prophetess</h3>
 					</div>
 				</a>
 			</div>

@@ -22,10 +22,8 @@
 			</a> 	
         </div>
 		</div>
-		<hr>
-		<p>Parochial Sub-Commitees</p><br><br>
-		<hr>
-    <div class="row">
+		<h3>Parochial Sub-Committees</h3>
+		<div class="row">
 			<div class="col-md-3 col-xs-12 col-sm-6">
 					<a href="#">
 						<div class="bg-orange flaticon_thumbnail">
@@ -60,6 +58,6 @@
 					</div>
 				</a>
 			</div>	
-    </div>
+		</div>
     </div>  
   </div>
