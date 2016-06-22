@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 |--------------------------------------------------------------------------
 | MY Custom Modules
@@ -20,7 +20,10 @@ $config['modules']['projects'] = array(
 );
 
 *********************** /EXAMPLE ***********************************/
-
+$config['modules']['events'] = array(
+	'preview_path' => 'events/{slug}',
+	'display_field' => 'title',
+);
 
 
 /*********************** OVERWRITES ************************************/
