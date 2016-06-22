@@ -23,7 +23,7 @@
 			</figure>
 			
 			<div class="post_content">
-				<p class="news-p"><?=$post->content_filtered?></p>
+				<?=$post->content?>
 			</div>
 			
 		</div>
