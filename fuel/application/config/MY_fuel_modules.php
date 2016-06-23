@@ -24,6 +24,10 @@ $config['modules']['events'] = array(
 	'preview_path' => 'events/{slug}',
 	'display_field' => 'title',
 );
+$config['modules']['hosts'] = array(
+	'preview_path' => 'hosts/{slug}',
+	'display_field' => 'name',
+);
 
 
 /*********************** OVERWRITES ************************************/
