@@ -23,10 +23,11 @@ $config['modules']['projects'] = array(
 $config['modules']['events'] = array(
 	'preview_path' => 'events/{slug}',
 	'display_field' => 'title',
+	'sanitize_input' => array('template','php'),
 );
 $config['modules']['hosts'] = array(
 	'preview_path' => 'hosts/{slug}',
-	'display_field' => 'name',
+	'display_field' => 'name'
 );
 
 

@@ -12,13 +12,13 @@ class Hosts_model extends Base_module_model {
     $this->db->select('id, name, address, SUBSTRING(description, 1, 50) AS description, published', FALSE);
     $data = parent::list_items($limit, $offset, $col, $order, $just_count);
     // check just_count is FALSE or else $data may not be a valid array
-    if (empty($just_count))
-    {
-      foreach($data as $key => $val)
-      {
+    if (empty($just_count)) {
+
+      foreach($data as $key => $val) {
         $data[$key]['description'] = htmlentities($val['description'], ENT_QUOTES, 'UTF-8');
       }
     }
+
     return $data;
   }
 

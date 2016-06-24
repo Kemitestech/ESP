@@ -3,17 +3,31 @@
 require_once(FUEL_PATH.'models/Base_module_model.php');
 
 class Events_model extends Base_module_model {
-  public $foreign_keys  = array('host_id' => 'hosts_model', 'category_id' => array(FUEL_FOLDER => 'fuel_categories_model', 'where' => array('context' => 'event')));
+  public $record_class = 'Event';
+  public $foreign_keys  = array('host_id' => 'hosts_model', 'category_id' => array(FUEL_FOLDER => 'fuel_categories_model', 'where' => array('context' => 'events')));
+  public $has_many = array('tags' => array(FUEL_FOLDER => 'fuel_tags_model'));
+  public $unique_fields = array('slug');
+  public $parsed_fields = array('description', 'description_formatted');
+  public $required = array('title',
+                'slug',
+                'description',
+                'event_date',
+                'event_starttime',
+                'event_endtime',
+                'host_id',
+                'location',
+      );
 
   function __construct() {
     parent::__construct('events');
   }
 
-  function list_items($limit = NULL, $offset = NULL, $col = 'name', $order = 'asc', $just_count = FALSE) {
-    $this->db->select('id, title,	event_date, location, SUBSTRING(description, 1, 50) AS description, thumbnail_image,	published', FALSE);
+  function list_items($limit = NULL, $offset = NULL, $col = 'title', $order = 'asc', $just_count = FALSE) {
+    $sql = 'events.id, events.title, events.event_date, events.location, SUBSTRING(events.description, 1, 50) AS description, events.published';
+    $this->db->select($sql, FALSE);
     $data = parent::list_items($limit, $offset, $col, $order, $just_count);
     // check just_count is FALSE or else $data may not be a valid array
-    if (empty($just_count))
+    if (!$just_count)
     {
       foreach($data as $key => $val)
       {
@@ -28,7 +42,8 @@ class Events_model extends Base_module_model {
     // ******************* ADD CUSTOM FORM STUFF HERE *******************
     $fields['main_image']['folder'] = 'images/events/';
     $fields['thumbnail_image']['folder'] = 'images/events/thumbs/';
-    $fields['list_image']['folder']   = 'images/events/lists/';
+    $fields['list_image']['folder'] = 'images/events/lists/';
+    $fields['content']['img_folder'] = 'events/';
 
     $fields['Content'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Images'] = array('type' => 'fieldset', 'class' => 'tab');
@@ -59,19 +74,42 @@ class Events_model extends Base_module_model {
       'Settings',
       'publish_date',
       'Associations',
-      'category_id'
+      'category_id',
+      'tags'
     );
 
-    foreach($order as $key => $val)
-    {
+    foreach($order as $key => $val) {
       $fields[$val]['order'] = $key + 1;
     }
 
     return $fields;
   }
 
+  function tree() {
+    return $this->_tree('foreign_keys');
+  }
+
+  public function find_upcoming($limit = NULL) {
+    return $this->find_all(array('event_date >=' => datetime_now()), NULL, $limit);
+  }
 }
 
 class Event_model extends Base_module_record {
+
+  public function get_url() {
+    return site_url('events/'.$this->slug);
+  }
+
+  public function get_main_image_path() {
+    return img_path('events/'.$this->main_image);
+  }
+
+  public function get_list_image_path() {
+    return img_path('events/lists/'.$this->list_image);
+  }
+
+  public function get_thumbnail_image_path() {
+    return img_path('events/thumbs/'.$this->thumb_image);
+  }
 
 }
