@@ -11,8 +11,7 @@ class Events_model extends Base_module_model {
   public $required = array('title',
                 'slug',
                 'description',
-                'event_date',
-                'event_starttime',
+                'event_startdate',
                 'event_endtime',
                 'host_id',
                 'location',
@@ -23,7 +22,7 @@ class Events_model extends Base_module_model {
   }
 
   function list_items($limit = NULL, $offset = NULL, $col = 'title', $order = 'asc', $just_count = FALSE) {
-    $sql = 'events.id, events.title, events.event_date, events.location, SUBSTRING(events.description, 1, 50) AS description, events.published';
+    $sql = 'events.id, events.title, events.event_startdate as start_date, events.location, SUBSTRING(events.description, 1, 50) AS description, events.published';
     $this->db->select($sql, FALSE);
     $data = parent::list_items($limit, $offset, $col, $order, $just_count);
     // check just_count is FALSE or else $data may not be a valid array
@@ -43,7 +42,7 @@ class Events_model extends Base_module_model {
     $fields['main_image']['folder'] = 'images/events/';
     $fields['thumbnail_image']['folder'] = 'images/events/thumbs/';
     $fields['list_image']['folder'] = 'images/events/lists/';
-    $fields['content']['img_folder'] = 'events/';
+    $fields['description']['img_folder'] = 'events/';
 
     $fields['Content'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Images'] = array('type' => 'fieldset', 'class' => 'tab');
@@ -51,7 +50,8 @@ class Events_model extends Base_module_model {
     $fields['Settings'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Associations'] = array('type' => 'fieldset', 'class' => 'tab');
 
-    $fields['event_starttime']['label'] = 'Start time';
+    $fields['event_startdate']['label'] = 'Start date';
+    $fields['event_enddate']['label'] = 'End date';
     $fields['event_endtime']['label'] = 'End time';
     $fields['location']['label'] = 'Address';
     $fields['host_id']['label'] = 'Host name';
@@ -62,8 +62,8 @@ class Events_model extends Base_module_model {
       'description',
       'published',
       'Event Details',
-      'event_date',
-      'event_starttime',
+      'event_startdate',
+      'event_enddate',
       'event_endtime',
       'host_id',
       'location',
@@ -89,8 +89,8 @@ class Events_model extends Base_module_model {
     return $this->_tree('foreign_keys');
   }
 
-  public function find_upcoming($limit = NULL) {
-    return $this->find_all(array('event_date >=' => datetime_now()), NULL, $limit);
+  public function find_upcoming($limit = NULL, $offset = NULL) {
+    return $this->find_all(array('event_startdate >=' => datetime_now()), NULL, $limit, $offset);
   }
 }
 
