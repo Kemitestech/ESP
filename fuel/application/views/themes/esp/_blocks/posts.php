@@ -10,7 +10,7 @@
 						<a href="<?=$post->url?>" class="thumbnail thumbnail-override">
 							<img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" alt="nature">
 						</a>
-					</div>					
+					</div>
 					<div class="col-md-6">
 						<?=blog_block('post_unpublished', array('post' => $post))?>
 						<h2 class="thumbnail-title"><a href="<?=$post->url?>"><?=$post->title?></a></h2>
@@ -33,9 +33,8 @@
 			<hr>
 			<div class="clear"></div>
 			<?php endforeach; ?>
-
 			<div class="view_archives">
-				<div class="pagination"><?php if (!empty($pagination)) : ?><?=$pagination?>  &nbsp;<?php endif; ?></div>
+				<nav><?php if (!empty($pagination)) : ?><?=$pagination?>  &nbsp;<?php endif; ?></nav>
 			</div>
 
 		<?php else: ?>

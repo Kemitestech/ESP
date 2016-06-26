@@ -9,34 +9,61 @@ if ($slug) :
     redirect_404();
   endif;
 
+  if ($event->has_page_title()) :
+    fuel_set_var('page_title', $event->page_title);
+  else :
+    fuel_set_var('page_title', $event->title);
+  endif;
+
+  if ($event->has_meta_description()) :
+    fuel_set_var('meta_description', $event->meta_description);
+  endif;
+  if ($event->has_meta_keywords()) :
+    fuel_set_var('meta_keywords', $event->meta_keywords);
+  endif;
+
+  if ($event->has_og_title()) :
+    fuel_set_var('open_graph_title', $event->og_title);
+  endif;
+
+  if ($event->has_og_description()) :
+    fuel_set_var('open_graph_description', $event->og_description);
+  endif;
+
+  if ($event->has_og_image()) :
+    fuel_set_var('open_graph_image', $event->og_image);
+  endif;
+  
+  if ($event->has_canonical()) :
+    fuel_set_var('canonical', $event->canonical);
+  endif;
+
 else:
   $CI =& get_instance();
   $CI->load->library('pagination');
   $CI->load->model('events_model');
-  $limit = 2;
-  $offset = $CI->input->get('per_page');
-  $total = $CI->events_model->record_count();
+  $CI->load->config('pagination', TRUE);
 
-  $config['base_url'] = base_url('events');
-  $config['total_rows'] = $total;
-  $config['uri_segment'] = 2;
-  $config['per_page'] = $limit;
-  $config['page_query_string'] = TRUE;
-  $config['display_pages'] = FALSE;
-  $config['next_link'] = 'Next <span aria-hidden="true">&rarr;</span>';
-  $config['prev_link'] = '<span aria-hidden="true">&larr;</span> Prev';
-  $config['full_tag_open'] = '<ul class="pager">';
-  $config['full_tag_close'] = '</ul>';
-  $config['next_tag_open'] = '<li class="next">';
-  $config['next_tag_close'] = '</li>';
-  $config['prev_tag_open'] = '<li class="previous">';
-  $config['prev_tag_close'] = '</li>';
+  $limit = 10;
+  $offset = (((int)$CI->input->get('per_page') - 1) * $limit);
+  $offset = ($offset < 0 ? 0 : $offset);
+  $base_url = base_url('events');
+  $uri_segment = 2;
+  $total = $CI->events_model->record_count(array('event_startdate >=' => datetime_now()));
+
+  $CI->config->set_item('total_rows', $total);
+  $CI->config->set_item('uri_segment', $uri_segment);
+  $CI->config->set_item('per_page', $limit);
+  $CI->config->set_item('page_query_string', TRUE);
+  $config = $CI->config->config;
+  $config['base_url'] = $base_url;
+  $config['num_links'] = 2;
+  $config['use_page_numbers'] = TRUE;
 
   $CI->pagination->initialize($config);
   $pagination = $CI->pagination->create_links();
-  $tags = fuel_model('tags');
-	$events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate', 'where' => array('event_startdate >=' => datetime_now())));
 
+	$events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate', 'where' => array('event_startdate >=' => datetime_now())));
 endif;
 
 if (!empty($event)) : ?>

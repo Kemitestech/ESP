@@ -42,12 +42,15 @@ class Events_model extends Base_module_model {
     $fields['main_image']['folder'] = 'images/events/';
     $fields['thumbnail_image']['folder'] = 'images/events/thumbs/';
     $fields['list_image']['folder'] = 'images/events/lists/';
+    $fields['og_image']['folder'] = 'images/events/og_image/';
     $fields['description']['img_folder'] = 'events/';
 
     $fields['Content'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Images'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Event Details'] = array('type' => 'fieldset', 'class' => 'tab');
     $fields['Settings'] = array('type' => 'fieldset', 'class' => 'tab');
+    $fields['Meta'] = array('type' => 'fieldset', 'class' => 'tab');
+    $fields['Open Graph'] = array('type' => 'section', 'tag' => 'h3', 'value' => 'Open Graph');
     $fields['Associations'] = array('type' => 'fieldset', 'class' => 'tab');
 
     $fields['event_startdate']['label'] = 'Start date';
@@ -73,6 +76,15 @@ class Events_model extends Base_module_model {
       'list_image',
       'Settings',
       'publish_date',
+      'Meta',
+      'page_title',
+      'meta_description',
+      'meta_keywords',
+      'canonical',
+      'Open Graph',
+      'og_title',
+      'og_description',
+      'og_image',
       'Associations',
       'category_id',
       'tags'

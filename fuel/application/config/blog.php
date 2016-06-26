@@ -1,15 +1,15 @@
-<?php 
+<?php
 /*
 |--------------------------------------------------------------------------
 | FUEL NAVIGATION: An array of navigation items for the left menu
 |--------------------------------------------------------------------------
 */
 $config['nav']['blog'] = array(
-	'blog/posts' => lang('module_blog_posts'), 
-	//'blog/categories' => lang('module_blog_categories'),  
-	'blog/comments' => lang('module_blog_comments'), 
-	'blog/links' => lang('module_blog_links'), 
-	'blog/users' => lang('module_blog_authors'), 
+	'blog/posts' => lang('module_blog_posts'),
+	//'blog/categories' => lang('module_blog_categories'),
+	'blog/comments' => lang('module_blog_comments'),
+	'blog/links' => lang('module_blog_links'),
+	'blog/users' => lang('module_blog_authors'),
 );
 
 /*
@@ -21,7 +21,7 @@ $config['nav']['blog'] = array(
 // deterines whether to use this configuration below or the database for controlling the blogs behavior
 $config['blog_use_db_table_settings'] = TRUE;
 
-// set as defaults 
+// set as defaults
 $config['blog'] = array();
 $config['blog']['title'] = '';
 $config['blog']['description'] = '';
@@ -45,9 +45,9 @@ $config['blog']['multiple_authors'] = FALSE;
 $config['blog']['limit_to_user'] = FALSE;
 $config['blog']['social_media'] = array('twitter' => 'Twitter', 'linkedin' => 'LinkedIn', 'rdio' => 'Rdio', 'googleplus' => 'Google+', 'instagram' => 'Instagram', 'pinterest' => 'Pinterest', 'flickr' => 'Flickr');
 $config['blog']['image_sizes'] = array(
-	'main'      => array('width' => 515, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE), 
-	'list'      => array('width' => 300, 'height' => 175, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE), 
-	'thumbnail' => array('width' => 100, 'height' => 100, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE),  
+	'main'      => array('width' => 515, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE),
+	'list'      => array('width' => 300, 'height' => 175, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE),
+	'thumbnail' => array('width' => 100, 'height' => 100, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE),
 	'avatar'    => array('width' => 100, 'height' => 95, 'resize_method' => 'resize_and_crop', 'resize_and_crop' => TRUE)
 );
 $config['blog']['stopforumspam'] = array(
@@ -108,14 +108,14 @@ $config['blog']['captcha'] = array(
 				'line_color' => '#ff9900,#414141,#ea631d,#aaaaaa,#f0a049,#ff9900'
 			);
 
-// comment form 
+// comment form
 $config['blog']['comment_form'] = array();
 $config['blog']['comment_form']['fields'] = array();
 
 // pagination
 $config['blog']['pagination'] = array(
-		'prev_link' => 'Prev',
-		'next_link' => 'Next',
+		'prev_link' => '<span aria-hidden="true">&larr;</span> Prev',
+		'next_link' => 'Next <span aria-hidden="true">&rarr;</span>',
 		'first_link' => '',
 		'last_link' => '',
 	);
