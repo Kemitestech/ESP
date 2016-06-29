@@ -18,7 +18,7 @@
         <div class="row" style="margin-bottom: 20px;">
 			<div class="col-xs-6 col-md-4">
 				<h3 class="header-title">Service times</h3>
-				<p>Sunday 10:00 - 14:00</br></br> Wednesday 19:00 - 21:00</br></br>Friday 19:00 - 21:00</p>
+				Sunday 10:00 - 14:00</br></br> Wednesday 19:00 - 21:00</br></br>Friday 19:00 - 21:00
 			</div>
 			<div class="col-xs-6 col-md-4">
 				<h3 class="header-title">Contact us</h3>
@@ -32,9 +32,9 @@
 			<div class="col-xs-7 col-md-4">
 				<h3 class="header-title">Social</h3>
 				<ul class="soc">
-                  <li><a class="soc-facebook" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
-                  <li><a class="soc-twitter" href="#"></a></li>
-                  <li><a class="soc-youtube" href="#"></a></li>       
+            <li><a class="soc-facebook" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
+            <li><a class="soc-twitter" href="#"></a></li>
+            <li><a class="soc-youtube" href="#"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -42,10 +42,10 @@
     <div class="container-fluid row-background">
       <div class="container">
         <div class="row">
-          <div class="col-xs-6 col-md-4"><p>Copyright &#169 2015 CCC Edward Street Parish</p></div>
-          <div class="col-xs-6 col-md-4"><p>Charity Registration Number: 5929215</p></div>
-      <div class="col-xs-6 col-md-4"><p>Designed and Developed by KemITes Tech</p></div>
-      <div class="col-xs-6 col-md-1 hidden-lg">
+          <div class="col-xs-6 col-md-4">Copyright &#169 2015 CCC Edward Street Parish</div>
+          <div class="col-xs-6 col-md-4">Charity Registration Number: 5929215</div>
+          <div class="col-xs-6 col-md-4">Designed and Developed by KemITes Tech</div>
+          <div class="col-xs-6 col-md-1 hidden-lg">
             <a href="#top" role="button" class="btn btn-default set-radius page-scroll">
               <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
             </a>

@@ -1,6 +1,6 @@
 <?php fuel_set_var('layout', ''); ?>
 <?php // declaring $page_title variable for the Home Page using fuel_set_var ?>
-<?php fuel_set_var('page_title', 'Welcome | CCC Edward Street Parish'); ?>
+<?php fuel_set_var('page_title', 'Welcome | CCC Edward Street Parish Church'); ?>
 <?php $this->load->view('_blocks/header'); ?>
 <div id ="home-hero" class="slider1 jumbotron jumbo-slider-override hero-hover">
   <div style="background: url('https://placeimg.com/1000/400/tech') no-repeat center center; background-size: cover; height: 350px;">

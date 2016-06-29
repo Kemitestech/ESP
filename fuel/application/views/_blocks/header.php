@@ -3,12 +3,18 @@
 <head>
 	<?php if(!empty($is_blog)) : ?>
 	<title><?=$CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
-	<?php else : ?>
+  <?php elseif (is_home()) : ?>
 	<title><?=fuel_var('page_title', '')?></title>
+	<?php else : ?>
+	<title><?=fuel_var('page_title', '') . ' | CCC Edward Street Parish'?></title>
   <?php endif;  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
 	<meta name="keywords" content="<?=fuel_var('meta_keywords'); ?>" />
   <meta name="description" content="<?=fuel_var('meta_description'); ?>" />
+	<meta property="og:title" content="<?=fuel_var('open_graph_title', '')?>" />
+	<meta property="og:description" content="<?=fuel_var('open_graph_description', '')?>" />
+	<meta property="og:image" content="<?=fuel_var('open_graph_image', '')?>" />
+	<link rel="canonical" href="<?=fuel_var('canonical', '')?>" />
 
   <?php echo css('bootstrap.min.css'); ?>
   <?php echo css('bootstrap-theme.min.css'); ?>
