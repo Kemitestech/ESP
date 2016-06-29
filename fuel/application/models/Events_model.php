@@ -124,4 +124,20 @@ class Event_model extends Base_module_record {
     return img_path('events/thumbs/'.$this->thumb_image);
   }
 
+  function get_tags_linked($order = 'name asc', $join = ', ', $link_params = array()) {
+    $tags = $this->tags;
+
+    if ( ! empty($tags)) {
+      $tags_linked = array();
+
+      foreach ($tags as $tag) {
+        $tags_linked[] = anchor(base_url('events/tags/'.$tag->slug), ucfirst($tag->name), $link_params);
+      }
+
+      $return = implode($tags_linked, $join);
+      return $return;
+    }
+    return NULL;
+  }
+
 }

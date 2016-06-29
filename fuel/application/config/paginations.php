@@ -1,7 +1,7 @@
 <?php
 $config['total_rows'] = NULL;
 $config['uri_segment'] = NULL;
-$config['per_page'] = NULL;
+$config['per_page'] = 10;
 $config['base_url'] = NULL;
 $config['page_query_string'] = NULL;
 $config['display_pages'] = FALSE;

@@ -3,7 +3,10 @@
 require_once(FUEL_PATH.'models/Base_module_model.php');
 
 class Hosts_model extends Base_module_model {
-
+  public $parsed_fields = array('description', 'description_formatted');
+  public $required = array('name', 'address');
+  public $unique_fields = array('name');
+  
   function __construct() {
     parent::__construct('hosts');
   }

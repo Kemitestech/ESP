@@ -33,37 +33,39 @@ if ($slug) :
   if ($event->has_og_image()) :
     fuel_set_var('open_graph_image', $event->og_image);
   endif;
-  
+
   if ($event->has_canonical()) :
     fuel_set_var('canonical', $event->canonical);
   endif;
 
 else:
-  $CI =& get_instance();
   $CI->load->library('pagination');
   $CI->load->model('events_model');
-  $CI->load->config('pagination', TRUE);
+  $CI->load->config('paginations', TRUE);
 
-  $limit = 10;
+  $limit = $CI->config->item('per_page', 'paginations');
+
   $offset = (((int)$CI->input->get('per_page') - 1) * $limit);
   $offset = ($offset < 0 ? 0 : $offset);
   $base_url = base_url('events');
   $uri_segment = 2;
   $total = $CI->events_model->record_count(array('event_startdate >=' => datetime_now()));
 
-  $CI->config->set_item('total_rows', $total);
-  $CI->config->set_item('uri_segment', $uri_segment);
-  $CI->config->set_item('per_page', $limit);
-  $CI->config->set_item('page_query_string', TRUE);
   $config = $CI->config->config;
+  $config = $config['paginations'];
   $config['base_url'] = $base_url;
   $config['num_links'] = 2;
   $config['use_page_numbers'] = TRUE;
+  $config['total_rows'] = $total;
+  $config['uri_segment'] = $uri_segment;
+  $config['page_query_string'] = TRUE;
 
   $CI->pagination->initialize($config);
   $pagination = $CI->pagination->create_links();
 
 	$events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate', 'where' => array('event_startdate >=' => datetime_now())));
+  $vars['events'] = $events;
+  $vars['pagination'] = $pagination;
 endif;
 
 if (!empty($event)) : ?>
@@ -102,41 +104,11 @@ if (!empty($event)) : ?>
   </div>
 </div>
 
-<?php else: ?>
+<?php
+else: ?>
 <div class="container">
   <h1>Upcoming and Latest Events</h1>
-	<div class="row">
-  <?=fuel_edit('create', 'Create event', 'events')?>
-		<div class="col-md-10">
-
-
-  <?php foreach($events as $event) : ?>
-		<div class="row">
-			<div class="event">
-				<div class="col-md-3">
-					<a href="<?=$event->url?>" class="thumbnail thumbnail-override">
-						<img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" alt="nature">
-					</a>
-				</div>
-				<div class="col-md-6">
-					<h2 class="thumbnail-title"><a href="<?=$event->url?>"><?=$event->title?></a></h2>
-					<p class="thumnail-p"><strong><?=date_formatter($event->event_startdate, 'F jS Y')?><?=' at '.date_formatter($event->event_startdate, 'H:i')?></strong></p>
-					<p class="thumnail-p">HOSTED BY <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
-					<a href="<?=$event->url?>"><button type="submit" class="btn btn-info no-radius">View Event Details</button></a>
-				</div>
-			</div>
-		</div>
-		<hr>
-  <?php endforeach; ?>
-  <div class="view_archives">
-
-      <nav>
-      <?php if (!empty($pagination)) : ?><?=$pagination?>  &nbsp;<?php endif; ?>
-      </nav>
-
-  </div>
-  </div>
-	</div>
-
+  <?=$this->load->view('_blocks/event_posts', $vars)?>
 </div>
-<?php endif; ?>
+<?php
+endif; ?>

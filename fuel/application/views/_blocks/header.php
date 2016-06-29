@@ -3,7 +3,7 @@
 <head>
 	<?php if(!empty($is_blog)) : ?>
 	<title><?=$CI->fuel_blog->page_title($page_title, ' | ', 'right'); ?></title>
-	<?php elseif ($is_home) : ?>
+  <?php elseif (is_home()) : ?>
 	<title><?=fuel_var('page_title', '')?></title>
 	<?php else : ?>
 	<title><?=fuel_var('page_title', '') . ' | CCC Edward Street Parish'?></title>
