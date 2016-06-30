@@ -405,6 +405,10 @@ overflow-y: scroll;
   border: none;
 }
 
+p.tenet {
+  padding: 10px;
+  font-weight: 400;
+}
 /*
 -----------------------------------------------------------
             Article Page styles
