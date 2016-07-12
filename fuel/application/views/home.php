@@ -37,6 +37,7 @@
     </div>
   </div>
 </div>
+
 <div id="home-news-container" class="container-fluid jumbotron">
   <!--start of container-->
   <div class="container ">
@@ -129,6 +130,8 @@
     <!-- end of col-md -->
   </div>
   <!-- end of container -->
+
 </div>
+<?=$this->load->view('_blocks/quotations')?>
 <?php $this->load->view('_blocks/newsletter_section')?>
 <?php $this->load->view('_blocks/footer'); ?>

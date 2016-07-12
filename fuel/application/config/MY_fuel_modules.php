@@ -27,5 +27,6 @@ $config['modules']['projects'] = array(
 
 $config['module_overwrites']['categories']['hidden'] = FALSE; // change to FALSE if you want to use the generic categories module
 $config['module_overwrites']['tags']['hidden'] = FALSE; // change to FALSE if you want to use the generic tags module
+$config['modules']['quotations'] = array();
 
 /*********************** /OVERWRITES ************************************/
