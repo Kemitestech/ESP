@@ -9,10 +9,10 @@
 	  <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <a>
-          <p class="bg-orange tenet">It is essential to worship GOD</p>
+          <p class="bg-orange tenet">We must not wear shoes while wearing Sutana and whilst within the church premises</p>
         </a>
         <div class="caption">
-            <p>Exodus 34: 8<br> Psalms 99: 5<br>Revelations 14: 7<br> Matthew 4: 10</p>
+          <p>Matthew 17: 1 - 2<br>Matthew 28: 2 - 3<br>Mark 9: 2 - 3<br>Revelation 7: 9</p>
         </div>
       </div>
 
@@ -37,24 +37,22 @@
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
-          <a>
-            <p class="bg-blue tenet">Carrying corpse into the church is forbidden</p>
-          </a>
-          <div class="caption">
-            <p>Numbers 19: 12 - 14<br> Isaiah 38: 18<br>Ezekiel 43: 7 - 9<br>Mark 12: 27</p>
-          </div>
+        <a>
+          <p class="bg-blue tenet">Protection and GOD's injunction according to the dictates of the holy spirit</p>
+        </a>
+        <div class="caption">
+          <p>Matthew 2: 13 - 19<br>Joshua 20: 1 - 6<br>Numbers 35: 6<br>Deuteronomy 4: 41 - 43</p>
+        </div>
       </div>
-
     </div>
     <hr>
     <div class="row">
-
       <div class="col-xs-12 col-sm-6 col-md-3">
         <a>
-          <p class="bg-orange tenet">We must not wear shoes while wearing Sutana and whilst within the church premises</p>
+          <p class="bg-orange tenet">It is essential to worship GOD</p>
         </a>
         <div class="caption">
-          <p>Matthew 17: 1 - 2<br>Matthew 28: 2 - 3<br>Mark 9: 2 - 3<br>Revelation 7: 9</p>
+            <p>Exodus 34: 8<br> Psalms 99: 5<br>Revelations 14: 7<br> Matthew 4: 10</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3">
@@ -104,19 +102,19 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
       <a>
-        <p class="bg-green tenet">Protection and GOD's injunction according to the dictates of the holy spirit</p>
-      </a>
-      <div class="caption">
-        <p>Matthew 2: 13 - 19<br>Joshua 20: 1 - 6<br>Numbers 35: 6<br>Deuteronomy 4: 41 - 43</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <a>
-        <p class="bg-blue tenet">New moon service, is a divine injunction</p>
+        <p class="bg-green tenet">New moon service, is a divine injunction</p>
       </a>
       <div class="caption">
         <p>Numbers 28: 11</p>
       </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a>
+          <p class="bg-blue tenet">Carrying corpse into the church is forbidden</p>
+        </a>
+        <div class="caption">
+          <p>Numbers 19: 12 - 14<br> Isaiah 38: 18<br>Ezekiel 43: 7 - 9<br>Mark 12: 27</p>
+        </div>
     </div>
    </div>
   </div>

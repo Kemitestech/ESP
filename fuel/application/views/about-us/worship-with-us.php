@@ -20,7 +20,7 @@
             <table class="table table-striped table-condensed table-margin">
               <tr>
                 <th scope="col"><h2 class="header-title">Day</h2></th>
-                <th scope="col"><h2 class="header-title">Type of Services</h2></th>
+                <th scope="col"><h2 class="header-title">Type of Service</h2></th>
                 <th scope="col"><h2 class="header-title">Time</h2></th>
               </tr>
               <tr>
@@ -35,13 +35,11 @@
               </tr>
               <tr>
                 <td><h3>Wednesday</h3></td>
-                <td><h3>Service for the Needy</h3></td>
-                <td><h3>9.00am - 9.30pm</h3></td>
-              </tr>
-              <tr>
-                <td><h3>Wednesday</h3></td>
-                <td><h3>Mercy Day</h3></td>
-                <td><h3>7.00pm - 9.00pm</h3></td>
+                <td>
+                  <h3>Service for the Needy</h3>
+                  <h3>Mercy Day</h3>
+                </td>
+                <td><h3>9.00am - 9.30am</h3><h3>7.00pm - 9.00pm</h3></td>
               </tr>
               <tr>
                 <td><h3>Thursday</h3></td>
@@ -50,13 +48,14 @@
               </tr>
               <tr>
                 <td><h3>Friday</h3></td>
-                <td><h3>Power Day</h3></td>
-                <td><h3>7:00pm - 9.00pm</h3></td>
-              </tr>
-              <tr>
-                <td><h3>Friday</h3></td>
-                <td><h3>Prophet and Prophetess</h3></td>
-                <td><h3>9.00pm - 12.00am</h3></td>
+                <td>
+                  <h3>Power Day</h3>
+                  <h3>Prophet and Prophetess</h3>
+                </td>
+                <td>
+                  <h3>7:00pm - 9.00pm</h3>
+                  <h3>9.00pm - 12.00am</h3>
+                </td>
               </tr>
             </table>
             </div>
@@ -66,7 +65,7 @@
       <div role="tabpanel" id="coc" class="tab-pane fade"><!--Start of tabpanel-->
         <div class="row">
           <div class="col-md-12">
-            <ol style="margin-top: 50px;">
+            <ol class="coc_items">
               <li><p>Service Conductors must sanctify themselves, keeping off from all impurities for three days prior to the Lord's day or any other service day - Exodus 19: 10-15.</p></li>
               <li><p>All elders, in the church should put on robes appropriate for their respective ranks, in accordance with the laid-down tenet of the church. On Sunday and New Year-day, they should all appear in their full regalia.</p></li>
               <li><p>It is very important for all literate members to cultivate the habit of reading the Bible in order to save themselves from any embarassment if and when they are called upon to read the Bible or any other book.</p></li>

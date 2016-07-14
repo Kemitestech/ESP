@@ -6,14 +6,13 @@
     <div class="row">
       <div class="col-md-3 col-md-offset-4 col-xs-12 col-sm-6">
         <a href="#">
-          <div class="bg-torqouise flaticon_thumbnail">
+          <div class="bg-torqouise flaticon_thumbnail" style="margin-bottom: 20px;">
             <img src="<?=assets_path('images/iconfinder/shepherd.svg'); ?>" class="img-responsive" alt="image">
             <h3>Shepherd</h3>
           </div>
         </a>
       </div>
     </div>
-    <hr>
     <div class="row">
       <div class="col-md-3 col-xs-12 col-sm-6">
           <a href="#">
@@ -51,5 +50,6 @@
         </a>
       </div>
 		</div>
+    <hr>
     </div>
   </div>

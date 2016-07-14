@@ -463,6 +463,13 @@ margin-top: 50px;
   background-clip: padding-box;
 }
 
+.coc_items {
+  margin-top: 50px;
+}
+
+.coc_items li > p {
+  font-weight: 400;
+}
 /*
 -----------------------------------------------------------
             Contact Page styles
@@ -622,14 +629,9 @@ left: 0px;
   text-align: center;
 }
 
-
-.navbar-default {
-
-}
-
- #primary-nav.navbar-nav > .active > a,
- #primary-nav.navbar-nav > li > a:hover,
- #primary-nav.navbar-nav > .active > a:focus {
+#primary-nav.navbar-nav > .active > a,
+#primary-nav.navbar-nav > li > a:hover,
+#primary-nav.navbar-nav > .active > a:focus {
     /* Set the color of the active state of navbar tabs */
     background-color: #00a1c6;
     background-image: url('../images/bedge-grunge.png');
