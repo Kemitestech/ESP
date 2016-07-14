@@ -212,6 +212,21 @@ overflow-y: scroll;
   color: #FFB100;
 }
 
+.quotes{
+    /*background-color: #00a1c6;
+  background-image: url('../images/bedge-grunge.png');
+  background-size: 100% 100%;*/
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  min-height: 150px;
+}
+
+.quotes-bible_description{
+  font-size: 22px;
+  font-weight: 400;
+}
+
 .event-details {
   display: -webkit-box;
   display: -webkit-flex;

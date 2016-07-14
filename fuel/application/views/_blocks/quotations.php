@@ -17,11 +17,11 @@
 	endif;
 
 ?>
-<div class="jumbotron" style="background-color: #00a1c6; background-image: url('/~mclaren/esp/assets/images/bedge-grunge.png'); background-size: 100% 100%;">
-	<div class="container" style="text-align: center; margin-top: 50px;">
-		<div style="color: white;">
-			<p><?=$description;?></p>
-			<p><?=ucfirst($bible_verse);?></p>
+<div class="quotes">
+	<div class="container">
+		<div>
+			<p class="quotes-bible_description"><?=$description;?></p>
+			<i><p>- <?=ucfirst($bible_verse);?></p></i>
 		</div>
 	</div>
 </div>
