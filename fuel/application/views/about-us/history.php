@@ -1,12 +1,12 @@
-<div id="history-banner"class="jumbotron jumbotron-img reset-jumb-pos" style="color: white;">
+<div id="history-banner" class="jumbotron jumbotron-img reset-jumb-pos" style="color: white;">
     <div class="container">
-       <div class="page-header page-header-nounderline"> 
+       <div class="page-header page-header-nounderline">
       <h1>Our History</h1>
       <p>Edward Street Parish has a rich history as a church and also as part of Celestial Church of Christ World Wide</p>
-       </div>       
+       </div>
       </div>
-  </div>
-  <div class="jumbotron contact-background reset-jumb-pos">    
+</div>
+  <div class="jumbotron contact-background reset-jumb-pos">
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#ccc-history" data-toggle="tab" aria-controls="ccc-history" role="tab">Celestial Church of Christ</a></li>
@@ -14,7 +14,7 @@
         </ul>
         <div class="tab-content"><!--Start of tab-content-->
           <div role="tabpanel" id="ccc-history" class="tab-pane fade in active"><!--Start of tabpanel-->
-          
+
            <div class="row"><!--Start of row-->
             <div class="content" data-spy="scroll" data-target="navbar-example" data-offset="5">
              <div class="col-md-9" id="mainCol">
@@ -24,8 +24,8 @@
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       <h4 class="modal-title" id="myModalLabel">Founder of Celestial Church of Christ</h4>
-                    </div> 
-                    <div class="modal-body">              
+                    </div>
+                    <div class="modal-body">
                     <div class="row"><!--Start of row-->
                      <div class="col-md-8 col-md-offset-2">
                        <div class="thumbnail">
@@ -56,7 +56,7 @@
               The name of the Church "Celestial Church of Christ" was revealed by the Holy Spirit through a Prophet who was held in trance for seven days.<br><br>
               <b>The Tenets and Mode of Worship of the Church:</b><br><br>
               Ordained by the Holy Spirit.  The rules and regulations written in the booklet of "Tents and Admission into the membership of Celestial Church of Christ."<br><br>
-              Mode of worship includes the setting of the Altar, and the seat therein, the number of candles used for various types of services and the seating arrangement in particular, it should be noted that the seating arrangements was revealed through a Prophetess who under the influence of the Holy Spirit in the wilderness on Friday 5th of October, 1947, sketched the seating arrangement using oranges. 
+              Mode of worship includes the setting of the Altar, and the seat therein, the number of candles used for various types of services and the seating arrangement in particular, it should be noted that the seating arrangements was revealed through a Prophetess who under the influence of the Holy Spirit in the wilderness on Friday 5th of October, 1947, sketched the seating arrangement using oranges.
               <br><br>
               <b>The Service of the Church:</b><br><br>
               Revealed through the Holy Spirit as promised by our Lord Jesus Christ (John 14:25-26)<br><br>
@@ -79,14 +79,14 @@
                     <li><a href="#sec5">Membership</a></li>
                   </ul>
               </div>
-              </div><!--End of content-->              
+              </div><!--End of content-->
               </div><!--End of row-->
             </div><!--End of tab panel-->
               <div role="tabpanel" class="tab-pane fade" id="edward-history">
                 <h1><small>CCC Edward Street Parish</small></h1>
                 <p>Work in Progress. History coming soon<p>
               </div>
-           </div> 
+           </div>
           </div><!--End of tab-content-->
     </div>
   </div>
