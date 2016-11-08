@@ -33,7 +33,6 @@
 				<h3 class="header-title">Social</h3>
 				<ul class="soc">
             <li><a class="soc-facebook" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
-            <li><a class="soc-twitter" href="#"></a></li>
             <li><a class="soc-youtube" href="#"></a></li>
 				</ul>
 			</div>
