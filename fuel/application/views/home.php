@@ -40,83 +40,28 @@
     <div class="col-md-13 col-md-offset-1">
       <!-- Start of slider -->
       <div class="slider">
+        <?php
+          $posts = $this->fuel->blog->get_recent_posts($limit = 3, $where = null);
+
+          if (!empty($posts)) :
+            foreach($posts as $post): ?>
         <div>
           <div class="col-md-11">
             <div class="thumbnail thumbnail-override">
              <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
              <div class="caption">
-            <h4 class="header-title">Coming Soon</h4>
-            <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p><a class="btn btn-news"  disabled role="button">Read more</a></p>
+              <h3 class="header-title"><?=$post->title?></h3>
+              <p class="no-jumbotron-p"><?=$post->get_excerpt_formatted(50, '')?></p>
+              <p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read more</a></p>
              </div>
             </div>
           </div>
         </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-             <img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-             <div class="caption">
-               <h4 class="header-title">Coming Soon</h4>
-               <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-               <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-             </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-              <div class="thumbnail thumbnail-override">
-                <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
-                <div class="caption">
-                  <h4 class="header-title">Coming Soon</h4>
-                  <p class="no-jumbotron-p">Lorem psyche ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-                </div>
-              </div>
-          </div>
-        </div>
+        <?php
+            endforeach;
+          else: ?>
+            <h2>No posts available</h2>
+        <?php  endif; ?>
       </div>
       <!-- end of slider -->
     </div>
