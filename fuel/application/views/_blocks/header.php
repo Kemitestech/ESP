@@ -75,19 +75,19 @@
 						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
-						<li class="hidden-xs hidden-sm">
+					<!--<li class="hidden-xs hidden-sm">
 							<a>
-								<img src="<?php echo assets_path('images/search2.png'); ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
+								<img src="<?php //echo assets_path('images/search2.png'); ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
 							</a>
-						</li>
-						<form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
+						</li>-->
+						<!--<form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
 							<div class="form-group">
 							 <div class="col-xs-7 col-sm-8 search-pos">
 							  <input type="text" class="form-control" placeholder="Search">
 							 </div>
 							 <button type="submit"style="margin-left: 20px;" class="btn btn-default">Search</button>
 							</div>
-						</form>
+						</form>-->
 						<li class="visible-lg-inline">
 						<?php if(!$CI->fuel->blog->is_logged_in()) :?>
 							<a href="<?php echo base_url('fuel/login'); ?>" class="nav-color">
