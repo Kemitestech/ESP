@@ -29,106 +29,65 @@
     </div>
   </div>
 </div>
-<div id="testimonial-parralax" class="container-fluid parallax-window">
-  <div class="jumbotron vertical-center text-center" style="background: none;">
-    <div class="container" style="color: white;">
-      <h2>Would you like to see our testimonies?</h2>
-      <a href="testimonials.html" class="btn btn-lg btn-transparent"  role="button">View</a>
-    </div>
-  </div>
-</div>
+<?php //$this->load->view('_blocks/paralax_testimonials')?>
+<?=$this->load->view('_blocks/quotations')?>
 <div id="home-news-container" class="container-fluid jumbotron">
   <!--start of container-->
   <div class="container ">
     <div class="page-header page-header-nounderline">
-        <h1 class="header-title" style="text-align: center;">News and Events</h1>
+        <h1 class="header-title" style="text-align: center;">Posts and Events</h1>
     </div>
     <div class="col-md-13 col-md-offset-1">
       <!-- Start of slider -->
       <div class="slider">
+        <?php
+          $posts = $this->fuel->blog->get_recent_posts($limit = 3, $where = null);
+
+          $date = new DateTime();
+          $events_date_range = $date->sub(new DateInterval('P5M'))->format('Y-m-d H:i:s') ?: $date->format('Y-m-d H:i:s');
+          $events = fuel_model('events', array('limit' => 3, 'order' => 'event_startdate', 'where' => array('event_startdate >=' => $events_date_range)));
+
+          if (!empty($posts)) :
+            foreach($posts as $post): ?>
         <div>
           <div class="col-md-11">
             <div class="thumbnail thumbnail-override">
              <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
              <div class="caption">
-            <h4 class="header-title">Coming Soon</h4>
-            <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p><a class="btn btn-news"  disabled role="button">Read more</a></p>
+              <h3 class="header-title"><?=$post->title?></h3>
+              <p class="no-jumbotron-p"><?=$post->get_excerpt_formatted(50, '')?></p>
+              <p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read More</a></p>
              </div>
             </div>
           </div>
         </div>
+      <?php endforeach; ?>
+  <?php endif; ?>
 
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-             <img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-             <div class="caption">
-               <h4 class="header-title">Coming Soon</h4>
-               <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-               <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-             </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/tech" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
-            <div class="thumbnail thumbnail-override">
-              <img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image" style="width: 100%;">
-              <div class="caption">
-                <h4 class="header-title">Coming Soon</h4>
-                <p class="no-jumbotron-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="col-md-11">
+  <?php if (!empty($events)) :
+          foreach($events as $event) : ?>
+          <div>
+            <div class="col-md-11">
               <div class="thumbnail thumbnail-override">
-                <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
-                <div class="caption">
-                  <h4 class="header-title">Coming Soon</h4>
-                  <p class="no-jumbotron-p">Lorem psyche ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <p><a class="btn btn-news" disabled role="button">Read more</a></p>
-                </div>
+               <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
+               <div class="caption">
+                <h3 class="header-title"><?=$event->title?></h3>
+                <p>Hosted by <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
+                <p><a class="btn btn-news" href="<?=$event->url?>" role="button">View Event</a></p>
+               </div>
               </div>
+            </div>
           </div>
-        </div>
+    <?php endforeach; ?>
+  <?php endif;?>
       </div>
       <!-- end of slider -->
     </div>
     <!-- end of col-md -->
   </div>
   <!-- end of container -->
+
 </div>
+
 <?php $this->load->view('_blocks/newsletter_section')?>
 <?php $this->load->view('_blocks/footer'); ?>

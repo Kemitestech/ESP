@@ -8,9 +8,6 @@
 				<div class="col-xs-7 col-md-5 col-md-offset-1">
 					<ul class="nav">
 					<li class="horizontal-lists"><a href="<?php echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li>
-					<li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Terms of Use</a></li>
-					<li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Trademark</a></li>
-					<li class="horizontal-lists"><a href="#" class="header-title" style="font-size:14px;">Site Map</a></li>
 					</ul>
 				</div>
 			</div>
@@ -33,8 +30,7 @@
 				<h3 class="header-title">Social</h3>
 				<ul class="soc">
             <li><a class="soc-facebook" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
-            <!--<li><a class="soc-twitter" href="#"></a></li>-->
-            <li><a class="soc-youtube" href="#"></a></li>
+            <li><a class="soc-youtube" href="https://www.youtube.com/channel/UCPVuinVvBtnG3WQabRB0bRw"></a></li>
 				</ul>
 			</div>
 		</div>

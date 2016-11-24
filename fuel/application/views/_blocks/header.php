@@ -57,38 +57,38 @@
 			    	<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'about-us') !== false) echo $active; ?>">
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
-							<li class="<?php if(uri_string() == 'about-us/what-we-do') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/what-we-do') ?>" class="nav-color ">What we do</a></li>
-							<li class="<?php if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
+							<!--<li class="<?php //if(uri_string() == 'about-us/what-we-do') echo $dropdownactive; ?>"><a href="<?php //echo base_url('about-us/what-we-do') ?>" class="nav-color ">What we do</a></li>
+							<li class="<?php //if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php //echo base_url('about-us/history') ?>" class="nav-color">History</a></li>-->
 							<li class="<?php if(uri_string() == 'about-us/tenets') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
               <li class="<?php if (uri_string() == 'about-us/our-church-administration') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-church-administration') ?>" class="nav-color">Church Administration</a></li>
 							<li class="<?php if (uri_string() == 'about-us/spiritual-arms-of-church') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/spiritual-arms-of-church') ?>" class="nav-color">Spiritual arms of church</a></li>
 							<li class="<?php if(uri_string() == 'about-us/worship-with-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/worship-with-us') ?>" class="nav-color">Worship with us</a></li>
-							<li class="<?php if(uri_string() == 'about-us/contact-us') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/contact-us') ?>" class="nav-color nav-hover">Contact</a></li>
 		  				</ul>
 						</li>
 						<!-- Start of About us section dropdown navigation -->
 						<!-- End of About us section dropdown navigation -->
 						<li class="collapse-underline <?php if(uri_string() == 'blog') echo $active; ?>"><a href="<?php echo base_url('blog') ?>" class="nav-color nav-hover">Blog</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'events') echo $active; ?>"><a href="<?php echo base_url('events') ?>" class="nav-color nav-hover">Events</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'youth') echo $active; ?>"><a href="<?php echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>
+						<!--<li class="collapse-underline <?php //if(uri_string() == 'youth') echo $active; ?>"><a href="<?php //echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>-->
+						<li class="collapse-underline <?php if(uri_string() == 'contact-us') echo $active; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact Us</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
-						<li class="hidden-xs hidden-sm">
+					<!--<li class="hidden-xs hidden-sm">
 							<a>
-								<img src="<?php echo assets_path('images/search2.png'); ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
+								<img src="<?php //echo assets_path('images/search2.png'); ?>" class="nav-img-display" alt="" role="button" data-target="#collapseExample"data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
 							</a>
-						</li>
-						<form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
+						</li>-->
+						<!--<form class="navbar-form navbar-left navbar-form-override visible-xs-inline visible-sm-inline" role="search">
 							<div class="form-group">
 							 <div class="col-xs-7 col-sm-8 search-pos">
 							  <input type="text" class="form-control" placeholder="Search">
 							 </div>
 							 <button type="submit"style="margin-left: 20px;" class="btn btn-default">Search</button>
 							</div>
-						</form>
+						</form>-->
 						<li class="visible-lg-inline">
 						<?php if(!$CI->fuel->blog->is_logged_in()) :?>
 							<a href="<?php echo base_url('fuel/login'); ?>" class="nav-color">
