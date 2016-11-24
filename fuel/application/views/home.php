@@ -78,7 +78,7 @@
               </div>
             </div>
           </div>
-    <?php endforeach;?>
+    <?php endforeach; ?>
   <?php endif;?>
       </div>
       <!-- end of slider -->
