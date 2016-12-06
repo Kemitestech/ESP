@@ -1,12 +1,18 @@
 {
-	"description" : "The CodeIgniter framework",
-	"name" : "codeigniter/framework",
-	"license": "MIT",
-	"require": {
-		"php": ">=5.2.4"
-	},
-	"require-dev": {
-		"mikey179/vfsStream": "1.1.*",
-		"vlucas/phpdotenv": "^2.4"
-	}
+    "name": "kemitestech/esp_website",
+    "description": "Website for Edward Street Parish",
+    "require": {
+        "php": ">=5.2.4",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KemitesTech",
+            "email": "kemitestech@gamil.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+    }
 }
