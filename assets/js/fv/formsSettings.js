@@ -10,11 +10,11 @@ $(document).ready(function() {
             fullname: {
                 validators: {
                     notEmpty: {
-                        message: 'The fullname is required'
+                        message: 'Your full name is required'
                     },
 					stringLength: {
                         max: 50,
-                        message: 'The fullname must be less than 50 characters'
+                        message: 'Your full name must be less than 50 characters'
                     }
                 }
             },
@@ -22,17 +22,17 @@ $(document).ready(function() {
                 validators: {
                     stringLength: {
                         max: 50,
-                        message: 'The business name must be less than 70 characters'
+                        message: 'Your business name must be less than 50 characters'
                     }
                 }
             },
 			email: {
                 validators: {
                     emailAddress: {
-                        message: 'The value is not a valid email address'
+                        message: 'Please enter a valid email address'
                     },
                     notEmpty: {
-                        message: 'The Email Address is required'
+                        message: 'Your Email Address is required'
                     }
                 }
             },
@@ -50,7 +50,7 @@ $(document).ready(function() {
             subject: {
                 validators: {
                     notEmpty: {
-                        message: 'The subject is required'
+                        message: 'A subject is required'
                     },
                     stringLength: {
                         max: 50,
@@ -62,10 +62,10 @@ $(document).ready(function() {
                 validators: {
                     stringLength: {
                         max: 300,
-                        message: 'The enquiry must be less than 200 characters'
+                        message: 'Your enquiry must be less than 300 characters'
                     },
                     notEmpty: {
-                        message: 'The enquiry is required'
+                        message: 'Please tell us about your enquiry'
                     }
                 }
             }
@@ -79,31 +79,31 @@ $(document).ready(function() {
     .on('success.form.fv', function(e) {
         e.preventDefault();
         var $form = $(e.target);
-        
+
         $.ajax({
             type: 'POST',
-            url: 'http://www.eunuigbe.home/~unuigbee/edwardstreetparish/contactform',
+            url: 'http://www.eunuigbe/~unuigbee/edwardstreetparish/Contactform',
             dataType: 'json',
             data: $form.serialize(),
             success: function(response){
+                $('#csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
+
+                if(response.result === 'error'){
+                  $('#alertmessage')
+                  .removeClass('alert-success')
+                  .addClass('alert-warning')
+                  .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
+                  .show();
+                  $('#alertmodal').modal('show');
+                } else if(response.result === 'ok') {
                     $form.formValidation('resetForm', true);
-                    if(response.result === 'error'){
-                        $('#alertmessage')
-                        .removeClass('alert-success')
-                        .addClass('alert-warning')
-                        .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
-                        .show();
-                        $('#alertmodal').modal('show');
-                    }
-                    if(response.result === 'ok'){
-                        $('#alertmessage')
-                        .removeClass('alert-warning')
-                        .addClass('alert-success')
-                        .html('Thank you, your message has been sent.')
-                        .show();
-                        $('#alertmodal').modal('show');
-                    }
-                        
+                    $('#alertmessage')
+                    .removeClass('alert-warning')
+                    .addClass('alert-success')
+                    .html('Thank you, your message has been sent.')
+                    .show();
+                    $('#alertmodal').modal('show');
+                }
             },
             error: function(xhr){
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
@@ -112,6 +112,6 @@ $(document).ready(function() {
                     console.log(json.message);
                 }
             }
-        });   
+        });
     });
 });

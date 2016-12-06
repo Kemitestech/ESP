@@ -8,6 +8,10 @@ class Contactform extends CI_Controller {
 
     public function index() {
 				$this->load->library('email');
+				$dotenv = new Dotenv\Dotenv(FCPATH);
+				$dotenv->load();
+				$spark_post_username = getenv('SPARK_POST_USERNAME');
+				$spark_post_password = getenv('SPARK_POST_SECRET');
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|alpha_numeric_spaces');
@@ -26,9 +30,6 @@ class Contactform extends CI_Controller {
 
         }
         else {
-						$email_config = $this->config->load('mailchimp_email', TRUE, TRUE); // Loads Mailchimp configurations
-
-						$to_address = $email_config['to_address']; // Gets the 'to address' item from mailchimp_email config file
             $fullname = $this->input->post('fullname');
             $businessname = $this->input->post('businessname');
             $email = $this->input->post('email');
@@ -39,24 +40,39 @@ class Contactform extends CI_Controller {
             $this->output->set_content_type('application/json');
             $this->output->set_status_header('200');
 
-						$this->email->initialize($email_config);
+						$config['protocol'] = 'smtp';
+						$config['charset']  = 'utf-8'; //Change this you your preferred charset
+						$config['wordwrap'] = TRUE;
+						$config['mailtype'] = "html"; //Use 'text' if you don't need html tags and images
+						$config['crlf'] = "\r\n";      //should be "\r\n"
+						$config['newline'] = "\r\n";   //should be "\r\n"
 
-            $this->email->from($email, $fullname);
-            $this->email->to($to_address);
+						$config['smtp_host'] = 'smtp.sparkpostmail.com';
+						$config['smtp_user'] = $spark_post_username;
+						$config['smtp_pass'] = $spark_post_password;
+						$config['smtp_port'] = '587';
+						$config['smtp_crypto'] = 'tls';
+
+						$this->email->initialize($config);
+            $this->email->from('testing@sparkpostbox.com', $fullname);
+						$this->email->reply_to($email, $fullname);
+            $this->email->to("info@cccedwardstreetparish.org");
             $this->email->subject($subject);
 
 						//Checks if businessname and phonenumber is empty.
 						//If empty set variables to empty string
-						$businessname = !empty($businessname) ? 'Business Name:' . $businessname . '<br>' : '';
-						$phone = !empty($phone) ? 'Telephone Number:' . $phone . '<br><br>' : '';
+						$businessname = !empty($businessname) ? 'Business name: ' . $businessname . '<br><br>' : '';
+						$phone = !empty($phone) ? 'Contact Number: ' . $phone . '<br><br>' : '';
+						$conclusion = 'Kind regards,<br>' . $fullname
+						$this->email->message('Dear Edward Street Parish,<br><br>' . $message . '<br><br>' . $businessname . $phone . $conclusion);
 
-						$this->email->message('Dear Edward Street Parish,<br><br>' . $businessname . $phone . $message);
+						$csrfTokenName = $this->security->get_csrf_token_name().'';
+						$csrfHash = $this->security->get_csrf_hash().'';
 
             if(!$this->email->send()){
-                echo json_encode(array('result' => 'error'));
+                echo json_encode(array('result' => 'error', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
             }else{
-                $this->email->send();
-                echo json_encode(array('result' => 'ok'));
+                echo json_encode(array('result' => 'ok', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
             }
         }
 

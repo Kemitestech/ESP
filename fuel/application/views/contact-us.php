@@ -63,6 +63,8 @@
             <?php echo form_error('message'); ?>
            </div>
           </div>
+          <?php $csrf = array( 'name' => $this->security->get_csrf_token_name(), 'hash' => $this->security->get_csrf_hash() ); ?>
+          <input id="csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
           <div class="form-group">
             <div class="col-sm-9">
               <button type="submit" disabled="disabled" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
