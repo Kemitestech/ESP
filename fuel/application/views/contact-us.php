@@ -65,6 +65,9 @@
           </div>
           <?php $csrf = array( 'name' => $this->security->get_csrf_token_name(), 'hash' => $this->security->get_csrf_hash() ); ?>
           <input id="csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+          <div id="form_field_firstname">
+            <input id="form_field_firstname" type="text" name="firstname" value/>
+          </div>
           <div class="form-group">
             <div class="col-sm-9">
               <button type="submit" disabled="disabled" class="btn btn-contact btn-lg btn-block no-radius">Send</button>
