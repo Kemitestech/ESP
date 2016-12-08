@@ -1391,3 +1391,7 @@ nav.affix-top #bs-example-navbar-collapse-1{
         flex: 0 1 auto;
 }
 }
+
+#form_field_firstname {
+  display: none;
+}
