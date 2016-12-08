@@ -19,15 +19,15 @@ class Contactform extends CI_Controller {
         $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
         $this->form_validation->set_rules('subject', 'Subject', 'trim|required|alpha_numeric_spaces');
         $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|alpha_numeric_spaces');
+				$this->form_validation->set_rules('firstname', 'First Name', 'callback_check_empty');
 
         if($this->form_validation->run() == FALSE) {
 
-            $this->output->set_status_header('400');
+            $this->output->set_status_header('200');
             $this->output->set_content_type('application/json');
 
             $this->data['message'] = validation_errors();
-            echo json_encode($this->data);
-
+            echo json_encode($this->data['message']);
         }
         else {
             $fullname = $this->input->post('fullname');
@@ -63,7 +63,7 @@ class Contactform extends CI_Controller {
 						//If empty set variables to empty string
 						$businessname = !empty($businessname) ? 'Business name: ' . $businessname . '<br><br>' : '';
 						$phone = !empty($phone) ? 'Contact Number: ' . $phone . '<br><br>' : '';
-						$conclusion = 'Kind regards,<br>' . $fullname
+						$conclusion = 'Kind regards,<br>' . $fullname;
 						$this->email->message('Dear Edward Street Parish,<br><br>' . $message . '<br><br>' . $businessname . $phone . $conclusion);
 
 						$csrfTokenName = $this->security->get_csrf_token_name().'';
@@ -77,5 +77,14 @@ class Contactform extends CI_Controller {
         }
 
     }
+
+		public function check_empty($string) {
+			if(empty($string)) {
+				return true;
+			} else {
+				$this->form_validation->set_message('check_empty', 'This {field} field should be no longer than 50 characters');
+				return false;
+			}
+		}
 	}
 ?>
