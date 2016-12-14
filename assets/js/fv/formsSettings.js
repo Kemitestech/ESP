@@ -82,7 +82,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'http://www.eunuigbe/~unuigbee/edwardstreetparish/Contactform',
+            url: 'http://dev.cccedwardstreetparish.org/Contactform',
             dataType: 'json',
             data: $form.serialize(),
             success: function(response){
