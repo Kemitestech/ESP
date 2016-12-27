@@ -88,10 +88,10 @@
 		 ?>
 		<?=$comment_form?>
 	<?php else: ?>
-		<p><?php//lang('blog_comments_off')?></p>
+		<p><?php //lang('blog_comments_off')?></p>
 	<?php endif; ?>
 	</div>
 
 <?php else: ?>
-	<p><?php//lang('blog_comments_off')?></p>
+	<p><?php //lang('blog_comments_off')?></p>
 <?php endif; ?>
