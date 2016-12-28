@@ -52,10 +52,14 @@
         <div>
           <div class="col-md-11">
             <div class="thumbnail thumbnail-override">
-             <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
+             <?php if($post->has_list_image()): ?>
+                    <img src="<?=$post->list_image_path?>" class="img-responsive" alt="Image">
+             <?php else: ?>
+                    <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+             <?php endif; ?>
              <div class="caption">
-              <h3 class="header-title"><?=$post->title?></h3>
-              <p class="no-jumbotron-p"><?=$post->get_excerpt_formatted(50, '')?></p>
+              <h3><?=$post->title?></h3>
+              <?=$post->get_excerpt_formatted(50, '')?>
               <p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read More</a></p>
              </div>
             </div>
@@ -69,7 +73,11 @@
           <div>
             <div class="col-md-11">
               <div class="thumbnail thumbnail-override">
-               <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" style="width: 100%;">
+                <?php if($event->has_list_image()): ?>
+                       <img src="<?=$event->list_image_path?>" class="img-responsive" alt="Image">
+                <?php else: ?>
+                       <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+                <?php endif; ?>
                <div class="caption">
                 <h3 class="header-title"><?=$event->title?></h3>
                 <p>Hosted by <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>

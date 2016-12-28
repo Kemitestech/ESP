@@ -1395,3 +1395,7 @@ nav.affix-top #bs-example-navbar-collapse-1{
 #form_field_firstname {
   display: none;
 }
+
+.thumbnail-override > img.img-responsive {
+  margin-left: 0;
+}

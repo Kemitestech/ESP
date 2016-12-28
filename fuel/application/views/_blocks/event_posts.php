@@ -8,7 +8,11 @@
     <div class="event">
       <div class="col-md-3">
         <a href="<?=$event->url?>" class="thumbnail thumbnail-override">
-          <img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" alt="nature">
+          <?php if($event->has_list_image()): ?>
+                 <img src="<?=$event->list_image_path?>" class="img-responsive" alt="Image">
+          <?php else: ?>
+                 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+          <?php endif; ?>
         </a>
       </div>
       <div class="col-md-6">
