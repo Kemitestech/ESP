@@ -12,12 +12,15 @@ SetEnvIf Host dev.cccedwardstreetparish.org$ CI_ENV=development
 
 # Allow asset folders through
 RewriteRule ^(fuel/modules/(.+)?/assets/(.+)) - [L]
+
 # Protect application and system files from being viewed
 RewriteRule ^(fuel/install/.+|fuel/crons/.+|fuel/data_backup/.+|fuel/codeigniter/.+|fuel/modules/.+|fuel/application/.+) - [F,L] 
 RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteCond %{REQUEST_FILENAME} !-d RewriteRule ^(.*)$ index.php?/$0 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ index.php?/$0 [L,QSA]
 
 # Prevents access to dot files (.git, .htaccess) - security.
-RewriteCond %{SCRIPT_FILENAME} -d RewriteCond %{SCRIPT_FILENAME} -f 
+RewriteCond %{SCRIPT_FILENAME} -d 
+RewriteCond %{SCRIPT_FILENAME} -f 
 RewriteRule "(^|/)\." - [F]
 </IfModule>
