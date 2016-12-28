@@ -52,7 +52,7 @@
         <div>
           <div class="col-md-11">
             <div class="thumbnail thumbnail-override">
-             <?php if($post->list_image): ?>
+             <?php if($post->has_list_image()): ?>
                     <img src="<?=$post->list_image_path?>" class="img-responsive" alt="Image">
              <?php else: ?>
                     <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">

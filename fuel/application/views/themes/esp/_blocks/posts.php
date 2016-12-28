@@ -8,7 +8,11 @@
 					<?=fuel_edit($post)?>
 					<div class="col-md-3">
 						<a href="<?=$post->url?>" class="thumbnail thumbnail-override">
-							<img src="https://placeimg.com/225/200/arch" class="img-responsive" alt="Image" alt="nature">
+							<?php if($post->has_list_image()): ?>
+										 <p><a href="<?=$post->url?>"><img src="<?=$post->list_image_path?>" alt="<?=$post->title_entities?>" /></a></p>
+							<?php else: ?>
+										 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+							<?php endif; ?>
 						</a>
 					</div>
 					<div class="col-md-6">
