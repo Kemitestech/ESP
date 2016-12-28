@@ -26,7 +26,7 @@
 						<div class="post-content">
 							<p class="thumnail-p"><?=$post->excerpt?></p>
 						</div>
-						<a href="<?=$post->url?>"><button type="submit" class="btn btn-info no-radius">Read more</button></a>
+						<p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read more</a></p>
 						<div class="post-meta">
 							<span class="glyphicon glyphicon-tags"></span><?=$post->tags_linked ?>
 						</div>
