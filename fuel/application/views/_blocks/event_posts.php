@@ -19,7 +19,7 @@
         <h2 class="thumbnail-title"><a href="<?=$event->url?>"><?=$event->title?></a></h2>
         <p class="thumnail-p"><strong><?=date_formatter($event->event_startdate, 'F jS Y')?><?=' at '.date_formatter($event->event_startdate, 'H:i')?></strong></p>
         <p class="thumnail-p">HOSTED BY <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
-        <a href="<?=$event->url?>"><button type="submit" class="btn btn-info no-radius">View Event Details</button></a>
+        <p><a class="btn btn-news" href="<?=$event->url?>" role="button">View Event</a></p>
         <div class="post-meta">
           <?php if(!empty($event->tags_linked)) : ?>
           <span class="glyphicon glyphicon-tags"></span><?=$event->tags_linked?>
