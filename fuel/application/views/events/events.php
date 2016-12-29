@@ -43,13 +43,15 @@ else:
   $CI->load->model('events_model');
   $CI->load->config('paginations', TRUE);
 
+  $current_date = new DateTime();
+  $event_interval = $current_date->sub(new DateInterval('P12M'));
   $limit = $CI->config->item('per_page', 'paginations');
 
   $offset = (((int)$CI->input->get('per_page') - 1) * $limit);
   $offset = ($offset < 0 ? 0 : $offset);
   $base_url = base_url('events');
   $uri_segment = 2;
-  $total = $CI->events_model->record_count(array('event_startdate >=' => datetime_now()));
+  $total = $CI->events_model->record_count(array('event_startdate >=' => $event_interval->format('Y-m-d')));
 
   $config = $CI->config->config;
   $config = $config['paginations'];
@@ -63,9 +65,11 @@ else:
   $CI->pagination->initialize($config);
   $pagination = $CI->pagination->create_links();
 
-	$events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate', 'where' => array('event_startdate >=' => datetime_now())));
+  $events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate desc', 'where' => array('event_startdate >=' => $event_interval->format('Y-m-d'))));
+	$upcoming_event = fuel_model('events', array('limit' => 1, 'offset' => null, 'order' => 'abs(now() - event_startdate) asc', 'where' => null));
   $vars['events'] = $events;
   $vars['pagination'] = $pagination;
+  $vars['upcoming_event'] = $upcoming_event;
 endif;
 
 if (!empty($event)) : ?>
