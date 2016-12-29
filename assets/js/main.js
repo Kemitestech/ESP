@@ -5,7 +5,7 @@ $('body').scrollspy({
 
 //$('.parallax-window').parallax({imageSrc: 'assets/images/light_cross.jpg', bleed: 200});
 
-$('.quotes').parallax({imageSrc: 'assets/images/bible1.jpg', bleed: 200});
+$('.quotes').parallax({imageSrc: 'assets/images/bible1.jpg', bleed: 300});
 
 $(function(){
 
