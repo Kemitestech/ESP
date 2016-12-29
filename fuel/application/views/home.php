@@ -79,7 +79,7 @@
                        <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
                 <?php endif; ?>
                <div class="caption">
-                <h3 class="header-title"><?=$event->title?></h3>
+                <h3><?=$event->title?></h3>
                 <p>Hosted by <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
                 <p><a class="btn btn-news" href="<?=$event->url?>" role="button">View Event</a></p>
                </div>
