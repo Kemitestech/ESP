@@ -914,6 +914,11 @@ IE 10 in Windows 8 and Windows Phone 8 media query viewport fix
   margin-left: 10px;
 }
 
+.form-center > .form-control {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
 .navbar-brand{
   padding: 15px 2px;
 }
@@ -1204,6 +1209,11 @@ margin-top:148px;
   right: 0;
 }
 
+.form-center > .form-control {
+  width: 30%;
+  margin-bottom: 5px;
+}
+
 ul.nav-font a{
   font-size: 20px;
 }
@@ -1398,4 +1408,13 @@ nav.affix-top #bs-example-navbar-collapse-1{
 
 .thumbnail-override > img.img-responsive {
   margin-left: 0;
+}
+
+.form-center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-center > .form-control {
+  margin-bottom: 5px;
 }
