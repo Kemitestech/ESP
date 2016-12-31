@@ -1418,3 +1418,10 @@ nav.affix-top #bs-example-navbar-collapse-1{
 .form-center > .form-control {
   margin-bottom: 5px;
 }
+
+.form-inline > button.subscribe {
+  margin-bottom: 5px;
+  border-radius: 4px;
+  padding: 5px 12px;
+  color: white;
+}
