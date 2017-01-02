@@ -1209,9 +1209,13 @@ margin-top:148px;
   right: 0;
 }
 
-.form-center > .form-control {
+#subscribeForm > .form-group {
   width: 40%;
   margin-bottom: 5px;
+}
+
+#subscribeForm > .form-group > .form-control {
+  width: 100%;
 }
 
 ul.nav-font a{

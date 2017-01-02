@@ -8,9 +8,11 @@
           <h2 class="center-text">Subscribe to our Newsletter</h2>
           <p class="center-text">Interesting topics from CCC Edward Street Parish delivered straight to you.</p>
           <form id="subscribeForm" class="form-inline form-center">
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
             <?php $csrf = array( 'name' => $this->security->get_csrf_token_name(), 'hash' => $this->security->get_csrf_hash() ); ?>
-            <input id="csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+            <input id="subscribe_csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
             <div id="subscribe_field_firstname">
               <input type="text" name="firstname" value/>
             </div>
