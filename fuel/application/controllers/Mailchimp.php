@@ -25,15 +25,15 @@ class Mailchimp extends CI_Controller {
 
             $this->data['message'] = validation_errors();
 
-            echo json_encode(
+            echo json_encode([
               'message' => $this->data['message'],
               'csrfTokenName' => $csrfTokenName,
               'csrfHash' => $csrfHash
-          );
+            ]);
         }
         else {
             $email = $this->input->post('email');
-            $listID = $this->config->item('list_id');
+            $listId = $this->config->item('list_id');
             $listName = $this->config->item('list_name');
             $url = $this->config->item('api_url');
 
@@ -55,7 +55,7 @@ class Mailchimp extends CI_Controller {
   			if(empty($string)) {
   				return true;
   			} else {
-  				$this->form_validation->set_message('check_empty', 'This {field} field should be no longer than 50 characters');
+  				$this->form_validation->set_message('check_empty', 'The {field} field should be no longer than 50 characters');
   				return false;
   			}
 		}
