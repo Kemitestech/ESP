@@ -1210,7 +1210,7 @@ margin-top:148px;
 }
 
 .form-center > .form-control {
-  width: 30%;
+  width: 40%;
   margin-bottom: 5px;
 }
 
@@ -1424,4 +1424,8 @@ nav.affix-top #bs-example-navbar-collapse-1{
   border-radius: 4px;
   padding: 5px 12px;
   color: white;
+}
+
+#subscribe_field_firstname {
+  display: none;
 }
