@@ -1,4 +1,55 @@
 $(document).ready(function() {
+  $('#subscribeForm').formValidation({
+       framework: 'bootstrap',
+       icon: {
+           valid: 'glyphicon glyphicon-ok',
+           invalid: 'glyphicon glyphicon-remove',
+           validating: 'glyphicon glyphicon-refresh'
+       },
+       fields: {
+         email: {
+               validators: {
+                   emailAddress: {
+                       message: 'Please enter a valid email address'
+                   },
+                   notEmpty: {
+                       message: 'Your Email Address is required'
+                   }
+               }
+          }
+      }
+   })
+   .on('success.form.fv', function(e) {
+       e.preventDefault();
+       var $form = $(e.target);
+
+       $.ajax({
+           type: 'POST',
+           url: 'http://dev.cccedwardstreetparish.org/Mailchimp',
+           dataType: 'json',
+           data: $form.serialize(),
+           success: function(response){
+               $('#subscribe_csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
+
+               if(response.status) {
+                 console.log('success');
+                 console.log(response);
+               } else {
+                 console.log(response);
+                 console.log('failure');
+               }
+           },
+           error: function(xhr){
+               if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
+                   var json = $.parseJSON(xhr.responseText );
+                   $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
+                   alert(json.message);
+                   console.log(json.message);
+               }
+           }
+       });
+   });
+
    $('#signinForm').formValidation({
         framework: 'bootstrap',
         icon: {
