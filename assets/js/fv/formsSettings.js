@@ -152,12 +152,11 @@ $(document).ready(function() {
             data: $form.serialize(),
             success: function(response){
                 $('#csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
-
                 if(response.result === 'error'){
                   $('#alertmessage')
                   .removeClass('alert-success')
                   .addClass('alert-warning')
-                  .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
+                  .html('<h3>Sorry, there was an error with your request.</h3> <p><small>Make sure you supplied the right Email address.</small></p>')
                   .show();
                   $('#alertmodal').modal('show');
                 } else if(response.result === 'ok') {
@@ -165,7 +164,7 @@ $(document).ready(function() {
                     $('#alertmessage')
                     .removeClass('alert-warning')
                     .addClass('alert-success')
-                    .html('Thank you, your message has been sent.')
+                    .html('<h3>Thank you, your message has been sent.</h3> <p><small>We\'ll respond to you shortly.</small></p>')
                     .show();
                     $('#alertmodal').modal('show');
                 }
@@ -173,7 +172,13 @@ $(document).ready(function() {
             error: function(xhr){
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
                     var json = $.parseJSON(xhr.responseText );
-                    alert(json.message);
+                    $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
+                    $('#alertmessage')
+                    .removeClass('alert-success')
+                    .addClass('alert-warning')
+                    .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
+                    .show();
+                    $('#alertmodal').modal('show');
                     console.log(json.message);
                 }
             }
