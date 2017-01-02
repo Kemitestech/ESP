@@ -8,6 +8,19 @@
           <h2 class="center-text">Subscribe to our Newsletter</h2>
           <p class="center-text">Interesting topics from CCC Edward Street Parish delivered straight to you.</p>
           <form id="subscribeForm" class="form-inline form-center">
+            <div id="subscribeAlertmodal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div id="subscribeAlertMessage" class="alert" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="form-group">
               <input type="email" name="email" class="form-control" placeholder="Email">
             </div>
