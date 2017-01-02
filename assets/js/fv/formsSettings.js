@@ -32,18 +32,32 @@ $(document).ready(function() {
                $('#subscribe_csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
 
                if(response.status) {
-                 console.log('success');
-                 console.log(response);
+                   $form.formValidation('resetForm', true);
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-warning')
+                   .addClass('alert-success')
+                   .html('<h3>Thank you for subscribing!</h3><p><small>We cannot wait to get in touch with you</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
                } else {
-                 console.log(response);
-                 console.log('failure');
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-success')
+                   .addClass('alert-warning')
+                   .html('<h3>Sorry, there was a problem with your request.</h3><p><small>You might already have subscribed to our Newsletter!</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
                }
            },
            error: function(xhr){
                if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
                    var json = $.parseJSON(xhr.responseText );
                    $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
-                   alert(json.message);
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-success')
+                   .addClass('alert-warning')
+                   .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
                    console.log(json.message);
                }
            }
