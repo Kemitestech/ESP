@@ -11,6 +11,12 @@
 				<span class="sep" style="padding: 0px 10px;">|</span>
 				<?=date_formatter($post->publish_date, 'M d, Y')?>
 			</div>
+			<ul class="soc-news">
+				<li><a class="soc-news-twitter" href="#"></a></li>
+				<li><a class="soc-news-google" href="#"></a></li>
+				<li><a class="soc-news-facebook" href="#"></a></li>
+				<li><a class="soc-news-email1 soc-icon-last" href="#"></a></li>
+			</ul>
 			<div class="ssk-group">
 			    <a href="" class="ssk ssk-facebook"></a>
 			    <a href="" class="ssk ssk-twitter"></a>
