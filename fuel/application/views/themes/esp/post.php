@@ -17,6 +17,12 @@
 				<li><a class="soc-news-facebook" href="#"></a></li>
 				<li><a class="soc-news-email1 soc-icon-last" href="#"></a></li>
 			</ul>
+			<div class="ssk-group">
+			    <a href="" class="ssk ssk-facebook"></a>
+			    <a href="" class="ssk ssk-twitter"></a>
+			    <a href="" class="ssk ssk-google-plus"></a>
+					<a href="" class="ssk ssk-email"></a>
+			</div>
 			<figure class="post-figure">
 				<?php if($post->has_main_image()): ?>
 							 <img src="<?=$post->main_image_path?>" class="img-responsive" alt="Image">

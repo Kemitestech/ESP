@@ -21,6 +21,7 @@
   <?php echo css('style.css'); ?>
   <?php echo css('slick-theme.css'); ?>
   <?php echo css('fv/formValidation.min.css'); ?>
+	<?php echo css('social-share-kit.css'); ?>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
 
@@ -34,6 +35,7 @@
 	<?php echo js('jquery.easing.min.js'); ?>
   <?php echo js('scrolling-nav.js'); ?>
   <?php echo js('parallax.min.js'); ?>
+	<?php echo js('social-share-kit.min.js'); ?>
 </head>
 <body id="top">
 	<nav id="myAffix" class="myaffix1 navbar navbar-default"><!-- Start of Navigation -->
