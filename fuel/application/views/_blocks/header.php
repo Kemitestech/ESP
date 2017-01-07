@@ -75,7 +75,7 @@
 						<!--<li class="collapse-underline <?php //if(uri_string() == 'youth') echo $active; ?>"><a href="<?php //echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>-->
 						<li class="collapse-underline <?php if(uri_string() == 'contact-us') echo $active; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact Us</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
+						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('media');?>" class="nav-color nav-hover">Gallery</a></li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
 					<!--<li class="hidden-xs hidden-sm">
