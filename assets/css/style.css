@@ -597,7 +597,7 @@ transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 
 .footer {
   background-color: #f5f5f5;
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   height: auto;
 
@@ -1369,4 +1369,19 @@ nav.affix-top #bs-example-navbar-collapse-1{
 
 #subscribe_field_firstname {
   display: none;
+}
+
+#vid-container {
+  position: absolute;
+  display: block;
+  content: " ";
+  height: 70vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0px;
 }
