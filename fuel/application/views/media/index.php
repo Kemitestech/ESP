@@ -1,29 +1,43 @@
 <div class="jumbotron contact-background reset-jumb-pos">
   <div class="container">
-<?php if($video_data): ?>
-        <div class="row"><!--Start of row-->
-          <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-      <?php   foreach($video_data as $video):?>
-          <div class="col-lg-7 col-md-12">
-            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-              <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                <span class="wistia_embed wistia_async_<?=$video->hashed_id?> popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span>
+    <h1 class="header-title title-margin">Videos</h1>
+<?php if($video_data):
+      $item_count = 0;
+      $nth_sequence = array();
+      $max_count = count($video_data); ?>
+      <?php foreach($video_data as $video):?>
+      <?php
+        $nextTerm = ($item_count*3) + 1;
+
+        $item_count = $item_count + 1;
+        array_push($nth_sequence, $nextTerm);
+
+        $url = $video->thumbnail->url;
+        $splitURL = explode("=",$url);
+        $dimensions = "400x250";
+        $newURL = $splitURL[0]."=".$dimensions."&image_play_button=true&image_play_button_color=00a1c6"; ?>
+
+      <?php if(in_array($item_count, $nth_sequence)): // for every 4th item including the initial item we add a <div class="row">?>
+          <div class="row"><!-- Start of row-->
+      <?php endif;  ?>
+            <div class="col-md-4">
+              <div class="thumbnail thumbnail-override">
+                <a title="<?=$video->name?>" href="<?=base_url('media/videos/watch/'.$video->hashed_id)?>"><img src="<?=$newURL?>"/></a>
+               <div class="caption" style="padding:0px;margin-top:10px;">
+                 <a title="<?=$video->name?>" href="<?=base_url('media/watch/'.$video->hashed_id)?>"><p style="margin:0px 0px 5px 0px;"><small><?=word_limiter($video->name, 11, '&#8230;');?></small></p></a>
+                 <div>
+                   <?=$video->section?>
+                   <span class="sep" style="padding: 0px 5px;">|</span>
+                   <?=date_formatter($video->created, 'M d, Y')?>
+                 </div>
+               </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-5 col-md-12">
-            <h2><?=$video->name?></h2>
-            <hr>
-            <?php
-              $url = $video->thumbnail->url;
-              $splitURL = explode("=",$url);
-              $dimensions = "300x200";
-              $newURL = $splitURL[0]."=".$dimensions."&image_play_button=true&image_play_button_color=00a1c6";
-            ?>
-            <a href="<?=base_url('media/watch/'.$video->hashed_id)?>"><img src="<?=$newURL?>" /></a>
-          </div>
+      <?php if($item_count%3 == 0 || $item_count == $max_count): // for every 3rd item or the last item we add a </div>?>
+          </div><!-- End of row-->
+      <?php endif;  ?>
 <?php   endforeach;  ?>
-        </div><!-- End of row-->
+
 <?php else:  ?>
         <h1>No data available!</h1>
 <?php endif;  ?>
