@@ -50,7 +50,7 @@ $(document).ready(function() {
            },
            error: function(xhr){
                if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
-                   var json = $.parseJSON(xhr.responseText );
+                   var json = $.parseJSON(xhr.responseText);
                    $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
                    $('#subscribeAlertMessage')
                    .removeClass('alert-success')
@@ -170,9 +170,10 @@ $(document).ready(function() {
                 }
             },
             error: function(xhr){
+                console.log(xhr);
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
-                    var json = $.parseJSON(xhr.responseText );
-                    $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
+                    var json = xhr.responseJSON;
+                    $('#csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
                     $('#alertmessage')
                     .removeClass('alert-success')
                     .addClass('alert-warning')
