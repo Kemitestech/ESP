@@ -75,7 +75,13 @@
 						<!--<li class="collapse-underline <?php //if(uri_string() == 'youth') echo $active; ?>"><a href="<?php //echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>-->
 						<li class="collapse-underline <?php if(uri_string() == 'contact-us') echo $active; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact Us</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('media');?>" class="nav-color nav-hover">Gallery</a></li>
+						<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'media') !== false) echo $active; ?>">
+							<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Media</a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="<?php if (uri_string() == 'media/videos') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/videos') ?>" class="nav-color">Videos</a></li>
+								<li class="<?php if(uri_string() == 'media/gallery') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/gallery') ?>" class="nav-color">Gallery</a></li>
+							</ul>
+						</li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
 					<!--<li class="hidden-xs hidden-sm">
