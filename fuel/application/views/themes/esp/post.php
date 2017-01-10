@@ -11,14 +11,16 @@
 				<span class="sep" style="padding: 0px 10px;">|</span>
 				<?=date_formatter($post->publish_date, 'M d, Y')?>
 			</div>
-			<ul class="soc-news">
-				<li><a class="soc-news-twitter" href="#"></a></li>
-				<li><a class="soc-news-google" href="#"></a></li>
-				<li><a class="soc-news-facebook" href="#"></a></li>
-				<li><a class="soc-news-email1 soc-icon-last" href="#"></a></li>
-			</ul>
+			<div class="ssk-group">
+			    <a href="" class="ssk ssk-facebook"></a>
+			    <a href="" class="ssk ssk-twitter"></a>
+			    <a href="" class="ssk ssk-google-plus"></a>
+					<a href="" class="ssk ssk-email"></a>
+			</div>
 			<figure class="post-figure">
-				<img src="https://placeimg.com/600/525/arch" class="img-responsive" alt="Image" >
+				<?php if($post->has_main_image()): ?>
+							 <img src="<?=$post->main_image_path?>" class="img-responsive" alt="Image">
+				<?php endif; ?>
 				<figcaption></figcaption>
 			</figure>
 
@@ -39,7 +41,11 @@
 				<?php $recent_posts = $this->fuel->blog->get_recent_posts(); ?>
 				<?php foreach($recent_posts as $recent_post) : ?>
 				<figure class="post-figure">
-					<a href="<?=$recent_post->url?>"><img src="https://placeimg.com/225/200/nature" class="img-responsive" alt="Image"></a>
+					<?php if($recent_post->has_list_image()): ?>
+								 <p><a href="<?=$recent_post->url?>"><img src="<?=$recent_post->list_image_path?>" alt="<?=$recent_post->title_entities?>" /></a></p>
+					<?php else: ?>
+								 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+					<?php endif; ?>
 					<figcaption><?=$recent_post->title?></figcaption>
 				</figure>
 				<?php endforeach; ?>
@@ -88,10 +94,10 @@
 		 ?>
 		<?=$comment_form?>
 	<?php else: ?>
-		<p><?php//lang('blog_comments_off')?></p>
+		<p><?php //lang('blog_comments_off')?></p>
 	<?php endif; ?>
 	</div>
 
 <?php else: ?>
-	<p><?php//lang('blog_comments_off')?></p>
+	<p><?php //lang('blog_comments_off')?></p>
 <?php endif; ?>

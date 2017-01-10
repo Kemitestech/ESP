@@ -1,11 +1,37 @@
   <div class="jumbotron newsletter-section">
     <div class="container">
-      <h3 class="header-title center-text">Sign up to our newsletter</h3><p class="center-text">Coming soon</p>
-      <div>
-        <form class="form-inline" style="width: 200px; margin: 0 auto;">
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
-          <button type="submit" class="btn btn-default">Sign up</button>
-        </form>
+      <div class="row">
+        <div class="col-md-2">
+          <img src="<?=img_path('email_send.svg', null, null)?>" class="img-responsive hidden-xs hidden-sm" alt="Image">
+        </div>
+        <div class="col-md-9">
+          <h2 class="center-text">Subscribe to our Newsletter</h2>
+          <p class="center-text">Interesting topics from CCC Edward Street Parish delivered straight to you.</p>
+          <form id="subscribeForm" class="form-inline form-center">
+            <div id="subscribeAlertmodal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div id="subscribeAlertMessage" class="alert" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <?php $csrf = array( 'name' => $this->security->get_csrf_token_name(), 'hash' => $this->security->get_csrf_hash() ); ?>
+            <input id="subscribe_csrf" type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+            <div id="subscribe_field_firstname">
+              <input type="text" name="firstname" value/>
+            </div>
+            <button type="submit" class="btn btn-contact subscribe">Subscribe</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

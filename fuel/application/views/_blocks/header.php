@@ -21,6 +21,7 @@
   <?php echo css('style.css'); ?>
   <?php echo css('slick-theme.css'); ?>
   <?php echo css('fv/formValidation.min.css'); ?>
+	<?php echo css('social-share-kit.css'); ?>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
 
@@ -34,6 +35,7 @@
 	<?php echo js('jquery.easing.min.js'); ?>
   <?php echo js('scrolling-nav.js'); ?>
   <?php echo js('parallax.min.js'); ?>
+	<?php echo js('social-share-kit.min.js'); ?>
 </head>
 <body id="top">
 	<nav id="myAffix" class="myaffix1 navbar navbar-default"><!-- Start of Navigation -->
@@ -73,7 +75,13 @@
 						<!--<li class="collapse-underline <?php //if(uri_string() == 'youth') echo $active; ?>"><a href="<?php //echo base_url('youth') ?>" class="nav-color nav-hover">Youth</a></li>-->
 						<li class="collapse-underline <?php if(uri_string() == 'contact-us') echo $active; ?>"><a href="<?php echo base_url('contact-us') ?>" class="nav-color nav-hover">Contact Us</a></li>
 						<li class="collapse-underline <?php if(uri_string() == 'prayer-request') echo $active; ?>"><a href="<?php echo base_url('prayer-request') ?>" class="nav-color nav-hover">Prayer request</a></li>
-						<li class="collapse-underline <?php if(uri_string() == 'gallery') echo $active; ?>"><a href="<?php echo base_url('gallery');?>" class="nav-color nav-hover">Gallery</a></li>
+						<li class="dropdown collapse-underline <?php if(strpos(uri_string(),'media') !== false) echo $active; ?>">
+							<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Media</a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="<?php if (uri_string() == 'media/videos') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/videos') ?>" class="nav-color">Videos</a></li>
+								<li class="<?php if(uri_string() == 'media/gallery') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/gallery') ?>" class="nav-color">Gallery</a></li>
+							</ul>
+						</li>
 					</ul><!-- End of navbar-nav -->
 					<ul id="secondary-nav" class="nav navbar-nav repos-top-right"><!-- Start of second nav -->
 					<!--<li class="hidden-xs hidden-sm">

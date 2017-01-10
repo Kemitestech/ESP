@@ -1,4 +1,69 @@
 $(document).ready(function() {
+  $('#subscribeForm').formValidation({
+       framework: 'bootstrap',
+       icon: {
+           valid: 'glyphicon glyphicon-ok',
+           invalid: 'glyphicon glyphicon-remove',
+           validating: 'glyphicon glyphicon-refresh'
+       },
+       fields: {
+         email: {
+               validators: {
+                   emailAddress: {
+                       message: 'Please enter a valid email address'
+                   },
+                   notEmpty: {
+                       message: 'Your Email Address is required'
+                   }
+               }
+          }
+      }
+   })
+   .on('success.form.fv', function(e) {
+       e.preventDefault();
+       var $form = $(e.target);
+
+       $.ajax({
+           type: 'POST',
+           url: 'http://dev.cccedwardstreetparish.org/Mailchimp',
+           dataType: 'json',
+           data: $form.serialize(),
+           success: function(response){
+               $('#subscribe_csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
+
+               if(response.status) {
+                   $form.formValidation('resetForm', true);
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-warning')
+                   .addClass('alert-success')
+                   .html('<h3>Thank you for subscribing!</h3><p><small>We cannot wait to get in touch with you</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
+               } else {
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-success')
+                   .addClass('alert-warning')
+                   .html('<h3>Sorry, there was a problem with your request.</h3><p><small>You might already have subscribed to our Newsletter!</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
+               }
+           },
+           error: function(xhr){
+               if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
+                   var json = $.parseJSON(xhr.responseText);
+                   $('#subscribe_csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
+                   $('#subscribeAlertMessage')
+                   .removeClass('alert-success')
+                   .addClass('alert-warning')
+                   .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
+                   .show();
+                   $('#subscribeAlertmodal').modal('show');
+                   console.log(json.message);
+               }
+           }
+       });
+   });
+
    $('#signinForm').formValidation({
         framework: 'bootstrap',
         icon: {
@@ -86,12 +151,11 @@ $(document).ready(function() {
             data: $form.serialize(),
             success: function(response){
                 $('#csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
-
                 if(response.result === 'error'){
                   $('#alertmessage')
                   .removeClass('alert-success')
                   .addClass('alert-warning')
-                  .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
+                  .html('<h3>Sorry, there was an error with your request.</h3> <p><small>Make sure you supplied the right Email address.</small></p>')
                   .show();
                   $('#alertmodal').modal('show');
                 } else if(response.result === 'ok') {
@@ -99,15 +163,22 @@ $(document).ready(function() {
                     $('#alertmessage')
                     .removeClass('alert-warning')
                     .addClass('alert-success')
-                    .html('Thank you, your message has been sent.')
+                    .html('<h3>Thank you, your message has been sent.</h3> <p><small>We\'ll respond to you shortly.</small></p>')
                     .show();
                     $('#alertmodal').modal('show');
                 }
             },
             error: function(xhr){
+                console.log(xhr);
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
-                    var json = $.parseJSON(xhr.responseText );
-                    alert(json.message);
+                    var json = xhr.responseJSON;
+                    $('#csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
+                    $('#alertmessage')
+                    .removeClass('alert-success')
+                    .addClass('alert-warning')
+                    .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
+                    .show();
+                    $('#alertmodal').modal('show');
                     console.log(json.message);
                 }
             }

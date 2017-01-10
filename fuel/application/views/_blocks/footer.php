@@ -29,8 +29,8 @@
 			<div class="col-xs-7 col-md-4">
 				<h3 class="header-title">Social</h3>
 				<ul class="soc">
-            <li><a class="soc-facebook" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
-            <li><a class="soc-youtube" href="https://www.youtube.com/channel/UCPVuinVvBtnG3WQabRB0bRw"></a></li>
+            <li><a class="soc-facebook" target="_blank" href="https://www.facebook.com/CCCedwardstreetparishorg-1106478782699697/"></a></li>
+            <li><a class="soc-youtube"  target="_blank" href="https://www.youtube.com/channel/UCPVuinVvBtnG3WQabRB0bRw"></a></li>
 				</ul>
 			</div>
 		</div>

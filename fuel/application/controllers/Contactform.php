@@ -12,6 +12,8 @@ class Contactform extends CI_Controller {
 				$dotenv->load();
 				$spark_post_username = getenv('SPARK_POST_USERNAME');
 				$spark_post_password = getenv('SPARK_POST_SECRET');
+				$csrfTokenName = $this->security->get_csrf_token_name().'';
+				$csrfHash = $this->security->get_csrf_hash().'';
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|alpha_numeric_spaces');
         $this->form_validation->set_rules('businessname', 'Business Name', 'trim|alpha_numeric_spaces');
@@ -23,11 +25,15 @@ class Contactform extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
 
-            $this->output->set_status_header('200');
+            $this->output->set_status_header('400');
             $this->output->set_content_type('application/json');
 
             $this->data['message'] = validation_errors();
-            echo json_encode($this->data['message']);
+						echo json_encode([
+							'message' => $this->data['message'],
+							'csrfTokenName' => $csrfTokenName,
+							'csrfHash' => $csrfHash
+						]);
         }
         else {
             $fullname = $this->input->post('fullname');
@@ -66,9 +72,6 @@ class Contactform extends CI_Controller {
 						$conclusion = 'Kind regards,<br>' . $fullname;
 						$this->email->message('Dear Edward Street Parish,<br><br>' . $message . '<br><br>' . $businessname . $phone . $conclusion);
 
-						$csrfTokenName = $this->security->get_csrf_token_name().'';
-						$csrfHash = $this->security->get_csrf_hash().'';
-
             if(!$this->email->send()){
                 echo json_encode(array('result' => 'error', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
             }else{
@@ -82,7 +85,7 @@ class Contactform extends CI_Controller {
 			if(empty($string)) {
 				return true;
 			} else {
-				$this->form_validation->set_message('check_empty', 'This {field} field should be no longer than 50 characters');
+				$this->form_validation->set_message('check_empty', 'The {field} field should be no longer than 50 characters');
 				return false;
 			}
 		}
