@@ -11,7 +11,6 @@ class Mailchimp extends CI_Controller {
     public function index() {
 				$dotenv = new Dotenv\Dotenv(FCPATH);
 				$dotenv->load();
-				$mail_chimp_secret = getenv('SPARK_POST_SECRET');
         $csrfTokenName = $this->security->get_csrf_token_name().'';
         $csrfHash = $this->security->get_csrf_hash().'';
 
