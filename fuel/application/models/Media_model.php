@@ -15,7 +15,7 @@ class Media_model extends CI_Model {
   public function getMediaList($projectID = null, $page = 1, $per_page = 100, $full = true) {
       $medias = null;
 
-      if($page > 1) {
+      if($page >= 1) {
           $params = array(
             'page' => $page,
             'per_page' => $per_page
