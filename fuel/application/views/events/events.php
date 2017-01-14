@@ -66,7 +66,7 @@ else:
   $pagination = $CI->pagination->create_links();
 
   $events = fuel_model('events', array('limit' => $limit, 'offset' => $offset, 'order' => 'event_startdate desc', 'where' => array('event_startdate >=' => $event_interval->format('Y-m-d'))));
-	$upcoming_event = fuel_model('events', array('limit' => 1, 'offset' => null, 'order' => 'abs(now() - event_startdate) asc', 'where' => null));
+	$upcoming_event = fuel_model('events', array('limit' => 1, 'offset' => null, 'order' => 'abs(now() - event_startdate) asc', 'where' => 'event_startdate >= now()'));
   $vars['events'] = $events;
   $vars['pagination'] = $pagination;
   $vars['upcoming_event'] = $upcoming_event;
