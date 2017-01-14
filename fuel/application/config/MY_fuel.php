@@ -14,10 +14,10 @@ $config['site_name'] = 'ESP';
 // whether the admin backend is enabled or not
 $config['admin_enabled'] = TRUE;
 
-// options are cms, views, and auto. 
+// options are cms, views, and auto.
 // cms pulls views and variables from the database,
 // views mode pulls views from the views folder and variables from the _variables folder,
-// and the auto option will first check the database for a page and if it doesn't exist or is 
+// and the auto option will first check the database for a page and if it doesn't exist or is
 // not published, it will then check for the corresponding view file.
 $config['fuel_mode'] = 'auto';
 
@@ -38,8 +38,8 @@ $config['default_pwd'] = 'admin';
 // $config['max_page_params'] = array('about/news/' => 1);
 $config['max_page_params'] = 0;
 
-// will auto search view files. 
-// If the URI is about/history and the about/history view 
+// will auto search view files.
+// If the URI is about/history and the about/history view
 // does not exist but about does, it will render the about page
 $config['auto_search_views'] = FALSE;
 
@@ -56,7 +56,7 @@ $config['assets_upload_max_height']  = 768;
 // markitup: allows you to visualize the code in its raw format - not wysiwyg (http://markitup.jaysalvat.com/)
 // ckeditor: suitable for clients; shows what the output will look like in the page (http://ckeditor.com/)
 // for more editor settings, look at the config/editors.php configuration file
-$config['text_editor'] = 'markitup';
+$config['text_editor'] = 'ckeditor';
 
 // The parsing engine to use for FUEL. Options are dwoo, ci and now 'twig'!
 $config['parser_engine'] = 'dwoo';
@@ -74,7 +74,7 @@ $config['parser_delimiters'] = array(
 
 // Functions allowed by the parsing engine
 $config['parser_allowed_functions'] = array(
-	'strip_tags', 'date', 
+	'strip_tags', 'date',
 	'detect_lang','lang',
 	'js', 'css', 'swf', 'img_path', 'css_path', 'js_path', 'swf_path', 'pdf_path', 'media_path', 'cache_path', 'captcha_path', 'assets_path', // assets specific
 	'fuel_block', 'fuel_model', 'fuel_nav', 'fuel_edit', 'fuel_set_var', 'fuel_var', 'fuel_var_append', 'fuel_form', 'fuel_page', // FUEL specific
