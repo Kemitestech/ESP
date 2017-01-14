@@ -7,7 +7,7 @@ class Mailchimp_model extends CI_Model {
 
     public function addEmailToList($emailAddress, $listName = null, $listId = null, $url) {
         if(is_null($listId)) {
-            $listId = $this->getListId($listName);
+            $listId = $this->getListId($listName, $url);
         }
 
         if(!is_null($listName) || !is_null($listId)) {
@@ -27,8 +27,8 @@ class Mailchimp_model extends CI_Model {
                 if($resultArray->status == "subscribed") {
                     return true;
                 }
-                if(isset($resultArray->title) && $resultArray->title == 400 && trim($resultArray->title)=="Member Exists") {
-                  return true;
+                if(isset($resultArray->title) && isset($resultArray->status) && trim($resultArray->title)=="Member Exists") {
+                  return false;
                 }
             }
         }
@@ -48,13 +48,13 @@ class Mailchimp_model extends CI_Model {
             foreach($listResultArray->$lists as $list) {
               if(strtolower(str_replace(' ','', $listName)) == strtolower(str_replace(' ','', $list->name))) {
                   if(isset($list->id)) {
-                    $listId = $list->id;
+                    $listID = $list->id;
                     break;
                   }
               }
             }
         }
-        return $listId;
+        return $listID;
     }
 
     private function getAllLists($url) {
@@ -74,6 +74,7 @@ class Mailchimp_model extends CI_Model {
         }
         $data = curl_exec($ch);
         // $headers = curl_getinfo($ch);
+        curl_close($ch);
         return $data;
     }
 }
