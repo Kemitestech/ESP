@@ -78,14 +78,15 @@
     <hr class="hidden-md hidden-lg">
     <div class="col-md-4">
       <h3 class="header-title" style="margin: 0 0 10px;">Other Contact Details </h3>
-      <p>Sheperd's Office:</p>
+      <!--<p>Sheperd's Office:</p>
       <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br> <abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
-      <hr>
+      <hr>-->
       <p>Parochial Commitee:</p>
-      <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
+      <address><abbr title="Phone">P:</abbr> 44 (0)208 694 9000 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
       <hr>
-      <p>Clergy:</p>
+      <!--<p>Clergy:</p>
       <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
+      -->
     </div>
     </div>
     </div>
