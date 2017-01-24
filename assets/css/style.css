@@ -660,9 +660,9 @@ left: 0px;
 
 .jumbotron-img {
   /* responsive jumbotron size */
-  background: url('https://placeimg.com/1000/400/tech') no-repeat center center;
+  background: url('../images/worship_with_us@2x.jpg') no-repeat right top;
   background-size: cover;
-  height: 330px;
+  height: 250px;
 }
 
 .jumbo-slider-override{
@@ -1144,6 +1144,13 @@ margin-top:148px;
   position: absolute;
   top: -4px;
   right: 0;
+}
+
+.jumbotron-img {
+  /* responsive jumbotron size */
+  background: url('../images/worship_with_us@2x.jpg') no-repeat center top;
+  background-size: cover;
+  height: 360px;
 }
 
 #subscribeForm > .form-group {
