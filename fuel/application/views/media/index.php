@@ -44,7 +44,7 @@
 <?php   endforeach;  ?>
 
 <?php else:  ?>
-        <h1>No data available!</h1>
+        <h4>We currently have no videos to show. In the mean time enjoy the rest of the site and check back later!</h4>
 <?php endif;  ?>
   </div>
 </div>
