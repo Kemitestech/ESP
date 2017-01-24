@@ -665,6 +665,12 @@ left: 0px;
   height: 250px;
 }
 
+.home-landing-hero {
+  background: url('../images/landing_image_one@2x.jpg') no-repeat center top;
+  background-size: cover;
+  height: 340px;
+}
+
 .jumbo-slider-override{
 	padding: 0px;
 	top: -70px;
@@ -1149,6 +1155,12 @@ margin-top:148px;
 .jumbotron-img {
   /* responsive jumbotron size */
   background: url('../images/worship_with_us@2x.jpg') no-repeat center top;
+  background-size: cover;
+  height: 360px;
+}
+
+.home-landing-hero {
+  background: url('../images/landing_image_one@2x.jpg') no-repeat center top;
   background-size: cover;
   height: 360px;
 }
