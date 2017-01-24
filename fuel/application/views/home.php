@@ -3,14 +3,12 @@
 <?php fuel_set_var('page_title', 'Welcome | CCC Edward Street Parish Church'); ?>
 <?php $this->load->view('_blocks/header'); ?>
 <div id ="home-hero" class="slider1 jumbotron jumbo-slider-override hero-hover">
-  <div style="background: url('https://placeimg.com/1000/400/tech') no-repeat center center; background-size: cover; height: 350px;">
-    <div style="padding: 30px; color: white;">
-      <h1>EDWARD YOUTH MINISTRY</h1>
+  <div>
+    <div class="home-landing-hero" style="padding: 30px; color: white;">
+      <h1>EDWARD STREET PARISH</h1>
       <h2>WE ARE A "CHOSEN GENERATION"</h2>
-      <a class="btn btn-lg hero-button" href="youth.html" role="button">FIND OUT MORE</a>
+      <a class="btn btn-lg hero-button" href="<?php echo base_url('blog') ?>" role="button">FIND OUT MORE</a>
     </div>
-  </div>
-  <div style="background: url('https://placeimg.com/1000/400/arch') no-repeat center center; background-size: cover; height: 350px;">
   </div>
 </div>
 <div class="jumbotron contact-background reset-jumb-pos">
