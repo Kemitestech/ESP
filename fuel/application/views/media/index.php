@@ -4,8 +4,9 @@
 <?php if($video_data):
       $item_count = 0;
       $nth_sequence = array();
-      $max_count = count($video_data); ?>
+      $max_count = count($video_data);
       //loops through value of video_data key in the var array within the media controller that has the JSON response returned from the getMediaList();
+      ?>
       <?php foreach($video_data as $video):?>
       <?php
         //Upon each loop $nextTerm will increase by $item_count *3 + 1
