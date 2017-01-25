@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2016, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  * @filesource
@@ -287,10 +287,9 @@ class Fuel_assets extends Fuel_base_library {
 					$params['file_name'] = preg_replace('#(.*)\{file\}(.*)#U', '$1'.pathinfo($file['name'], PATHINFO_FILENAME).'$2', $params['file_name']);
 				}
 
-
-
-				// set overwrite
+				// explicitly set as booleans because the 1 value will not work
 				$params['overwrite'] = (is_true_val($params['overwrite']));
+				$params['encrypt_name'] = (is_true_val($params['encrypt_name']));
 
 				if (is_image_file($params['file_name']) AND !empty($params['xss_clean']))
 				{

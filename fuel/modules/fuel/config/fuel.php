@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  * @filesource
@@ -420,6 +420,12 @@ $config['double_parse'] = FALSE;
 
 // The directory to put the parsed compiled files
 $config['parser_compile_dir'] = APPPATH.'cache/dwoo/compiled/';
+
+// The folder permissions to put the parsed compiled files
+$config['parser_compile_dir_perms'] = DIR_WRITE_MODE;
+
+// The file permissions for the parsed compiled files (Dwoo only)
+$config['parser_compile_file_perms'] = FILE_WRITE_MODE;
 
 // The delimiters used by the parsing engine
 $config['parser_delimiters'] = array(

@@ -89,7 +89,7 @@ if (typeof(window.fuel.fields) == 'undefined'){
 			return comboOpts;
 		}
 		// set up supercomboselects
-		$('select[multiple]', context).not('.no_combo').each(function(i){
+		$('select[multiple]', context).not('.no_combo, .field_type_select2').each(function(i){
 			var comboOpts = comboOptions(this);
 			$(this).supercomboselect(comboOpts);
 		});
@@ -768,8 +768,8 @@ if (typeof(window.fuel.fields) == 'undefined'){
 			var parentModule = fuel.getModuleURI(context);
 			var url = jqx_config.fuelPath + '/' + module + '/inline_';
 			var btnClasses = ($field.attr('multiple')) ? 'btn_field btn_field_right ' : 'btn_field';
-			if (!$field.parent().find('.edit_inline_button').length) $field.after('&nbsp;<a href="' + url + 'edit/" class="' + btnClasses+ ' edit_inline_button">' + fuel.lang('btn_edit') + '</a>');
-			if (!$field.parent().find('.add_inline_button').length) $field.after('&nbsp;<a href="' + url + 'create' + fields + addParams + '" class="' + btnClasses+ ' add_inline_button">' + fuel.lang('btn_add') + '</a>');
+			if (!$field.parent().find('.edit_inline_button').length) $field.after('&nbsp;<a href="' + url + 'edit/" class="' + btnClasses+ ' edit_inline_button" tabindex="-1">' + fuel.lang('btn_edit') + '</a>');
+			if (!$field.parent().find('.add_inline_button').length) $field.after('&nbsp;<a href="' + url + 'create' + fields + addParams + '" class="' + btnClasses+ ' add_inline_button" tabindex="-1">' + fuel.lang('btn_add') + '</a>');
 			
 			var refreshField = function($field){
 
@@ -1032,12 +1032,12 @@ if (typeof(window.fuel.fields) == 'undefined'){
 		$('.numeric', context).each(function(i){
 			var o = {decimal: false, negative: false}
 			o = $.extend(o, options);
-			if ($(this).attr('data-decimal') == "1" || $(this).attr('data-decimal').toLowerCase() == "yes" || $(this).attr('data-decimal').toLowerCase() == "true"){
+			if ($(this).attr('data-decimal') && ($(this).attr('data-decimal') == "1" || $(this).attr('data-decimal').toLowerCase() == "yes" || $(this).attr('data-decimal').toLowerCase() == "true")){
 				o.decimal = '.';
 			} else {
 				o.decimal = false;
 			}
-			if ($(this).attr('data-negative') == "1" || $(this).attr('data-negative').toLowerCase() == "yes" || $(this).attr('data-negative').toLowerCase() == "true"){
+			if ($(this).attr('data-negative') && ($(this).attr('data-negative') == "1" || $(this).attr('data-negative').toLowerCase() == "yes" || $(this).attr('data-negative').toLowerCase() == "true")){
 				o.negative = true;
 			} else {
 
@@ -1055,7 +1055,7 @@ if (typeof(window.fuel.fields) == 'undefined'){
 	// create currency field
 	fuel.fields.currency_field = function(context, options){
 		$('.currency', context).each(function(i){
-			var o = {aSep: ',', aDec: '.',  dGroup: 3, vMin: 0.00, vMax: 999999999.99}
+			var o = {aSep: ',', aDec: '.',  dGroup: 3, vMin: -999999999.99, vMax: 999999999.99}
 			o = $.extend(o, options);
 			if ($(this).attr('data-separator')){
 				o.aSep = $(this).attr('data-separator');
@@ -1312,20 +1312,19 @@ if (typeof(window.fuel.fields) == 'undefined'){
 
 			var selector = ($elem.data('selector')) ? $elem.data('selector') : 'tr';
 			var prefix = ($elem.data('prefix')) ? $elem.data('prefix') : '';
-			var val = $elem.val();
 
 			var $togglers = $(".toggle", context);
 			if (prefix){
 				var regex = new RegExp(' ' + prefix)
-				$togglers.filter(function() { 
+				$togglers.filter(function() {
 					return $(this).attr('class').match(regex); 
 				}).closest(selector).hide();
 
 			} else {
 				$(".toggle", context).closest(selector).hide();	
 			}
-
-			val = val.replace(' ', '.');
+			var val = $elem.val();
+			val = val.replace(/ /g, '-');
 			$(".toggle." + prefix + val, context).closest(selector).show();
 		}
 		
@@ -1349,10 +1348,12 @@ if (typeof(window.fuel.fields) == 'undefined'){
 			})
 			
 		})
-		$("input[type='radio'].toggler:checked").not('.__applied__').trigger("change");
 
 		// exlude blocks since they get ajaxed in and then run the toggler function
-		$("select.toggler").not('.field_type_block, .__applied__').trigger("change");
+		$("select.toggler", context).not('.field_type_block, .__applied__').trigger("change");
+
+		$("input[type='radio'].toggler:checked", context).not('.__applied__').trigger("change");
+
 	}
 
 
@@ -1390,7 +1391,6 @@ if (typeof(window.fuel.fields) == 'undefined'){
 	}
 
 	fuel.fields.dependent_field = function(context, options){
-		var firstlaunch = true;
 		
 		$('.dependent', context).each(function(i){
 
@@ -1436,19 +1436,19 @@ if (typeof(window.fuel.fields) == 'undefined'){
 				if ($.isEmptyObject(xtraData) === false) {
 					$.extend(data, xtraData);
 				}
-
 				if (val && val.length){
 					$.get(url, data, function(html){
 						var $select = $(replaceSelector);
+
 						$select.html(html);
 						$select.val(origValue);
 						//if ($select.prop("multiple")){
 							fuel.fields.multi_field(context);
 						//}
 
-						if (firstlaunch){
+						if (!$select.data('checksave')){
 							$.changeChecksaveValue($select, $select.val());
-							firstlaunch = false;	
+							$select.data('checksave', true);	
 						}
 					});
 				}
@@ -1465,10 +1465,12 @@ if (typeof(window.fuel.fields) == 'undefined'){
 			var $activeEmbeddedList = $(activeEmbeddedList);
 			var $embeddedListItems = $fuel.find("#"+$activeEmbeddedList.attr("id")+" .embedded_list_items");
 			$embeddedListItems.empty().addClass("loader");
+			$activeEmbeddedList.trigger('refreshEmbedListBegin');
 			var embeddedListAjax = $.post(__FUEL_PATH__ + "/" + $activeEmbeddedList.data("module-url") + "/ajax/embedded_list_items", $activeEmbeddedList.data("embedded-list-params"));
 			embeddedListAjax.done(function(data) {
 				$embeddedListItems.removeClass("loader").html(data);
 				fuel._initToolTips();
+				$activeEmbeddedList.trigger('refreshEmbedListEnd');
 			});
 		};
 
@@ -1487,6 +1489,7 @@ if (typeof(window.fuel.fields) == 'undefined'){
 			});
 		};
 
+		$fuel.off("click", ".datatable_action, #data_table td[class^='col']:not('.actions')");
 		$fuel.on("click", ".datatable_action, #data_table td[class^='col']:not('.actions')", embeddedListModalOpen);
 		
 		// added refresh event that can be triggered

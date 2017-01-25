@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -322,7 +322,7 @@ class Base_module_model extends MY_Model {
 			$this->db->select($this->table_name.'.*'); // make select table specific
 		}
 
-		if (!empty($col) AND !empty($order)) $this->db->order_by($col, $order);
+		if (!empty($col)) $this->db->order_by($col, $order, FALSE);
 		if (!empty($limit)) $this->db->limit($limit);
 		$this->db->offset($offset);
 		
@@ -718,7 +718,7 @@ class Base_module_model extends MY_Model {
 			{
 				$used_groups[$child[$key_field]] = $child[$key_field];
 				$attributes = ((isset($child['published']) AND $child['published'] == 'no') OR (isset($child['active']) AND $child['active'] == 'no')) ? array('class' => 'unpublished', 'title' => 'unpublished') : NULL;
-				$return['g'.$child[$g_key_field].'_c_'.$child[$key_field]] = array('parent_id' => $child[$key_field], 'label' => $child[$display_field], 'location' => fuel_url($module_obj->info('module_uri').'/edit/'.$child[$loc_field]), 'attributes' => $attributes);
+				$return['g'.$child[$g_key_field].'_c_'.$child[$key_field]] = array('parent_id' => $child[$key_field], 'label' => $child[$display_field], 'location' => fuel_url($module_obj->info('module_uri').'/edit/'.$child[$g_key_field]), 'attributes' => $attributes);
 			}
 
 			foreach($groups as $group)
@@ -1114,8 +1114,11 @@ class Base_module_model extends MY_Model {
 			}
 		}
 
-		unset($where['first_option']);
-		$options = $this->options_list(NULL, NULL, $where);
+		$__key__ = (!empty($where['__key__'])) ? $where['__key__'] : NULL;
+		$__label__ = (!empty($where['__label__'])) ? $where['__label__'] : NULL;
+		unset($where['__key__'], $where['__label__'], $where['first_option']);
+
+		$options = $this->options_list($__key__, $__label__, $where);
 
 		foreach($options as $key => $val)
 		{

@@ -316,7 +316,7 @@ class Module extends Fuel_base_controller {
 
 			if ($has_delete_permission)
 			{
-				$delete_func .= 'if (isset($cols[$CI->model->key_field()]))
+				$delete_func .= 'if (!empty($cols[$CI->model->key_field()]))
 				{
 					$url = fuel_url("'.$this->module_uri.'/delete/".$cols[$CI->model->key_field()]);
 					$link = "<a href=\"".$url."\" class=\"action_delete\">".lang("table_action_delete")."</a>";
@@ -572,7 +572,7 @@ class Module extends Fuel_base_controller {
 		
 		$defaults = array();
 		$defaults['col'] = (!empty($this->default_col)) ? $this->default_col : $this->display_field;
-		$defaults['order'] = (!empty($this->default_order)) ? $this->default_order : 'asc';
+		$defaults['order'] = (isset($this->default_order)) ? $this->default_order : 'asc';
 		$defaults['offset'] = 0;
 		$defaults['limit'] = key($this->limit_options);
 		$defaults['search_term'] = '';

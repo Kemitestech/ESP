@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2016, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -543,7 +543,7 @@ class Fuel_assets_model extends CI_Model {
 	*/
 	public function display_name($values)
 	{
-		$module =& $this->get_module();
+		$module = $this->get_module();
 
 		$key = $module->info('display_field');
 

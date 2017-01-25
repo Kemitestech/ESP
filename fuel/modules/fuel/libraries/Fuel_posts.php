@@ -9,7 +9,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2016, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  * @filesource
@@ -480,7 +480,8 @@ class Fuel_posts extends Fuel_base_library {
 		{
 			return $model->get_posts_count($where);
 		}
-
+		
+		$model->_common_query($model->display_unpublished_if_logged_in);
 		$count = $model->record_count($where);
 		return $count;
 	}

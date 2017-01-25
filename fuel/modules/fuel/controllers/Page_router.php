@@ -23,7 +23,7 @@ class Page_router extends CI_Controller {
 		if ( ! file_exists(APPPATH.'views/'.$this->location.EXT))
 		{
 			$non_routed_uri = uri_path(FALSE);
-       
+
 			if (file_exists(APPPATH.'views/'.$non_routed_uri.EXT))
 			{
 				$this->location = $non_routed_uri;
@@ -41,7 +41,7 @@ class Page_router extends CI_Controller {
 		{
 			$config['render_mode'] = 'views';
 			$page = $this->fuel->pages->create($config);
-			$
+			
 			$this->_remap_variables($page);
 		}
 		// using FUEL admin
@@ -95,17 +95,17 @@ class Page_router extends CI_Controller {
 		$page_data = $page->properties();
 		$this->load->helper('cookie');
 
-		// set up cache info
+		// set up cache info 
 		$cache_group = $this->fuel->config('page_cache_group');
 		$cache_id = $this->fuel->cache->create_id();
 
 		$output = '';
-
-		// grab from cache if exists without checking expiration time...
+		
+		// grab from cache if exists without checking expiration time... 
 		// Also.. saving from FUEL will remove cached page so you will always preview the latest saved
-		if ($this->fuel->config('use_page_cache') !== FALSE AND
-			$this->fuel->config('use_page_cache') !== 'views' AND
-			$this->fuel->cache->get($cache_id, $cache_group, FALSE) AND
+		if ($this->fuel->config('use_page_cache') !== FALSE AND 
+			$this->fuel->config('use_page_cache') !== 'views' AND 
+			$this->fuel->cache->get($cache_id, $cache_group, FALSE) AND 
 			$page->is_cached() AND !is_fuelified())
 		{
 			$output = $this->cache->get($cache_id, $cache_group);
@@ -118,8 +118,8 @@ class Page_router extends CI_Controller {
 				$output = $page->cms_render(TRUE, FALSE);
 
 				// save to cache but you must not be logged in for it to save
-				if ($this->fuel->config('use_page_cache') !== FALSE AND
-					$this->fuel->config('use_page_cache') !== 'views' AND
+				if ($this->fuel->config('use_page_cache') !== FALSE AND 
+					$this->fuel->config('use_page_cache') !== 'views' AND 
 					$page->is_cached() AND
 					!is_fuelified())
 				{
@@ -145,17 +145,17 @@ class Page_router extends CI_Controller {
 
 	/*
 	* ------------------------------------------------------
-	* If a controller method exists then call it. Otherwise,
-	* look for a corresponding view file if one exists.
-	* Eliminates the need to create controller methods with
+	* If a controller method exists then call it. Otherwise, 
+	* look for a corresponding view file if one exists. 
+	* Eliminates the need to create controller methods with 
 	* each page. It also will pull in the global and "section"
 	* specific configuration variables if they exist
 	* ------------------------------------------------------
 	*/
 	public function _remap_variables($page)
 	{
-
-		// set up cache info
+		
+		// set up cache info 
 		$cache_group = $this->fuel->config('page_cache_group');
 		$cache_id = $this->fuel->cache->create_id();
 

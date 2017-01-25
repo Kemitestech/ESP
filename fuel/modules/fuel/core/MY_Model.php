@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -1870,16 +1870,18 @@ class MY_Model extends CI_Model {
 	 * @param	mixed	where condition
 	 * @return	boolean
 	 */	
-	public function update($values, $where)
+	public function update($values, $where = array())
 	{
 		$this->_check_readonly();
 		$values = $this->on_before_update($values);
 		$values = $this->serialize_field_values($values);
-		$this->db->where($where);
+		if (!empty($where))
+		{
+			$this->db->where($where);
+		}
 		$return = $this->db->update($this->table_name, $values);
 		$this->on_after_update($values);
 		return $return;
-		
 	}
 	
 	// --------------------------------------------------------------------
@@ -2704,6 +2706,25 @@ class MY_Model extends CI_Model {
 	}
 	
 	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the table's comment
+	 *
+	 <code>
+	 $model->comment();
+	</code>
+	 *
+	 * @access	public
+	 * @return	boolean
+	 */	
+	public function comment()
+	{
+		$sql = "SELECT table_comment FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='". $this->db->database ."' AND table_name='" . $this->table_name . "'";
+		$query = $this->db->query($sql);
+		return $query->row()->table_comment;
+	}
+
+	// --------------------------------------------------------------------
 
 	/**
 	 * Returns an array of information that can be used for building a form (e.g. Form_builder). 
@@ -3352,7 +3373,7 @@ class MY_Model extends CI_Model {
 					// remove pre-existing relationships
 					if (!empty($fields['foreign_table']))
 					{
-						$del_where = array($fields['candidate_table'] => $CI->$related_models[$related_field]->table_name, $fields['foreign_table'] => $this->table_name, $fields['foreign_key'] => $id);
+						$del_where = array($fields['candidate_table'] => $CI->{$related_models[$related_field]}->table_name, $fields['foreign_table'] => $this->table_name, $fields['foreign_key'] => $id);
 					}
 					else
 					{
@@ -4317,7 +4338,7 @@ class MY_Model extends CI_Model {
 					{
 						foreach($values as $k => $v)
 						{
-							if (is_string($val) OR is_numeric($val))
+							if ((is_string($val) AND is_string($v)) OR is_numeric($val))
 							{
 								$return[$key] = str_replace('{'.$k.'}', $v, $val);
 							}	
@@ -4373,13 +4394,17 @@ class MY_Model extends CI_Model {
 
 		$find_and_or = preg_split("/_by_|(_and_)|(_or_)/", $find_where, -1, PREG_SPLIT_DELIM_CAPTURE);
 		$find_and_or_cleaned = array_values(array_filter($find_and_or));
-
 		if (!empty($find_and_or_cleaned) AND strncmp($name, 'find', 4) == 0)
 		{
 			$arg_index = 0;
 			foreach($find_and_or_cleaned as $key => $find)
 			{
-				if ($find == '_and_')
+				if ($arg_index == 0)
+				{
+					$this->db->where(array($find_and_or_cleaned[0] => $args[0]));
+					$arg_index++;
+				}
+				elseif ($find == '_and_')
 				{
 					$this->db->where(array($find_and_or_cleaned[$key + 1] => $args[$arg_index]));
 					$arg_index++;
@@ -4404,7 +4429,7 @@ class MY_Model extends CI_Model {
 			}
 
 			$other_args = array_slice($args, count($find_and_or) -1);
-		
+
 			if (!empty($other_args[0])) $this->db->order_by($other_args[0]);
 			if (!empty($limit)) $this->db->limit($limit);
 			if (!empty($other_args[1])) $this->db->offset($other_args[2]);
@@ -4427,7 +4452,7 @@ class MY_Model extends CI_Model {
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -4581,7 +4606,7 @@ class Data_set {
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -5875,7 +5900,7 @@ class Data_record {
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */

@@ -310,102 +310,17 @@ class Fuel_Loader extends CI_Loader
 	/** Load a module view **/
 	public function view($view, $vars = array(), $return = FALSE, $scope = NULL, $module = NULL) 
 	{
-		if (!isset($module)) $module = $this->_module; // FUEL
+		if (!isset($module)) $module = $this->_module; // <!-- FUEL
 
-		list($path, $_view) = Modules::find($view, $this->_module, 'views/');
-		
+		list($path, $_view) = Modules::find($view, $module, 'views/');
+
 		if ($path != FALSE) 
 		{
 			$this->_ci_view_paths = array($path => TRUE) + $this->_ci_view_paths;
 			$view = $_view;
 		}
-		
-		return $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return), $scope);
-	}
-
-	protected function &_ci_get_component($component) 
-	{
-		return CI::$APP->$component;
-	} 
-
-	
-	/****************************************************************************
-	METHODS FOR MATCHBOX COMPATIBILITY
-	****************************************************************************/
-	
-	/** Load config Matchbox style for backwards compatability **/
-	public function module_config($module, $file = '', $use_sections = FALSE, $fail_gracefully = FALSE)
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->config($file, $use_sections, $fail_gracefully, $module);
-	}
-
-	/** Load helper Matchbox style for backwards compatability **/
-	public function module_helper($module, $helper)
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->helper($helper, $module);
-	}
-
-	/** Load Language Matchbox style for backwards compatability **/
-	public function module_language($module, $langfile, $idiom = '', $return = FALSE, $add_suffix = TRUE, $alt_path = '')
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->language($langfile, $idiom, $return, $add_suffix, $alt_path, $module);
-	}
-
-	/** Load Library Matchbox style for backwards compatability **/
-	public function module_library($module, $library, $params = NULL, $object_name = NULL)
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->library($library, $params, $object_name);
-	}
-	
-	/** Load Model Matchbox style for backwards compatability **/
-	public function module_model($module, $model, $object_name = NULL, $connect = FALSE)
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->model($model, $object_name, $connect);
-	}
-
-	/** Load view Matchbox style for backwards compatability **/
-	public function module_view($module, $view, $vars = array(), $return = FALSE, $scope = NULL)
-	{
-		if (!isset($module)) $module = $this->_module; // FUEL
-		return $this->view($view, $vars, $return, $scope);
-	}
-
-
-	/** Load the database drivers **/
-	public function database($params = '', $return = FALSE, $active_record = NULL) {
-		if (class_exists('CI_DB', FALSE) AND $return == FALSE AND $active_record == NULL) 
-			return;
-
-		require_once BASEPATH.'database/DB'.EXT;
-		
-		$db = DB($params, $active_record);
-		
-		// <!-- FUEL
-		$my_driver = config_item('subclass_prefix').'DB_'.$db->dbdriver.'_driver';
-		$my_driver_file = APPPATH.'core/'.$my_driver.EXT;
-		
-		if (file_exists($my_driver_file))
-		{
-		    require_once($my_driver_file);
-		    $db = new $my_driver(get_object_vars($db));
-		}
-
-		if ($return === TRUE) 
-		{
-			return $db;
-		}
-		//	return DB($params, $active_record);
-		// FUEL -->
-		CI::$APP->db = '';
-		//CI::$APP->db = DB($params, $active_record);
-		CI::$APP->db = $db;
-		//$this->_ci_assign_to_models();
-		return CI::$APP->db;
+		$this->_ci_view_path = $path; // <!-- FUEL
+		return $this->_ci_load(array('_ci_view' => $view, '_ci_path' => $path, '_ci_vars' => $this->_ci_prepare_view_vars($vars), '_ci_return' => $return), $scope);
 	}
 
 	public function _ci_load($_ci_data, $scope = NULL) 
@@ -418,23 +333,25 @@ class Fuel_Loader extends CI_Loader
 			
 			/* add file extension if not provided */
 			$_ci_file = (pathinfo($_ci_view, PATHINFO_EXTENSION)) ? $_ci_view : $_ci_view.EXT;
-			
-			// <!-- FUEL ... so it will look in the "application" folder first
-			krsort($this->_ci_view_paths);
+			$_ci_path = $this->_ci_view_path.$_ci_file;
 
-			foreach ($this->_ci_view_paths as $path => $cascade) 
-			{				
-				if (file_exists($view = $path.$_ci_file)) 
+			if ( ! file_exists($_ci_path))
+			{
+				// <!-- FUEL...will call issues if you have the same view file in different modules
+				foreach ($this->_ci_view_paths as $path => $cascade) 
 				{
-					$_ci_path = $view;
-					break;
+					if (file_exists($view = $path.$_ci_file)) 
+					{
+						$_ci_path = $view;
+						break;
+					}
+					if ( ! $cascade) break;
 				}
-				if ( ! $cascade) break;
-			}	
+			}
+			
 		} 
 		elseif (isset($_ci_path)) 
 		{
-			
 			$_ci_file = basename($_ci_path);
 			if( ! file_exists($_ci_path)) $_ci_path = '';
 		}
@@ -493,6 +410,90 @@ class Fuel_Loader extends CI_Loader
 		}
 	}
 
+	protected function &_ci_get_component($component) 
+	{
+		return CI::$APP->$component;
+	} 
+
+	
+	/****************************************************************************
+	METHODS FOR MATCHBOX COMPATIBILITY
+	****************************************************************************/
+	
+	/** Load config Matchbox style for backwards compatability **/
+	public function module_config($module, $file = '', $use_sections = FALSE, $fail_gracefully = FALSE)
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->config($file, $use_sections, $fail_gracefully, $module);
+	}
+
+	/** Load helper Matchbox style for backwards compatability **/
+	public function module_helper($module, $helper)
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->helper($helper, $module);
+	}
+
+	/** Load Language Matchbox style for backwards compatability **/
+	public function module_language($module, $langfile, $idiom = '', $return = FALSE, $add_suffix = TRUE, $alt_path = '')
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->language($langfile, $idiom, $return, $add_suffix, $alt_path, $module);
+	}
+
+	/** Load Library Matchbox style for backwards compatability **/
+	public function module_library($module, $library, $params = NULL, $object_name = NULL)
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->library($library, $params, $object_name);
+	}
+	
+	/** Load Model Matchbox style for backwards compatability **/
+	public function module_model($module, $model, $object_name = NULL, $connect = FALSE)
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->model($model, $object_name, $connect);
+	}
+
+	/** Load view Matchbox style for backwards compatability **/
+	public function module_view($module, $view, $vars = array(), $return = FALSE, $scope = NULL)
+	{
+		if (!isset($module)) $module = $this->_module; // FUEL
+		return $this->view($view, $vars, $return, $scope, $module);
+	}
+
+
+	/** Load the database drivers **/
+	public function database($params = '', $return = FALSE, $active_record = NULL) {
+		if (class_exists('CI_DB', FALSE) AND $return == FALSE AND $active_record == NULL) 
+			return;
+
+		require_once BASEPATH.'database/DB'.EXT;
+		
+		$db = DB($params, $active_record);
+		
+		// <!-- FUEL
+		$my_driver = config_item('subclass_prefix').'DB_'.$db->dbdriver.'_driver';
+		$my_driver_file = APPPATH.'core/'.$my_driver.EXT;
+		
+		if (file_exists($my_driver_file))
+		{
+		    require_once($my_driver_file);
+		    $db = new $my_driver(get_object_vars($db));
+		}
+
+		if ($return === TRUE) 
+		{
+			return $db;
+		}
+		//	return DB($params, $active_record);
+		// FUEL -->
+		CI::$APP->db = '';
+		//CI::$APP->db = DB($params, $active_record);
+		CI::$APP->db = $db;
+		//$this->_ci_assign_to_models();
+		return CI::$APP->db;
+	}
 
 	// --------------------------------------------------------------------
 
@@ -814,7 +815,7 @@ class Fuel_Loader extends CI_Loader
 			$vars = array($vars => $val);
 		}
 
-		$vars = $this->_ci_object_to_array($vars);
+		$vars = $this->_ci_prepare_view_vars($vars);
 		if (is_array($vars) AND count($vars) > 0)
 		{
 			if (!isset($this->_ci_cached_vars[$scope]))

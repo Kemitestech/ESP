@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  */
@@ -345,6 +345,20 @@ class Fuel_users_model extends Base_module_model {
 		return $return;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Displays related password information in the right related box
+	 *
+	 * @access	public
+	 * @param	array Values
+	 * @return	string
+	 */	
+	public function related_items($values = array())
+	{
+		return $this->fuel->users->get_password_strength_text();
+	}
+
 	// --------------------------------------------------------------------
 	
 	/**

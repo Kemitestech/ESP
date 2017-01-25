@@ -10,7 +10,7 @@
 				</td>
 				<?php endif; ?>
 
-				<?php if ( $this->advanced_search != 'collapse') : ?>
+				<?php if ( $this->advanced_search !== 'collapse') : ?>
 				<td><a href="<?=fuel_url($this->module_uri.'/reset_page_state', FALSE)?>" class="reset"></a></td>
 				<td>
 					<div class="search_input<?php if ( $this->advanced_search === TRUE OR $this->advanced_search === 'popover') : ?> advanced<?php endif; ?>">
@@ -39,7 +39,7 @@
 
 	<ul>
 		<?php 
-		$create_url = (!empty($this->model->filters['group_id'])) ? $this->module_uri.'/create/'.$this->model->filters['group_id'] : $this->module_uri.'/create';
+		$create_url = (!empty($this->model->filters['group_id'])) ? $this->module_uri.'/create/?group_id='.$this->model->filters['group_id'] : $this->module_uri.'/create';
 		if (!empty($tree)) : ?>
 		<li class="active"><a href="#" id="toggle_list" class="ico ico_table" title="<?=$keyboard_shortcuts['toggle_view']?> to toggle view"><?=lang('btn_list')?></a></li>
 		<li><a href="#" id="toggle_tree" class="ico ico_tree" title="<?=$keyboard_shortcuts['toggle_view']?> to toggle view"><?=lang('btn_tree')?></a></li>

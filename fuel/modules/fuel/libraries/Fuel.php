@@ -8,7 +8,7 @@
  *
  * @package		FUEL CMS
  * @author		David McReynolds @ Daylight Studio
- * @copyright	Copyright (c) 2015, Daylight Studio LLC.
+ * @copyright	Copyright (c) 2017, Daylight Studio LLC.
  * @license		http://docs.getfuelcms.com/general/license
  * @link		http://www.getfuelcms.com
  * @filesource
@@ -130,6 +130,8 @@ class Fuel extends Fuel_advanced_module {
 		{
 			$this->CI->load->add_package_path(MODULES_PATH.$module);
 		}
+		// needed to add this here so views will load correctly
+		$this->CI->load->add_package_path(APPPATH);
 	}
 
 	// --------------------------------------------------------------------
@@ -468,7 +470,7 @@ class Fuel extends Fuel_advanced_module {
 	 * @param	string	The object
 	 * @return	object
 	 */	
-	public function &__get($var)
+	public function __get($var)
 	{
 		if (!isset($this->_attached[$var]))
 		{
