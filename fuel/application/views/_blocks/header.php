@@ -6,7 +6,7 @@
   <?php elseif (is_home()) : ?>
 	<title><?=fuel_var('page_title', '')?></title>
 	<?php else : ?>
-	<title><?=fuel_var('page_title', '') . ' | CCC Edward Street Parish'?></title>
+	<title><?=$page_title . ' | CCC Edward Street Parish'?></title>
   <?php endif;  ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8">
 	<meta name="keywords" content="<?=fuel_var('meta_keywords'); ?>" />
