@@ -51,6 +51,8 @@ class Media extends CI_Controller{
 
     if($response) {
       $vars['video_data'] = $response;
+    } else {
+      show_404();
     }
 
     $this->fuel->pages->render('media/video', $vars);//passed to the video.php view

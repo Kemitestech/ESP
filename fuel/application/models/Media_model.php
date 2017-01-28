@@ -49,7 +49,10 @@ class Media_model extends CI_Model {
   // Gets a single nedia item based on media id
   public function mediaShow($id = null) {
       $media = $this->sendRequest('medias/'.$id);
-
+      
+      if(isset($media->error)) {
+        return null;
+      }
       return $media;
   }
 
