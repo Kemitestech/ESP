@@ -24,7 +24,7 @@
 						</div>
 
 						<div class="post-content">
-							<p class="thumnail-p"><?=$post->excerpt?></p>
+							<p class="thumnail-p"><?=$post->get_excerpt_formatted(60, '')?></p>
 						</div>
 						<p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read more</a></p>
 						<div class="post-meta">
