@@ -35,7 +35,7 @@
     <div class="page-header page-header-nounderline">
         <h1 class="header-title" style="text-align: center;">Posts and Events</h1>
     </div>
-    <div class="col-md-13 col-md-offset-1">
+    <div class="col-md-12">
       <!-- Start of slider -->
       <div class="slider">
         <?php
@@ -51,9 +51,9 @@
           <div class="col-md-11">
             <div class="thumbnail thumbnail-override">
              <?php if($post->has_list_image()): ?>
-                    <img src="<?=$post->list_image_path?>" class="img-responsive" alt="Image">
+                    <img src="<?=$post->list_image_path?>" class="img-responsive" alt="<?=$post->title?>">
              <?php else: ?>
-                    <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+                    <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="logo">
              <?php endif; ?>
              <div class="caption">
               <h3><?=$post->title?></h3>
@@ -74,7 +74,7 @@
                 <?php if($event->has_list_image()): ?>
                        <img src="<?=$event->list_image_path?>" class="img-responsive" alt="Image">
                 <?php else: ?>
-                       <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+                       <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
                 <?php endif; ?>
                <div class="caption">
                 <h3><?=$event->title?></h3>

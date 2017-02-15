@@ -536,13 +536,16 @@ transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 
 }
 
-.thumbnail-override, .caption{
+.thumbnail-override, div.caption{
 	border: 0px;
 	box-shadow: none;
 	margin-top: 20px;
 	padding: 0px;
 }
 
+.caption {
+  padding: 0px!important;
+}
 .dropdown-menu {
 	background-repeat: repeat-x;
     border-radius: 4px;

@@ -44,7 +44,7 @@
 					<?php if($recent_post->has_list_image()): ?>
 								 <p><a href="<?=$recent_post->url?>"><img src="<?=$recent_post->list_image_path?>" alt="<?=$recent_post->title_entities?>" /></a></p>
 					<?php else: ?>
-								 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+								 <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
 					<?php endif; ?>
 					<figcaption><?=$recent_post->title?></figcaption>
 				</figure>

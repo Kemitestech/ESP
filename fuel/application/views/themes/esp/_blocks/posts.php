@@ -6,16 +6,16 @@
 			<div class="row">
 				<div class="post">
 					<?=fuel_edit($post)?>
-					<div class="col-md-3">
+					<div class="col-md-5">
 						<a href="<?=$post->url?>" class="thumbnail thumbnail-override">
 							<?php if($post->has_list_image()): ?>
 										 <p><a href="<?=$post->url?>"><img src="<?=$post->list_image_path?>" alt="<?=$post->title_entities?>" /></a></p>
 							<?php else: ?>
-										 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+								<img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
 							<?php endif; ?>
 						</a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-7">
 						<?=blog_block('post_unpublished', array('post' => $post))?>
 						<h2 class="thumbnail-title"><a href="<?=$post->url?>"><?=$post->title?></a></h2>
 						<div class="post-date">
@@ -28,7 +28,7 @@
 						</div>
 						<p><a class="btn btn-news" href="<?=$post->url?>" role="button">Read more</a></p>
 						<div class="post-meta">
-							<span class="glyphicon glyphicon-tags"></span><?=$post->tags_linked ?>
+							<span class="glyphicon glyphicon-tags"></span><?=$post->tags_linked?>
 						</div>
 
 					</div>

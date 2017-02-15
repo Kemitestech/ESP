@@ -13,7 +13,7 @@
                   <?php if($event->has_list_image()): ?>
                          <img src="<?=$event->list_image_path?>" class="img-responsive" alt="Image">
                   <?php else: ?>
-                         <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+                         <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
                   <?php endif; ?>
                 </a>
               </div>
@@ -42,16 +42,16 @@
   ?>
   <div class="row">
     <div class="event">
-      <div class="col-md-3">
+      <div class="col-md-5">
         <a href="<?=$event->url?>" class="thumbnail thumbnail-override">
           <?php if($event->has_list_image()): ?>
                  <img src="<?=$event->list_image_path?>" class="img-responsive" alt="Image">
           <?php else: ?>
-                 <img src="<?=img_path('place_holders/ESP Placeholder.svg', null, null)?>" class="img-responsive" alt="Image">
+                 <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
           <?php endif; ?>
         </a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-7">
         <h2 class="thumbnail-title"><a href="<?=$event->url?>"><?=$event->title?></a></h2>
         <p class="thumnail-p"><strong><?=date_formatter($event->event_startdate, 'F jS Y')?><?=' at '.date_formatter($event->event_startdate, 'H:i')?></strong></p>
         <p class="thumnail-p">HOSTED BY <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
@@ -73,6 +73,6 @@
   </div>
 <?php else : ?>
   <div class="no_events">
-    <p>There are no events available.</p>
+    <p>There are no events available at this present time.</p>
   </div>
 <?php endif; ?>

@@ -79,9 +79,13 @@ if (!empty($event)) : ?>
       <div class="event-details">
         <div class="event-detail">
           <?php if($event->has_main_image()): ?>
-              <img class="event-image" src="<?=$event->main_image_path?>" class="img-responsive" alt="<?=$event->title_entities?>">
-              <hr>
+            <img class="event-image" src="<?=$event->main_image_path?>" class="img-responsive" alt="<?=$event->title_entities?>">
+            <hr>
+          <?php else:  ?>
+            <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image">
+            <hr>
           <?php endif; ?>
+
         </div>
         <div class="event-detail">
           <h1 class="event-title"><?=fuel_edit($event)?><?=$event->title?></h1>
