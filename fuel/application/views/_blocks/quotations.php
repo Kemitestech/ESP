@@ -3,7 +3,7 @@
 	$description = "Jesus replied: Love the Lord your God with all your heart and with all your soul and with all your mind.";
 	$bible_verse = "St. Matthew 22: 37";
 
-	$quotation = fuel_model('quotations',array('find'=>'one', 'order'=> 'date_added DESC'));
+	$quotation = fuel_model('quotations',array('find'=>'one', 'order'=> 'RAND()'));
 	if(!empty($quotation)):
 
 		if($quotation->description):
