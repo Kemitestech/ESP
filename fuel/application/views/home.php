@@ -15,13 +15,13 @@
   <div class="container">
     <h1 class="header-title" style="text-align: center;">Edward Street Parish <br><small>Who we are</small></h1>
     <div class="row">
-      <div class="col-md-6">
-        <p>Celestial Church of Christ is a spiritual, world-wide, united, indivisible Holy Church which came into the world from heaven by DIVINE ORDER on the 29th of September 1947 in Porto Novo, Republic of Benin through the founder of the Church, the Reverend, Pastor, Prophet, Founder Samuel Bilehou Joseph Oshoffa (1909 - 1985).</p>
-      </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <p>
-          The Church is well known with Parishes, Dioceses all over the world with its International Headquarters in Nigeria.  See Celestial History for Brief History of the Church.
-          The Church is well known with Parishes, Dioceses all over the world with its International Headquarters in Nigeria.  See Celestial History for Brief History of the Church.
+          The celestial church of Christ, Edward Street Parish is a Christian religious and spiritual church, established in February 1990 and located at Edward Street Parish, New Cross, SE14 6DX.
+          It is a registered charity under the charity’s Act of England and Wales and part of a worldwide church movement with branches all over the world, including America, North America, Europe, Asia and Africa.
+        </p>
+        <p>
+          The church itself was founded by Rev. Pastor Samuel Bilewu Oshoffa on the 29th day of September 1949 in the Republic of Benin after receiving a divine injunction.
         </p>
       </div>
     </div>
