@@ -16,11 +16,11 @@
     <h1 class="header-title" style="text-align: center;">Edward Street Parish <br><small>Who we are</small></h1>
     <div class="row">
       <div class="col-md-12">
-        <p>
+        <p style="text-align: center">
           The celestial church of Christ, Edward Street Parish is a Christian religious and spiritual church, established in February 1990 and located at Edward Street Parish, New Cross, SE14 6DX.
-          It is a registered charity under the charity’s Act of England and Wales and part of a worldwide church movement with branches all over the world, including America, North America, Europe, Asia and Africa.
+          It is a registered charity under the charity’s Act of England and Wales 2011 and part of a worldwide church movement with branches all over the world, including America, North America, Europe, Asia and Africa.
         </p>
-        <p>
+        <p style="text-align: center">
           The church itself was founded by Rev. Pastor Samuel Bilewu Oshoffa on the 29th day of September 1949 in the Republic of Benin after receiving a divine injunction.
         </p>
       </div>
@@ -78,7 +78,7 @@
                 <?php endif; ?>
                <div class="caption">
                 <h3><?=$event->title?></h3>
-                <p>Hosted by <strong class="thumnail-by-name"><?=strtoupper($event->host->name)?></strong></p>
+                <p>Hosted by <?=strtoupper($event->host->name)?></p>
                 <p><a class="btn btn-news" href="<?=$event->url?>" role="button">View Event</a></p>
                </div>
               </div>
