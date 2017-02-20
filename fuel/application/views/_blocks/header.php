@@ -61,7 +61,7 @@
           		<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">About</a>
 		  				<ul class="dropdown-menu" role="menu">
 							<li class="<?php if(uri_string() == 'about-us/what-we-do') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/what-we-do') ?>" class="nav-color ">What we do</a></li>
-							<!-- <li class="<?php //if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php //echo base_url('about-us/history') ?>" class="nav-color">History</a></li>-->
+							<li class="<?php if(uri_string() == 'about-us/history') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/history') ?>" class="nav-color">History</a></li>
 							<li class="<?php if(uri_string() == 'about-us/tenets') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/tenets') ?>" class="nav-color">Tenets</a></li>
 							<li class="<?php if(uri_string() == 'about-us/our-ministries') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-ministries') ?>" class="nav-color">Ministries</a></li>
               <li class="<?php if (uri_string() == 'about-us/our-church-administration') echo $dropdownactive; ?>"><a href="<?php echo base_url('about-us/our-church-administration') ?>" class="nav-color">Church Administration</a></li>
