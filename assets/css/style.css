@@ -69,8 +69,8 @@ p {
 	border-left: 5px solid #FFB100;
 }
 
-#mainCol h1{
-  padding-top: 30px;
+.mainCol h1{
+  padding-top: 10px;
 }
 
 a:hover {
@@ -663,13 +663,25 @@ left: 0px;
 
 .jumbotron-img {
   /* responsive jumbotron size */
-  background: url('../images/worship_with_us@2x.jpg') no-repeat right top;
+  background: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)), url('../images/worship_with_us@2x.jpg') no-repeat right top;
   background-size: cover;
   height: 250px;
 }
 
 .home-landing-hero {
   background: url('../images/landing_image_one@2x.jpg') no-repeat center top;
+  background-size: cover;
+  height: 340px;
+}
+
+.history-landing-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)), url('../images/history_banner@2x.jpg') no-repeat center center;
+  background-size: cover;
+  height: 340px;
+}
+
+.what-we-do-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('../images/what_we_do_banner@2x.jpg') no-repeat top center;
   background-size: cover;
   height: 340px;
 }
@@ -1062,17 +1074,17 @@ nav.affix-top #bs-example-navbar-collapse-1{
 margin-top:148px;
 }
 
-#sidebar.affix-top {
+.sidebar.affix-top {
   position: static;
   margin-top:50px;
   width:228px;
 }
-#sidebar.affix {
+.sidebar.affix {
   position: fixed;
   top:90px;
   width:228px;
 }
-#sidebar.affix-bottom {
+.sidebar.affix-bottom {
   position: relative;
 }
 
@@ -1157,13 +1169,25 @@ margin-top:148px;
 
 .jumbotron-img {
   /* responsive jumbotron size */
-  background: url('../images/worship_with_us@2x.jpg') no-repeat center top;
+  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url('../images/worship_with_us@2x.jpg') no-repeat center top;
   background-size: cover;
   height: 360px;
 }
 
 .home-landing-hero {
-  background: url('../images/landing_image_one@2x.jpg') no-repeat center top;
+  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url('../images/landing_image_one@2x.jpg') no-repeat center top;
+  background-size: cover;
+  height: 360px;
+}
+
+.history-landing-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)), url('../images/history_banner@2x.jpg') no-repeat center center;
+  background-size: cover;
+  height: 360px;
+}
+
+.what-we-do-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url('../images/what_we_do_banner@2x.jpg') no-repeat top center;
   background-size: cover;
   height: 360px;
 }
@@ -1218,23 +1242,23 @@ nav.affix-top #bs-example-navbar-collapse-1{
   margin-top:148px;
 }
 
-#sidebar.affix-top {
+.sidebar.affix-top {
   position: static;
   margin-top:50px;
   width:228px;
 }
 
-#sidebar.affix {
+.sidebar.affix {
   position: fixed;
   top:90px;
   width:228px;
 }
 
-#sidebar.affix-bottom {
+.sidebar.affix-bottom {
   position: relative;
 }
 
-#sidebargallery.affix-top {
+.sidebargallery.affix-top {
   position: static;
   margin-top:50px;
   width:228px;
