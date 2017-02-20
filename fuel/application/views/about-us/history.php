@@ -1,23 +1,23 @@
-<div id="history-banner" class="jumbotron jumbotron-img reset-jumb-pos" style="color: white;">
-    <div class="container">
-       <div class="page-header page-header-nounderline">
+<div id="history-banner" class="history-landing-hero jumbotron reset-jumb-pos" style="color: white;">
+  <div class="container">
+     <div class="page-header page-header-nounderline">
       <h1>Our History</h1>
       <p>Edward Street Parish has a rich history as a church and also as part of Celestial Church of Christ World Wide</p>
-       </div>
-      </div>
+     </div>
+  </div>
 </div>
   <div class="jumbotron contact-background reset-jumb-pos">
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#ccc-history" data-toggle="tab" aria-controls="ccc-history" role="tab">Celestial Church of Christ</a></li>
-          <li role="presentation"><a href="#edward-history" data-toggle="tab" aria-controls="edward-history" role="tab">CCC Edward Street Parish</a></li>
+          <li role="presentation" class="active"><a href="#edward-history" data-toggle="tab" aria-controls="edward-history" role="tab">CCC Edward Street Parish</a></li>
+          <li role="presentation"><a href="#ccc-history" data-toggle="tab" aria-controls="ccc-history" role="tab">Celestial Church of Christ</a></li>
         </ul>
         <div class="tab-content"><!--Start of tab-content-->
-          <div role="tabpanel" id="ccc-history" class="tab-pane fade in active"><!--Start of tabpanel-->
+          <div role="tabpanel" id="ccc-history" class="tab-pane fade"><!--Start of tabpanel-->
 
            <div class="row"><!--Start of row-->
             <div class="content" data-spy="scroll" data-target="navbar-example" data-offset="5">
-             <div class="col-md-9" id="mainCol">
+             <div class="col-md-9 mainCol">
                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><!--Start of mymodal for popup content -->
                 <div class="modal-dialog" role="document"><!--Start of mymodaldialog-->
                  <div class="modal-content" style="text-align: center;"><!--Start of modal-content-->
@@ -41,7 +41,7 @@
                 </div><!--End of mymodaldialog-->
               </div><!--End of mymodal-->
               <h1 id="sec0"><small>The Church</small></h1>
-              <p>Celestial Church of Christ is a spiritual, world-wide, united, indivisible Holy Church which came into the world from heaven by DIVINE ORDER on the 29th of September 1947 in Porto Novo, Republic of Benin through the founder of the Church, the Late Reverend, Pastor, Prophet, <a data-toggle="modal" data-target="#myModal"><b>Founder Samuel Bilehou Joseph Oshoffa</b></a>. The Church is well known with Parishes, Dioceses all over the world with its International Headquarters in Nigeria.  See Celestial History for Brief History of the Church.</p>
+              <p>Celestial Church of Christ is a spiritual, world-wide, united, indivisible Holy Church which came into the world from heaven by DIVINE ORDER on the 29th of September 1947 in Porto Novo, Republic of Benin through the founder of the Church, the Late Reverend, Pastor, Prophet, <b>Founder Samuel Bilehou Joseph Oshoffa</b>. The Church is well known with Parishes, Dioceses all over the world with its International Headquarters in Nigeria.  See Celestial History for Brief History of the Church.</p>
               <hr>
               <h1 id="sec1"><small>The Divine Order</small></h1>
               <p>God called Rev., Pastor, Prophet Oshoffa on the day of total Eclipse of the sun in West Africa, when he was in the forest of Dahomey (now Republic of Benin), to purchase Ebony wood being a carpenter and timber trader, just like his father.  He was in the wilderness for forty days and forty nights.  Just as our Lord Jesus was led by the spirit into the wilderness for forty days and forty nights.  St. Matt. 4: 1-11, Mark 1:12-13, Luke 4:1-13.  Just as our Lord started his mission of redemption alone, so also did our highly esteemed Rev., Pastor, Founder, S.B.J. Oshoffa started alone, on the 29th September 1947.</p>
@@ -70,7 +70,7 @@
               <p><b>May God Bless you (Amen).</b></p>
               </div>
              <div class="col-md-3" id="navbar-example">
-                  <ul class="nav nav-stacked" id="sidebar">
+                  <ul class="nav nav-stacked sidebar">
                     <li><a href="#sec0">The Church</a></li>
                     <li><a href="#sec1">The Divine Order</a></li>
                     <li><a href="#sec2">The Spiritual Message</a></li>
@@ -82,9 +82,8 @@
               </div><!--End of content-->
               </div><!--End of row-->
             </div><!--End of tab panel-->
-              <div role="tabpanel" class="tab-pane fade" id="edward-history">
-                <h1><small>CCC Edward Street Parish</small></h1>
-                <p>Work in Progress. History coming soon<p>
+              <div role="tabpanel" class="tab-pane fade in active" id="edward-history">
+                <?=fuel_block('history')?>
               </div>
            </div>
           </div><!--End of tab-content-->
