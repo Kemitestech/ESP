@@ -7,7 +7,7 @@
 				</div>
 				<div class="col-xs-7 col-md-5 col-md-offset-1">
 					<ul class="nav">
-					<li class="horizontal-lists"><a href="<?php echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li>
+					<!-- <li class="horizontal-lists"><a href="<?php //echo base_url('faq') ?>" class="header-title" style="font-size:14px;">FAQ</a></li> -->
 	        <li class="horizontal-lists"><a href="<?php echo assets_path('pdf/bible-2017-lessons.pdf') ?>" target="_blank" class="header-title" style="font-size:14px;">Bible Lessons 2017</a></li>
           </ul>
 				</div>

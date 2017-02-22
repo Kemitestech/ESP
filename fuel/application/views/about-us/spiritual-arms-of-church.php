@@ -1,8 +1,8 @@
   <div class="jumbotron contact-background reset-jumb-pos">
     <div class="container">
 		<h1 class="header-title">Spiritual Arms of the Church</h1>
-		<p>Duis vulputate mauris nec facilisis gravida. Quisque vel elementum lacus. In luctus posuere augue id condimentum. Aliquam sed convallis libero, varius faucibus tellus. Curabitur ultrices eleifend molestie.<br><br></p>
-		<p>Check out our various arms of the church</p><br><br>
+		<p>Headed by the Shepherd in charge, the spiritual arms aim to cultivate and maintain the spiritually wellness of the church.</p>
+		<p>Check out our various arms of the church</p><br>
     <div class="row">
       <div class="col-md-3 col-md-offset-4 col-xs-12 col-sm-6">
         <a href="#">

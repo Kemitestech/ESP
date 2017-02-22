@@ -2,7 +2,7 @@
 		<div class="container">
 		   <div class="page-header page-header-nounderline">
 				<h1>What We Do</h1>
-				<p>Edward Street Parish is a spiritual church and a charity</p>
+				<p>Edward Street Parish is a spiritual church and charity that strives to teach and enact the Christian faith</p>
 		   </div>
   		</div>
 	</div>

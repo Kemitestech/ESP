@@ -1,8 +1,8 @@
 <div class="jumbotron contact-background reset-jumb-pos">
   <div class="container">
 		<h1 class="header-title">Our Church Administration</h1>
-		<p>Duis vulputate mauris nec facilisis gravida. Quisque vel elementum lacus. In luctus posuere augue id condimentum. Aliquam sed convallis libero, varius faucibus tellus. Curabitur ultrices eleifend molestie.<br><br></p>
-		<p>Check out our various Administrations</p><br><br>
+		<p>The administrative leadership of the parish/church rest with the parochial committee and it's sub-comittees and are responsible for the control and management of the Parish/Church.</p>
+		<p>Check out our various Administrations</p>
 		<div class="row">
       <div class="col-md-3 col-md-offset-4 col-xs-12 col-sm-6">
 				<a href="#">
@@ -13,7 +13,8 @@
 				</a>
 			</div>
 		</div>
-		<h3>Parochial sub-committees</h3>
+		<h2>Parochial sub-committees</h2>
+    <hr>
     <br>
   		<div class="row">
   			<div class="col-md-3 col-xs-12 col-sm-6">

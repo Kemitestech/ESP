@@ -21,7 +21,7 @@ if (isset($current_post) AND !$is_home)
     		<?php //echo $this->fuel->blog->sidemenu(array('authors', 'tags', 'categories', 'links', 'archives'))?>
 
 
-    	<div class="blog-main">
+    	<div class="blog-main" style="min-height: 150px;">
     		<?php echo fuel_var('body', ''); ?>
     	</div>
     </div>
