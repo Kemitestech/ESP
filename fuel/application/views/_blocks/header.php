@@ -99,11 +99,11 @@
 							</div>
 						</form>-->
 						<li class="visible-lg-inline">
-						<?php if(!$CI->fuel->blog->is_logged_in()) :?>
-							<a href="<?php echo base_url('fuel/login'); ?>" class="nav-color">
-								<img src="<?php echo assets_path('images/user.png'); ?>" style="" class="nav-img-display" alt="">
-							</a>
-						<?php endif; ?>
+						<?php //if(!$CI->fuel->blog->is_logged_in()) :?>
+							<!-- <a href="<?php //echo base_url('fuel/login'); ?>" class="nav-color">
+								<img src="<?php //echo assets_path('images/user.png'); ?>" style="" class="nav-img-display" alt="">
+							</a> -->
+						<?php //endif; ?>
 						</li>
 					</ul><!-- End of second nav -->
 					<div class="collapse" id="collapseExample">
