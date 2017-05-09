@@ -26,12 +26,12 @@
               <tr>
                 <td><h3>Sunday</h3></td>
                 <td><h3>Lord's Day</h3></td>
-                <td><h3>10:00am - 2:00pm</h3></td>
+                <td><h3>10:00 - 14:00</h3></td>
               </tr>
               <tr>
                 <td><h3>Tuesday</h3></td>
                 <td><h3>Counselling and Bible Class</h3></td>
-                <td><h3>7.00pm - 9.00pm</h3></td>
+                <td><h3>19:00 - 21:00</h3></td>
               </tr>
               <tr>
                 <td><h3>Wednesday</h3></td>
@@ -39,12 +39,12 @@
                   <h3>Service for the Needy</h3>
                   <h3>Mercy Day</h3>
                 </td>
-                <td><h3>9.00am - 9.30am</h3><h3>7.00pm - 9.00pm</h3></td>
+                <td><h3>9.00 - 9.30</h3><h3>19:00 - 21:00</h3></td>
               </tr>
               <tr>
                 <td><h3>Thursday</h3></td>
                 <td><h3>New Moon Service (<strong>1st Thursday of the Month</strong>)</h3></td>
-                <td><h3>10:00pm - 9.00pm</h3></td>
+                <td><h3>22:00 - 2:00</h3></td>
               </tr>
               <tr>
                 <td><h3>Friday</h3></td>
@@ -53,8 +53,8 @@
                   <h3>Prophet and Prophetess</h3>
                 </td>
                 <td>
-                  <h3>7:00pm - 9.00pm</h3>
-                  <h3>9.00pm - 12.00am</h3>
+                  <h3>19:00 - 21:00</h3>
+                  <h3>21:00 - 00:00</h3>
                 </td>
               </tr>
             </table>

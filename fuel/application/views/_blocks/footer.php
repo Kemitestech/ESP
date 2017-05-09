@@ -16,7 +16,13 @@
         <div class="row" style="margin-bottom: 20px;">
 			<div class="col-xs-6 col-md-4">
 				<h3 class="header-title">Service times</h3>
-				Sunday 10:00 - 14:00</br></br> Wednesday 19:00 - 21:00</br></br>Friday 19:00 - 21:00
+				<strong>Lord's Day Service:</strong> Sunday 10:00 - 14:00</br></br>
+				<strong>Counselling and Bible Class:</strong> Tuesday 19:00 - 21:00</br></br> 
+				<strong>Service for the Needy:</strong> Wednesday 9:00 - 9:30</br></br> 
+				<strong>Mercy Day</strong>: Wednesday 19:00 - 21:00</br></br> 
+				<strong>New Moon Service:</strong> 1st Thursday of the Month 22:00 - 2:00</br></br>
+				<strong>Prophet and Prophetess:</strong> Friday 21:00 - 00:00</br></br>
+				<strong>Power Day:</strong> Friday 19:00 - 21:00
 			</div>
 			<div class="col-xs-6 col-md-4">
 				<h3 class="header-title">Contact us</h3>
