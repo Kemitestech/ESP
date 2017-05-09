@@ -46,7 +46,7 @@
 					<?php else: ?>
 								 <img src="<?=img_path('place_holders/events_ph@2x.png', null, null)?>" class="img-responsive" alt="Image of church logo">
 					<?php endif; ?>
-					<figcaption><?=$recent_post->title?></figcaption>
+					<figcaption><a href="<?=$recent_post->url?>" style="color: inherit"><?=$recent_post->title?></a></figcaption>
 				</figure>
 				<?php endforeach; ?>
 		  </div>
