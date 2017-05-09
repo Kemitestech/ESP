@@ -45,7 +45,7 @@
 			</p>
 			<h3 class="header-title">Spiritual Leadership</h3>
 			<p>
-				This is headed by the Shepherd in charge or Minister in charge, usually the most senior in spiritual rank, He is assisted in the spiritual role by an assistant shepherd (If there is one in place), the Clergies and Elders of the church.
+				This is headed by the Shepherd in charge or Minister in charge, He is assisted in the spiritual role by an assistant shepherd (If there is one in place), the Clergies and Elders of the church.
 			</p>
 			<p>
 				He is responsible for all spiritual affairs and spiritual growth of the parish as in leading the service of worship and preaching sermons in accordance with the Christian faith. All the operational duties of the following departments/sections are under his charge and purview
@@ -71,23 +71,14 @@
 			<p>
 				The administrative leadership of the parish/church rest with the parochial committee and the Trustees known as the 'charity trustees’ body' and are responsible for the control and management of the Parish/Church.
 			</p>
-			<ol type="a">
-				<li>
-					<p>The Parochial Committee<br>This is the ruling body of the Parish responsible for its day to day running. It is made up of between 20 and 33 members of which 10 are democratically elected executive officers as follows</p>
-					<ul>
-						<li><p>Chairman and two vice chairman</p></li>
-						<li><p>Hon. Secretary and two Deputies</p></li>
-						<li><p>Treasurer and one Deputy</p></li>
-						<li><p>Financial secretary and one Deputy</p></li>
-					</ul>
-					<p>The composition of the full membership of the committee are set out in the governing document. All members of the committee both elected and non-elected hold office for a two year term after which they may be re-elected for a further period of term of office.</p>
-				</li>
-				<li>
-					<p>The Trustees</p>
-					<p>These comprise of the three principal officers of the parochial committee (i.e. chairman, secretary and treasurer) and four ex-officio nominated members, chosen from amongst the senior members of the church on the basis of maturity, experience and continuity.</p>
-					<p>They are responsible for all legal matters relating to the Parish (Church/ charity).  All Estate properties, Chattels and Securities of the Parish/church are administered and managed by this body. As trustees, they have the power to acquire, dispose, transfer and or mortgage the Landed property of the Parish (Church/Charity).</p>
-				</li>
-			</ol>
+			<p>The Parochial Committee<br>This is the ruling body of the Parish responsible for its day to day running. It is made up of a collection of members in which a select few hold the following democratically elected positions:</p>
+			<ul>
+				<li><p>Chairman and two vice chairman</p></li>
+				<li><p>Hon. Secretary and two Deputies</p></li>
+				<li><p>Treasurer and one Deputy</p></li>
+				<li><p>Financial secretary and one Deputy</p></li>
+			</ul>
+			<p>The composition of the full membership of the committee are set out in the governing document. All members of the committee both elected and non-elected hold office for a two year term after which they may be re-elected for a further period of term of office.</p>			
 			<hr>
 		</div><!--End of content-->
 	</div><!--End of tab-content-->
