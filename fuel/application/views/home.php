@@ -2,15 +2,7 @@
 <?php // declaring $page_title variable for the Home Page using fuel_set_var ?>
 <?php fuel_set_var('page_title', 'Welcome | CCC Edward Street Parish Church'); ?>
 <?php $this->load->view('_blocks/header'); ?>
-<div id ="home-hero" class="slider1 jumbotron jumbo-slider-override hero-hover">
-  <div>
-    <div class="home-landing-hero" style="padding: 30px; color: white; text-align: center;">
-      <h1>The Lord is our Shepherd</h1>
-      <h2>Discover the 'Word of GOD' and much more...</h2>
-      <a class="btn btn-lg hero-button" href="<?php echo base_url('blog') ?>" role="button">FIND OUT MORE</a>
-    </div>
-  </div>
-</div>
+<?php $this->load->view('_blocks/home_banner'); ?>
 <div class="jumbotron contact-background reset-jumb-pos">
   <div class="container">
     <h1 class="header-title" style="text-align: center;">Edward Street Parish <br><small>Who we are</small></h1>
