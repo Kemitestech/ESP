@@ -76,7 +76,7 @@
 							<a class="dropdown-toggle nav-color nav-hover" data-toggle="dropdown" role="button">Media</a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="<?php if (uri_string() == 'media/videos') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/videos') ?>" class="nav-color">Videos</a></li>
-								<li class="<?php if(uri_string() == 'media/gallery') echo $dropdownactive; ?>"><a href="<?php echo base_url('media/gallery') ?>" class="nav-color">Gallery</a></li>
+								<!--<li class="<?php //if(uri_string() == 'media/gallery') echo $dropdownactive; ?>"><a href="<?php //echo base_url('media/gallery') ?>" class="nav-color">Gallery</a></li>-->
 							</ul>
 						</li>
 						<li class="collapse-underline <?php if(uri_string() == 'events') echo $active; ?>"><a href="<?php echo base_url('events') ?>" class="nav-color nav-hover">Events</a></li>
