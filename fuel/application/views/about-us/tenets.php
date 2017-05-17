@@ -9,16 +9,7 @@
 	  <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <a>
-          <p class="bg-orange tenet">We must not wear shoes while wearing Sutana and whilst within the church premises</p>
-        </a>
-        <div class="caption">
-          <p>Matthew 17: 1 - 2<br>Matthew 28: 2 - 3<br>Mark 9: 2 - 3<br>Revelation 7: 9</p>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <a>
-          <p class="bg-torqouise tenet">
+          <p class="bg-orange tenet">
             Women on their menstrual period should abstain from the church for 7 clear days until the 8th day to come for santisfication
           </p>
         </a>
@@ -29,7 +20,7 @@
 
       <div class="col-xs-12 col-sm-6 col-md-3">
           <a>
-            <p class="bg-green tenet">Black and Red clothes are forbidden except for educational or professional reasons</p>
+            <p class="bg-torqouise tenet">Black and Red clothes are forbidden except for educational or professional reasons</p>
           </a>
           <div class="caption">
             <p>Revelations 6: 12<br>Revelations 19: 12 - 13<br></p>
@@ -38,12 +29,22 @@
 
       <div class="col-xs-12 col-sm-6 col-md-3">
         <a>
-          <p class="bg-blue tenet">Protection and GOD's injunction according to the dictates of the holy spirit</p>
+          <p class="bg-green tenet">Protection and GOD's injunction according to the dictates of the holy spirit</p>
         </a>
         <div class="caption">
           <p>Matthew 2: 13 - 19<br>Joshua 20: 1 - 6<br>Numbers 35: 6<br>Deuteronomy 4: 41 - 43</p>
         </div>
       </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <a>
+          <p class="bg-blue tenet">Carrying corpse into the church is forbidden</p>
+        </a>
+        <div class="caption">
+          <p>Numbers 19: 12 - 14<br> Isaiah 38: 18<br>Ezekiel 43: 7 - 9<br>Mark 12: 27</p>
+        </div>
+     </div>
+    
     </div>
     <hr>
     <div class="row">
@@ -107,14 +108,6 @@
       <div class="caption">
         <p>Numbers 28: 11</p>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-        <a>
-          <p class="bg-blue tenet">Carrying corpse into the church is forbidden</p>
-        </a>
-        <div class="caption">
-          <p>Numbers 19: 12 - 14<br> Isaiah 38: 18<br>Ezekiel 43: 7 - 9<br>Mark 12: 27</p>
-        </div>
     </div>
    </div>
   </div>
