@@ -78,8 +78,8 @@ $(document).ready(function() {
                         message: 'Your full name is required'
                     },
 					stringLength: {
-                        max: 50,
-                        message: 'Your full name must be less than 50 characters'
+                        max: 30,
+                        message: 'Your full name must be less than 30 characters'
                     }
                 }
             },
@@ -107,8 +107,8 @@ $(document).ready(function() {
                         message: 'The phone number can contain digits only'
                     },
 					stringLength: {
-						min: 11,
-						message: 'Please enter at least 11 digits'
+						min: 8,
+						message: 'Please enter at least 8 digits'
 					}
                 }
             },
@@ -118,16 +118,16 @@ $(document).ready(function() {
                         message: 'A subject is required'
                     },
                     stringLength: {
-                        max: 50,
-                        message: 'The subject must be less than 50 characters'
+                        max: 20,
+                        message: 'The subject must be less than 20 characters'
                     }
                 }
             },
 			message: {
                 validators: {
                     stringLength: {
-                        max: 300,
-                        message: 'Your enquiry must be less than 300 characters'
+                        max: 500,
+                        message: 'Your enquiry must be less than 500 characters'
                     },
                     notEmpty: {
                         message: 'Please tell us about your enquiry'
@@ -194,12 +194,9 @@ $(document).ready(function() {
          fields: {
              fullname: {
                  validators: {
-                     notEmpty: {
-                         message: 'Your full name is required'
-                     },
-           stringLength: {
-                         max: 50,
-                         message: 'Your full name must be less than 50 characters'
+                    stringLength: {
+                         max: 30,
+                         message: 'Your full name must be less than 30 characters'
                      }
                  }
              },
@@ -214,26 +211,14 @@ $(document).ready(function() {
                      }
                  }
              },
-
-             subject: {
-                 validators: {
-                     notEmpty: {
-                         message: 'A subject is required'
-                     },
-                     stringLength: {
-                         max: 50,
-                         message: 'The subject must be less than 50 characters'
-                     }
-                 }
-             },
        request: {
                  validators: {
                      stringLength: {
-                         max: 300,
-                         message: 'Your enquiry must be less than 300 characters'
+                         max: 700,
+                         message: 'Your enquiry must be less than 700 characters'
                      },
                      notEmpty: {
-                         message: 'Please tell us about your enquiry'
+                         message: 'Please tell us about your prayer request'
                      }
                  }
              }
@@ -276,7 +261,7 @@ $(document).ready(function() {
                      $('#prayer-request-alert-message')
                      .removeClass('alert-warning')
                      .addClass('alert-success')
-                     .html('Thank you, your message has been sent.')
+                     .html('Thank you, your prayer request has been received.')
                      .show();
                      $('#prayer-request-alert-modal').modal('show');
                  }
