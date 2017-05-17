@@ -25,7 +25,7 @@
         </div>
         <div class="form-group input-margin">
          <div class="col-sm-9">
-        <input type="text" name="fullname" class="form-control input-lg no-radius" id="name1" placeholder="Name *">
+        <input type="text" name="fullname" class="form-control input-lg no-radius" id="name1" placeholder="Name">
          </div>
         </div>
         <div class="form-group input-margin">
