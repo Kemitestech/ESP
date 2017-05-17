@@ -15,12 +15,12 @@ class Contactform extends CI_Controller {
 				$csrfTokenName = $this->security->get_csrf_token_name().'';
 				$csrfHash = $this->security->get_csrf_hash().'';
 
-        $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|required|alpha_numeric_spaces');
-        $this->form_validation->set_rules('businessname', 'Business Name', 'trim|alpha_numeric_spaces');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'max_length[30]|required|alpha_numeric_spaces|trim');
+        $this->form_validation->set_rules('businessname', 'Business Name', 'max_length[50]|alpha_numeric_spaces|trim');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
-        $this->form_validation->set_rules('phone', 'Telephone Number', 'trim|is_natural|min_length[11]');
-        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|alpha_numeric_spaces');
-        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|alpha_numeric_spaces');
+        $this->form_validation->set_rules('phone', 'Telephone Number', 'min_length[8]|trim|is_natural');
+        $this->form_validation->set_rules('subject', 'Subject', 'max_length[20]|required|alpha_numeric_spaces|trim');
+        $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|max_length[500]');
 				$this->form_validation->set_rules('firstname', 'First Name', 'callback_check_empty');
 
         if($this->form_validation->run() == FALSE) {

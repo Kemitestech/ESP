@@ -13,10 +13,9 @@ class Prayerrequestform extends CI_Controller {
     $spark_post_username = getenv('SPARK_POST_USERNAME');//PHP method that gets environment variables by searching the systen environment based on the argument password_needs_rehash
     $spark_post_password = getenv('SPARK_POST_SECRET');
 
-    $this->form_validation->set_rules('fullname', 'Full Name', 'min_length[3]|trim|alpha_numeric_spaces');//CodeIgnitor property that points to form validation class inorder to access the form validation method set_rules().
-                                                                                                                    //1st parameter is name of field, the second parameter is the human readable name for the error message and the third parameter is a rule to be applied.
-    $this->form_validation->set_rules('request', 'Request', 'trim|required|alpha_numeric_spaces');
-    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('fullname', 'Full Name', 'max_length[30]|alpha_numeric_spaces|trim');//CodeIgnitor property that points to form validation class inorder to access the form validation method set_rules().                                                                                                    //1st parameter is name of field, the second parameter is the human readable name for the error message and the third parameter is a rule to be applied.
+    $this->form_validation->set_rules('request', 'Request', 'max_length[700]|required|trim');
+    $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
     $this->form_validation->set_rules('firstname', 'Firstname', 'callback_check_empty');
     //Add rules for form fields
     $csrfTokenName = $this->security->get_csrf_token_name().'';
