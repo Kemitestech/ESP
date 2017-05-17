@@ -82,7 +82,7 @@
       <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br> <abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
       <hr>-->
       <p>Parochial Commitee:</p>
-      <address><abbr title="Phone">P:</abbr> 44 (0)208 694 9000 <br><abbr title="Email">E:</abbr><a href="mailto:#"> info.cccedwardstreetparish.org</a></address>
+      <address><abbr title="Phone">P:</abbr> 44 (0)208 694 9000 <br><abbr title="Email">E:</abbr><a href="mailto:info@cccedwardstreetparish.org?Subject=Enquiry"> info.cccedwardstreetparish.org</a></address>
       <hr>
       <!--<p>Clergy:</p>
       <address><abbr title="Phone">P:</abbr> 44 (0)208 692 9036 <br><abbr title="Email">E:</abbr><a href="mailto:#"> first.last@example.com</a></address>
