@@ -60,9 +60,9 @@ class Contactform extends CI_Controller {
 						$config['smtp_crypto'] = 'tls';
 
 						$this->email->initialize($config);
-            $this->email->from('testing@sparkpostbox.com', $fullname);
+            $this->email->from('info@cccedwardstreetparish.org', $fullname);
 						$this->email->reply_to($email, $fullname);
-            $this->email->to("info@cccedwardstreetparish.org");
+            $this->email->to('info@cccedwardstreetparish.org');
             $this->email->subject($subject);
 
 						//Checks if businessname and phonenumber is empty.

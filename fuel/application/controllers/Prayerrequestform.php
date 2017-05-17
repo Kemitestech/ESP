@@ -60,9 +60,9 @@ class Prayerrequestform extends CI_Controller {
       $config['smtp_crypto'] = 'tls';//setting type of encryption key.
 
       $this->email->initialize($config);//initialises email library with the configuration settings
-      $this->email->from('testing@sparkpostbox.com', $fullname);//first parameter is the address that the email will be sent from.  The second parameter is the person who sent the prayer request.
+      $this->email->from('prayer_request@cccedwardstreetparish.org', $fullname);//first parameter is the address that the email will be sent from.  The second parameter is the person who sent the prayer request.
       $this->email->reply_to($email, $fullname);//Email address to reply to and the name of the person who sent prayer request.
-      $this->email->to("info@cccedwardstreetparish.org");//Email address to send prayer requests to
+      $this->email->to("prayer_request@cccedwardstreetparish.org");//Email address to send prayer requests to
       $this->email->subject($subject);//subject of email which is set to prayer request
 
       $conclusion = !empty($fullname) ? 'kind regards,' . '<br>' . $fullname : 'kind regards,' . '<br>' . 'Anonymous';
