@@ -7,7 +7,7 @@
           <div class="form-group">
           <label class="col-sm-9">
             <p>Feel free to give us a call on 0208 692 9036 or simply use the form below. If you prefer, just email us direct at
-               <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">info@cccedwardstreetparish.org</a>
+               <a href="mailto:info@cccedwardstreetparish.org?Subject=Enquiry" target="_top">info@cccedwardstreetparish.org</a>
             </p>
           </label>
       <label class="col-sm-9">

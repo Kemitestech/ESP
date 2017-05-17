@@ -19,7 +19,7 @@
         <h1 class="header-title title-margin">Prayer Request</h1>
         <p>Use the form below for your prayer request and
           leave the rest to our Lord who never fails. Also you can email your request at
-           <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">prayer_request@cccedwardstreetparish.org</a>
+           <a href="mailto:prayer_request@cccedwardstreetparish.org?Subject=Prayer%20request" target="_top">prayer_request@cccedwardstreetparish.org</a>
         </p>
         </label>
         </div>
