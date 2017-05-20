@@ -3,7 +3,10 @@
     "description": "Website for Edward Street Parish",
     "require": {
         "php": ">=5.2.4",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "guzzlehttp/guzzle": "^6.2",
+        "php-http/guzzle6-adapter": "^1.1",
+        "sparkpost/sparkpost": "^2.1"
     },
     "license": "MIT",
     "authors": [
