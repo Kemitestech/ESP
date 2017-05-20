@@ -7,20 +7,22 @@ class Prayerrequestform extends CI_Controller {
   }
 
   public function index() {
-    $this->load->library('email');//loading amail library
-    $dotenv = new Dotenv\Dotenv(FCPATH);//Creating new object with an argument.  Dotenv\ is unique identifier of a class
-    $dotenv->load();//Using loading method from the Dotenv class to load environment variables into system environment
-    $spark_post_username = getenv('SPARK_POST_USERNAME');//PHP method that gets environment variables by searching the systen environment based on the argument password_needs_rehash
+    $spark_post_username = getenv('SPARK_POST_USERNAME');
     $spark_post_password = getenv('SPARK_POST_SECRET');
-
+    $dotenv = new Dotenv\Dotenv(FCPATH);
+    $dotenv->load();
+    $client = new GuzzleHttp\Client();
+    $httpClient = new Http\Adapter\Guzzle6\Client($client);
+    $sparkPost = new SparkPost\SparkPost($httpClient, array('key' => getenv('SPARK_POST_SECRET').''));
+    $csrfTokenName = $this->security->get_csrf_token_name().'';
+    $csrfHash = $this->security->get_csrf_hash().'';
+    //Add rules for form fields
     $this->form_validation->set_rules('fullname', 'Full Name', 'max_length[30]|alpha_numeric_spaces|trim');//CodeIgnitor property that points to form validation class inorder to access the form validation method set_rules().                                                                                                    //1st parameter is name of field, the second parameter is the human readable name for the error message and the third parameter is a rule to be applied.
     $this->form_validation->set_rules('request', 'Request', 'max_length[700]|required|trim');
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
     $this->form_validation->set_rules('firstname', 'Firstname', 'callback_check_empty');
-    //Add rules for form fields
-    $csrfTokenName = $this->security->get_csrf_token_name().'';
-    $csrfHash = $this->security->get_csrf_hash().'';
-//the run() checks if any form validation rules are broken
+
+    //the run() checks if any form validation rules are broken
     if($this->form_validation->run() == FALSE) {
 
         $this->output->set_status_header('400');//setting header status to 200 which means form request was successful
@@ -36,43 +38,37 @@ class Prayerrequestform extends CI_Controller {
     }
     //get the value of the form fields and store it in each variable
     else {
+      $this->output->set_content_type('application/json');
+      $this->output->set_status_header('200');//sucessfull
+
       $subject = 'Prayer request';
       $fullname = $this->input->post('fullname');
       $email = $this->input->post('email');
       $request = $this->input->post('request');
-
-      $this->output->set_content_type('application/json');
-      $this->output->set_status_header('200');//sucessfull
-
-      //grabbing the global config so value can be set for the email configurations
-      $config['protocol'] = 'smtp';//simple mail transfer protocol for.  It is an internet standard for email stransfer
-      $config['charset'] = 'utf-8';//character set to utf-8; set of alowable characters
-      $config['wordwrap'] = TRUE;//words can rap onto the next line at a certain point.
-      $config['mailtype'] = "html";//email will contain html
-      $config['crlf'] = "\r\n";//newline
-      $config['newline'] = "\r\n";
-
-      $config['smtp_host'] = 'smtp.sparkpostmail.com';//the host that is sending the prayer request form email.
-      $config['smtp_user'] = $spark_post_username;//username of the account
-      $config['smtp_pass'] = $spark_post_password;//password of the account is the API key
-      $config['smtp_port'] = '587';//the potal to listen out for messages and connection
-      $config['smtp_crypto'] = 'tls';//setting type of encryption key.
-
-      $this->email->initialize($config);//initialises email library with the configuration settings
-      $this->email->from('prayer_request@cccedwardstreetparish.org', $fullname);//first parameter is the address that the email will be sent from.  The second parameter is the person who sent the prayer request.
-      $this->email->reply_to($email, $fullname);//Email address to reply to and the name of the person who sent prayer request.
-      $this->email->to("prayer_request@cccedwardstreetparish.org");//Email address to send prayer requests to
-      $this->email->subject($subject);//subject of email which is set to prayer request
-
+      $variedname = empty($fullname) ? 'Anonymous' : $fullname;
+      $textMessage = "Dear Edward Street Parish,\n\n{$request}\n\nkind regards,\n{$variedname}";
       $conclusion = !empty($fullname) ? 'kind regards,' . '<br>' . $fullname : 'kind regards,' . '<br>' . 'Anonymous';
+      $promise = $sparkPost->transmissions->post(array(
+        'content' => array(
+          'from' => array('name' => 'Prayer Request', 'email' => 'prayer_request@cccedwardstreetparish.org'),
+          'subject' => "{$subject}",
+          'html' => "Dear Edward Street Parish,<br><br>{$request}<br><br>{$conclusion}",
+          'text' => $textMessage,
+          'reply_to' => "{$email}"
+        ),
+        'recipients' => array( 
+            array( 
+              'address' => array('name' => 'Emmanuel', 'email' => 'prayer_request@cccedwardstreetparish.org')
+            ) 
+        )
+      ));	      
 
-      $this->email->message('Dear Edward Street Parish,<br><br>' . $request . '<br><br>' . $conclusion);
-
-      if(!$this->email->send()){
-        echo json_encode(array('result' => 'error', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
-      }else{
-        echo json_encode(array('result' => 'ok', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
-      }
+      try {
+          $response = $promise->wait();
+          echo json_encode(array('result' => 'ok', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
+      } catch (\Exception $e) {
+          echo json_encode(array('result' => 'error', 'csrfTokenName' => $csrfTokenName, 'csrfHash' => $csrfHash));
+      }	
     }
   }
 

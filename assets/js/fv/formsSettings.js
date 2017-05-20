@@ -253,7 +253,7 @@ $(document).ready(function() {
                    $('#prayer-request-alert-message')//target #prayer-request-alert-message
                    .removeClass('alert-success')
                    .addClass('alert-warning')
-                   .html('Sorry, cannot send the message. Make sure you supplied the right Email address')
+                   .html('<h3>Sorry, cannot send the message</h3><p><small>Make sure you supplied the right Email address</small><p>')
                    .show();//show method shows the element alert message within the modal
                    $('#prayer-request-alert-modal').modal('show');//target prayer-request-alert-message and showing modal
                  } else if(response.result === 'ok') {
@@ -261,7 +261,7 @@ $(document).ready(function() {
                      $('#prayer-request-alert-message')
                      .removeClass('alert-warning')
                      .addClass('alert-success')
-                     .html('Thank you, your prayer request has been received.')
+                     .html('<h3>Thank you, your prayer request has been received.</h3>')
                      .show();
                      $('#prayer-request-alert-modal').modal('show');
                  }
