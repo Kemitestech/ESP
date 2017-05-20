@@ -21,9 +21,9 @@ class Contactform extends CI_Controller {
         $this->form_validation->set_rules('businessname', 'Business Name', 'max_length[50]|alpha_numeric_spaces|trim');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Telephone Number', 'min_length[8]|trim|is_natural');
-        $this->form_validation->set_rules('subject', 'Subject', 'max_length[20]|required|alpha_numeric_spaces|trim');
+        $this->form_validation->set_rules('subject', 'Subject', 'max_length[20]|required|trim');
         $this->form_validation->set_rules('message', 'Enquiry', 'trim|required|max_length[500]');
-				$this->form_validation->set_rules('firstname', 'First Name', 'callback_check_empty');
+		$this->form_validation->set_rules('firstname', 'First Name', 'callback_check_empty');
 
         if($this->form_validation->run() == FALSE) {
             $this->output->set_status_header('400');
@@ -53,7 +53,6 @@ class Contactform extends CI_Controller {
 			$businessname = !empty($businessname) ? 'Business name: ' . $businessname . '<br><br>' : '';
 			$phone = !empty($phone) ? 'Contact Number: ' . $phone . '<br><br>' : '';
 			$conclusion = 'Kind regards,<br>' . $fullname;
-			$this->email->message('Dear Edward Street Parish,<br><br>' . $message . '<br><br>' . $businessname . $phone . $conclusion);
 			$promise = $sparkPost->transmissions->post(array(
 				'content' => array(
 					'from' => array('name' => 'Edward Street Parish', 'email' => 'info@cccedwardstreetparish.org'),
@@ -64,7 +63,7 @@ class Contactform extends CI_Controller {
 				),
 				'recipients' => array( 
 						array( 
-							'address' => array('name' => 'Emmanuel', 'email' => 'info@cccedwardstreetparish.org')
+							'address' => array('name' => 'Edward Street Parish', 'email' => 'info@cccedwardstreetparish.org')
 						) 
 				)
 			));	

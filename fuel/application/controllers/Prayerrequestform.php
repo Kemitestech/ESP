@@ -58,7 +58,7 @@ class Prayerrequestform extends CI_Controller {
         ),
         'recipients' => array( 
             array( 
-              'address' => array('name' => 'Emmanuel', 'email' => 'prayer_request@cccedwardstreetparish.org')
+              'address' => array('name' => 'Edward Street Parish', 'email' => 'prayer_request@cccedwardstreetparish.org')
             ) 
         )
       ));	      
