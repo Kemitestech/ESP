@@ -58,7 +58,6 @@ $(document).ready(function() {
                    .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
                    .show();
                    $('#subscribeAlertmodal').modal('show');
-                   console.log(json.message);
                }
            }
        });
@@ -169,7 +168,6 @@ $(document).ready(function() {
                 }
             },
             error: function(xhr){
-                console.log(xhr);
                 if(xhr.status == 400) { //Validation error or other reason for Bad Request 400
                     var json = xhr.responseJSON;
                     $('#csrf').val(json.csrfHash).attr('name', json.csrfTokenName);
@@ -179,7 +177,6 @@ $(document).ready(function() {
                     .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
                     .show();
                     $('#alertmodal').modal('show');
-                    console.log(json.message);
                 }
             }
         });
@@ -247,7 +244,6 @@ $(document).ready(function() {
              //Success is called if the request was successfull.  Success is the key and function is the value.  The response is passed to the function argument
              success: function(response){
                $('#csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
-               console.log(response);
                 //  $('#csrf').val(response.csrfHash).attr('name', response.csrfTokenName);
                  if(response.result === 'error'){
                    $('#prayer-request-alert-message')//target #prayer-request-alert-message
@@ -268,8 +264,6 @@ $(document).ready(function() {
              },
              //If there is a error with the request the error fuction will be called
              error: function(xhr){//XHR IS THE RESPONSE PROVIDED BY jQuery ajax method
-
-                console.log(xhr);
                   //status is a special response key word that represent a HTTP status code
                  if(xhr.status == 400) { //Validation error or other reason for Bad request
                     //responseJSON is a conversion of a JSON response converted into a JavaScript object which was named responseJSON
@@ -281,7 +275,6 @@ $(document).ready(function() {
                           .html('<h3>Sorry, there was a problem with your request.</h3><p><small>'+json.message+'</small></p>')
                           .show();
                           $('#prayer-request-alert-modal').modal('show');
-                     console.log(json.message);
                  }
              }
          });
